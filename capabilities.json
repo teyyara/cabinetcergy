@@ -23,11 +23,25 @@
     "repository_build_or_typecheck": "not applicable yet: no project code or package manifest",
     "local_asset_decode_or_image_inventory": false,
     "pdf_download_and_content_verification": false,
-    "form_display_and_submission_test": false,
+    "form_display_and_submission_test": "public fields inspected only; no test submission",
     "real_form_submission": "prohibited",
     "private_form_response_access": "prohibited",
-    "live_deployment_access": "not tested",
-    "production_smoke_test": "not available until an actual deployment exists"
+    "live_deployment_access": "not applicable; no deployment",
+    "production_smoke_test": "not applicable; no deployment",
+    "public_page_text_reconnaissance": true,
+    "full_source_route_text_review": true,
+    "known_subroutes_with_text_review": 10,
+    "root_url_accessible_in_inspection_tool": false,
+    "page_asset_link_inspection": true,
+    "source_asset_urls_recorded": 25,
+    "some_source_image_urls_return_403": true,
+    "waiting_list_public_form_fields_reviewed_without_submission": true,
+    "google_maps_embed_url_identified": true,
+    "google_maps_runtime": "BLOCKED: inspection tool could not load Google Maps redirect",
+    "street_view_target": "BLOCKED: image under Street View heading shows children playing with blocks, not a panorama",
+    "pdf_downloads": "BLOCKED: filenames visible but direct document URLs and file contents not verified",
+    "full_browser_scroll_audit": false,
+    "mobile_responsive_audit": false
   },
   "policy": {
     "paid_dependencies_allowed": false,
@@ -35,5 +49,12 @@
     "new_persistent_form_storage_allowed": false,
     "unverified_observations_may_be_marked_pass": false
   },
-  "rule": "If a required capability is unavailable, document the limitation, seek a free valid alternative where appropriate, and otherwise mark the affected requirement BLOCKED or UNKNOWN rather than PASS."
+  "rule": "If a required capability is unavailable, document the limitation, seek a free valid alternative where appropriate, and otherwise mark the affected requirement BLOCKED or UNKNOWN rather than PASS.",
+  "workflow": {
+    "merge_successful_loop_checkpoint_to_main": true,
+    "merge_mechanism": "GitHub pull request",
+    "merge_requires_checkpoint_validation": true,
+    "verify_main_remote_after_merge": true,
+    "no_automatic_production_deployment": true
+  }
 }
