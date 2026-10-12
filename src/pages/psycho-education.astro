@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
+const domains = [
+  ["Communication", "Développement des compétences permettant de mieux comprendre, exprimer et partager ses idées, ses besoins et ses émotions, y compris pour les enfants non verbaux et/ou non vocaux."],
+  ["Logico-mathématiques", "Accompagnement des compétences liées au raisonnement, à la compréhension des nombres, aux opérations et à la résolution de problèmes."],
+  ["Lecture", "Soutien des compétences nécessaires à l’apprentissage et à la compréhension de la lecture, avec un travail autour des prérequis et de la compréhension."],
+  ["Compréhension", "Développement de stratégies permettant de comprendre et respecter les consignes, puis de comprendre et répondre aux questions."],
+  ["Attention et concentration", "Mise en place d’outils et de stratégies favorisant le maintien de l’attention dans les activités scolaires et quotidiennes."],
+  ["Organisation et autonomie", "Accompagnement dans la gestion des tâches, des routines et des responsabilités adaptées à l’âge de l’enfant. Apprendre à travailler seul."],
+  ["Habiletés sociales", "Développement des compétences relationnelles favorisant les interactions positives avec les autres."],
+];
+---
+<BaseLayout title="Psychoéducation | Cabinet des Hérons — Cergy" description="Présentation de l’accompagnement en psychoéducation proposé par le Cabinet des Hérons à Cergy." currentPath="/psycho-education/">
+  <PageIntro eyebrow="Nos accompagnements" title="Psychoéducation" description="Accompagnement individualisé — le site source indique que la psychoéducation ne nécessite pas d’ordonnance." />
+  <section class="section"><div class="container editorial-grid"><div><p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Apprentissages & autonomie</p><h2>Développer les compétences utiles au quotidien.</h2></div><div class="prose"><p>La psychoéducation vise à soutenir les apprentissages, les compétences de communication et l’autonomie de l’enfant ou de l’adolescent dans son environnement familial, scolaire et social.</p><p>L’accompagnement est construit en collaboration avec la famille afin de proposer des stratégies adaptées aux besoins de chacun.</p></div></div></section>
+  <section class="section section-soft"><div class="container"><p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Domaines travaillés</p><h2>Un accompagnement adapté à chaque enfant.</h2><div class="service-domain-grid">{domains.map(([title, description]) => <article class="domain-card"><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+  <section class="section"><div class="container feature-band"><div><p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Un accompagnement évolutif</p><h2>Des objectifs définis selon les besoins.</h2><p>Les objectifs sont définis en fonction des besoins identifiés et évoluent tout au long du suivi afin de favoriser les progrès, la confiance en soi et l’autonomie.</p></div><div class="feature-band-aside"><p>Le site source indique que cette prestation ne nécessite pas d’ordonnance.</p><a class="button button-light" href="/liste-attente/">Accéder à la liste d’attente ↗</a></div></div></section>
+</BaseLayout>
