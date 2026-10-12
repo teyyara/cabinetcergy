@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "project_id": "cabinet-des-herons-website",
   "run_id": "cabinetcergy-2026-10-12",
   "active_keyphrase": "Read the master strategy",
@@ -11,19 +11,40 @@
     "full_name": "teyyara/cabinetcergy",
     "default_branch": "main",
     "progression_branch": "aeos/progression",
-    "latest_verified_parent_before_bundle": "b420b15d051f7394740bd35b6c50e09d2dc74a0d"
+    "latest_verified_parent_before_bundle": "b420b15d051f7394740bd35b6c50e09d2dc74a0d",
+    "promotion_policy": {
+      "successful_loop_checkpoints": "merge_to_main_at_loop_end",
+      "mechanism": "GitHub pull request merge",
+      "remote_verification_required": true,
+      "no_force_push": true,
+      "production_release_separate": true
+    }
   },
   "loop": {
-    "current": 1,
-    "label": "LOOP 001",
-    "objective": "Establish a trustworthy repository baseline, persist the canonical rulebook and project brief, and record the initial evidence-backed source inventory and constraints.",
-    "phase": "reconnaissance-and-repository-bootstrap",
-    "state": "WAITING_FOR_CONTINUE",
-    "candidate_id": "CABINET-RECON-001",
-    "completed_at": "2026-10-12",
-    "latest_work_checkpoint_commit": "2a780c25b2353fb6aef667bccf8de3e083170948",
-    "status_record_commit": "947b19c8809fb185d1040650bed590073b2fd976",
-    "next_high_value_work": "Complete page-by-page source audit and exact asset/link inventory, including the original map/Street View sources and both PDF download destinations."
+    "current": 2,
+    "label": "LOOP 002",
+    "objective": "Audit all named public source routes and known assets, record existing Form/Maps endpoints and unresolved migration risks, and persist the user-requested main promotion policy.",
+    "phase": "source-audit-and-migration-evidence",
+    "state": "MERGE_PENDING",
+    "candidate_id": "CABINET-AUDIT-002",
+    "completed_at": null,
+    "latest_work_checkpoint_commit": null,
+    "source_audit_status": "PARTIAL_WITH_EXPLICIT_BLOCKERS",
+    "assets_inventoried": 25,
+    "form_submission_performed": false,
+    "private_form_responses_accessed": false,
+    "implementation_started": false,
+    "deployment_started": false,
+    "outstanding": [
+      "Root URL versus /accueil behavior",
+      "Two direct PDF download targets and document contents",
+      "Verified correct Street View target",
+      "Several source image URLs returned 403",
+      "Owner approval for credential/child images",
+      "Full real-browser and responsive audit",
+      "Framework/build/accessibility/performance/runtime verification"
+    ],
+    "next_high_value_work": "Resolve blocked PDF downloads and correct Street View source with browser-capable inspection, then select/build the static site only after source fidelity risks are mapped."
   },
   "constraints": {
     "zero_paid_dependencies": true,
