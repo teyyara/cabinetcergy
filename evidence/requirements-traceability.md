@@ -39,3 +39,20 @@ Status values: `PENDING`, `UNKNOWN`, `BLOCKED`, `PASS`, `FAIL`. No requirement i
 - Deployment: free static hosting only, selected after current plan terms/limits are verified; do not assume Vercel Hobby or GitHub Pages is compatible with this practice's use.
 - Success measure before launch: no missing source content or critical feature, no broken route/asset/link, preserved waiting list/map/download targets, tested responsive/accessibility behavior, build/deployment observed and reported with truthful confidence levels.
 - Unknown budgets/browser matrix/rollback/monitoring are not yet certified; define based on verified capabilities before candidate certification.
+
+
+| REQ-021 | Each successfully validated autonomous work-loop checkpoint is merged into `main` at loop end; merge is not a production release | R3 | Verify checkpoint, merge via GitHub PR or safe fast-forward, and verify remote `main` SHA | NEW — user-directed workflow change |
+
+## Change log
+
+- **Contract v1.1 / CR-001 (2026-10-12):** User explicitly requested that each successful work loop is merged to `main` at the end. Create/merge a GitHub pull request for each successfully validated loop checkpoint and verify the resulting remote state. Do not force-push. Merging evidence/progress into `main` does not authorize deployment or imply website readiness; production release remains independently gated.
+
+## Loop 002 — source audit status
+
+- Ten named subroutes reviewed through public text inspection; root alias remains unknown.
+- Form URL/embed and publicly visible question order/options recorded; no response data accessed and no submission performed.
+- Maps iframe URL captured; runtime embed blocked by inspection-tool redirect.
+- Street View mismatch confirmed; correct panorama not located.
+- PDF names identified but exact targets/content unknown.
+- 25 image source URLs recorded; several 403; credential and child-image publication gates documented.
+- Migration audit status: PARTIAL_WITH_EXPLICIT_BLOCKERS. Do not mark the website content, assets, links or runtime as PASS.
