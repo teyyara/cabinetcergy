@@ -1,41 +1,40 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-12-loop-004
-- **Current loop:** LOOP 004 — Vercel deployment readiness and release evidence
+- **Run ID:** cabinetcergy-2026-10-12-loop-005
+- **Current loop:** LOOP 005 — source image migration and local asset wiring
 - **State:** WAITING_FOR_CONTINUE
-- **Last working branch:** `aeos/loop-004-vercel-readiness` (merged)
+- **Working branch:** `aeos/loop-005-local-assets` (merged)
 - **Default / promotion branch:** `main`
-- **Website stack:** Astro 7.3.5 static output (Vite managed by Astro)
-- **Vercel project:** `cabinetcergy`; framework Astro; Node.js 24.x
+- **Latest main commit:** `6dfda6286b47ca2d5d4b8694cc84c73d71ab1a26`
+- **Checkpoint PR:** [PR #4 — merged](https://github.com/teyyara/cabinetcergy/pull/4)
+- **Website stack:** Astro 7.3.5 static output (Vite is managed internally by Astro)
 - **Review URL:** https://cabinetcergy.vercel.app
-- **Deployment status:** Vercel reports READY on production target from `main`
-- **Latest verified main deployment:** `dpl_cnHgm4GgSADX38Gi3EUxraniBUjf`
-- **Deployed merge commit:** `a34acccef04c4b404b97366f3951059fe6c3fdf1`
-- **Merged checkpoint:** [PR #3](https://github.com/teyyara/cabinetcergy/pull/3)
-- **CI:** PASS — [workflow run 38287965793](https://github.com/teyyara/cabinetcergy/actions/runs/38287965793)
+- **CI on PR head:** PASS — [run 38296393083](https://github.com/teyyara/cabinetcergy/actions/runs/38296393083)
+- **CI on merged main commit:** PASS — [run 38296509134](https://github.com/teyyara/cabinetcergy/actions/runs/38296509134)
 - **Last updated:** 2026-10-12
 
-## Loop 004 completed
+## Loop 005 completed
 
-- Verified the existing Vercel project detects Astro and uses Node.js 24.x.
-- Verified a READY production-target deployment after merging the checkpoint into `main`.
-- Verified the stable project domain `https://cabinetcergy.vercel.app` is assigned to the project.
-- Documented the supported Astro/Vite setup, build command, static output directory, Git deployment flow, and actual deployment evidence.
-- Corrected stale README, project configuration, capabilities and AEOS status that said the framework or deployment was not selected.
-- No application code, waiting-list form behavior, Vercel security configuration, third-party storage, database, analytics, API or paid dependency changed.
+Seven local WebP image assets were added to `public/images/`: the current source-site logo, three selected interior photos, and three practitioner portraits. The site header and footer use the local logo; the homepage and Le Cabinet page use locally served interior photographs; the homepage team cards and Équipe page use local practitioner portraits.
 
-## Evidence
+The original images were captured from successful image responses while the public Google Sites pages were rendered in Chromium. Direct requests to the Google Sites image gateway returned HTTP 403 in this environment, so the rendered-page capture path was used instead. Files were optimized to WebP and their source provenance, dimensions and sizes were recorded in `evidence/assets/source-assets.json`.
 
-- GitHub Actions [run 38287965793](https://github.com/teyyara/cabinetcergy/actions/runs/38287965793): dependency installation, Astro static build and route/integration verifier passed on the PR head.
-- Vercel API: latest deployment `dpl_cnHgm4GgSADX38Gi3EUxraniBUjf` is `READY`, target `production`, Git reference `main`, commit `a34acccef04c4b404b97366f3951059fe6c3fdf1`.
-- Vercel domain API: `cabinetcergy.vercel.app` is assigned and verified.
-- Technical evidence: `evidence/deployment/vercel-review-deployment-2026-10-12.md`.
+The build verifier now checks all seven local image assets exist and are non-empty, checks key local references in generated HTML, and fails if the output references `sites.google.com/sitesv-images-rt`.
+
+## Preserved constraints
+
+- The original Google Form URL and iframe integration are unchanged; no submissions were made and no private responses were accessed.
+- The user-provided CPAM and MDPH Drive URLs and exact Street View iframe URL are unchanged.
+- No backend, database, form replacement, analytics, custom storage, paid dependency or new third-party persistence was added.
+- Diploma/certificate scans and child-activity imagery remain excluded pending owner approval.
 
 ## Validation boundaries
 
-The build and Vercel deployment state are verified. Anonymous browser access has **not** been independently confirmed by a browser test in this environment. Neither the embedded Google Form, Street View iframe nor the Drive PDF behavior has been runtime-tested. Source-image availability, responsive layouts, accessibility, keyboard operation, external links and performance remain open QA items. Treat this as an owner-review deployment, not final public-launch QA signoff.
+GitHub Actions passed both on the PR head and on the merged `main` commit. The static build and 14-route verifier ran; seven local files and their output references were checked, and no Google Sites image-gateway URL remained in the generated HTML.
+
+A visual browser review of the new Astro site, full mobile/responsive and accessibility review, and runtime testing of the Form, Street View and PDF links have **not** been completed. The current Vercel deployment state was not rechecked after this merge; the review URL above is the existing project URL, not a claim that the newest assets have been visually verified in production.
 
 ## Next loop
 
-Wait for standalone `CONTINUE`. Prioritize browser/runtime checks and approved source-image remediation while keeping the static architecture and original form intact. After each successfully validated loop, merge its checkpoint into `main` and verify the resulting Vercel deployment separately.
+Wait for standalone `CONTINUE`. Prioritize browser-based visual QA, responsive crops and the preserved Form/Street View/PDF integrations. Keep the existing static architecture and do not republish approval-sensitive scans without owner review.
