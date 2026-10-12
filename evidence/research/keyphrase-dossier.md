@@ -186,7 +186,23 @@ Newly recorded observations:
 - The original Maps iframe URL was captured from Accès, but runtime rendering remains unverified because the inspection tool could not load its Google Maps redirect.
 - The image below “Vue de la rue (Street View)” depicts children playing with blocks, not a street panorama. The source image/label mismatch is a release blocker until resolved.
 - The homepage's 1 September 2026 opening notice is past as of the audit date. The Form currently says no individual-care places are available but group places remain. Both require owner review; do not silently change either.
-- The two PDFs remain unresolved: their file names appear alongside a generic Google Drive icon, but actual document URLs and contents were not verified.
+- The user has supplied exact Google Drive viewer URLs for both resources (https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view; https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view), and these are now linked in the Resources route. PDF contents and successful downloads remain uninspected.
 - Twenty-five source image URLs have been recorded. Some return HTTP 403 in the inspection tool. Credential scans and child imagery are flagged for approval before republication.
 
 Research is complete for keyphrase activation, but migration-grade asset and browser verification is incomplete. The source audit is PARTIAL, not PASS.
+
+
+## Loop 003 — user-supplied integrations and static-site foundation (2026-10-12)
+
+The user supplied the exact Google Drive viewer destinations:
+- **Aide exceptionnelle à la CPAM:** https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view
+- **Dossier MDPH / projet de vie:** https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view
+
+Both links are implemented in `src/pages/ressources-utiles.astro`. The PDF bytes/content and successful downloads have not been independently inspected.
+
+The user also supplied the exact Google Street View iframe `src`:
+`https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003`
+
+The new `src/pages/acces.astro` uses this exact source in a descriptive, lazy-loaded iframe. The old image under the original “Vue de la rue (Street View)” title is not reused as the panorama. Browser rendering remains to be checked.
+
+An initial Astro 7.3.5 static-output site is now implemented on `aeos/loop-003-site-foundation`, including the home page, services, team, tariffs, access, resources, FAQ and waiting-list routes, shared layout/styles, and GitHub Actions build/route verification. CI outcome is pending. No deployment is claimed. The existing Google Form responder/embed URLs remain unchanged; no response data was accessed or submitted.
