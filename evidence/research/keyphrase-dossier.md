@@ -33,7 +33,7 @@ The following page URLs are identified in the supplied master strategy and sourc
 | https://sites.google.com/view/cabinetdesheronscergy/ | Original root | Root did not resolve in the inspection interface; root alias remains UNKNOWN |
 | https://sites.google.com/view/cabinetdesheronscergy/accueil | Accueil | Visible home/waitlist entry point; use as confirmed homepage source pending root-alias verification |
 | https://sites.google.com/view/cabinetdesheronscergy/le-cabinet | Le Cabinet | Practice approach, premises and photographs |
-| https://sites.google.com/view/cabinetdesheronscergy/l% C3% A9quipe | L’Équipe | Practitioner biographies and training; URL encoded form to be normalized when used |
+| https://sites.google.com/view/cabinetdesheronscergy/l%C3%A9quipe | L’Équipe | Practitioner biographies and training; URL encoded form to be normalized when used |
 | https://sites.google.com/view/cabinetdesheronscergy/prestations | Prestations et tarifs | Practitioner fees and 2026–2027 content |
 | https://sites.google.com/view/cabinetdesheronscergy/prise-en-charge-de-groupe | Prise en charge de groupe | Group formats, schedules and conditions |
 | https://sites.google.com/view/cabinetdesheronscergy/acc%C3%A8s | Accès | Address, transport, parking, Maps and Street View area |
