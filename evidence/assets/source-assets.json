@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-10-12",
+  "status": "SOURCE_INVENTORY_ONLY_NOT_LOCAL_MIGRATION",
+  "note": "URLs are original Google Sites image-gateway URLs surfaced by source page links. They have not been copied into local project assets. Some returned HTTP 403 in the inspection interface. Personal-identifier certificate scans and child imagery require owner review before republication.",
+  "items": [
+    {
+      "id": "AST-001",
+      "page": "Accueil/header; Le Cabinet",
+      "purpose": "Official logo/brand mark",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72s8NDSj2gj8E_Ai74FbCWtScKi8Ct4mVAzhHc2NZBkAeUqUdfqQ4vYiQxR8uIgV80KlkkiYyVEzS4ejMOdwJm5dd6hsHBKSgQO1b--snoNEeVZ3NManAizXq6P2qhI1vhYVJKqrFVqU0JUgsvW3tXiR6skp3Ec0NBsHUF_TSrm_PrM9ajfAbufnbqR0PKxxgxpH9B5k_u7TyVVQe6MuqXFwHtC9kd9ufUMofN2N%3Dw1280",
+      "inspection": "Viewed; includes heron, brain, children, wording and tagline",
+      "state": "SOURCE_IDENTIFIED"
+    },
+    {
+      "id": "AST-002",
+      "page": "Accueil",
+      "purpose": "Home feature image",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72un8rWFsGUw2E0_EzPJ8WDsfttt7f9rKSP_FAdHYmuFFJMFg3qCRkZwz8QokaIDHwxu0a4T5Q1dGVe-r2nVV5S0lJvgd_vtaEqpmDYoyppHhRlrVk5mWGB2KX14dOVGYMlYgq96tgJtYlH-_tYYIoK3MgbO7iduontC407x1cG2sSccponhKZl9qNmS9K6-rHyCkAxkvc3-NuqL12Ea9YrP3avOS4Gkx9WvA4hs0XU%3Dw1280",
+      "inspection": "HTTP 403",
+      "state": "CONTENT_UNVERIFIED"
+    },
+    {
+      "id": "AST-003",
+      "page": "Accueil",
+      "purpose": "Team feature image",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72vf79fJ_n_LRQinxwNQM13t19Ir60bfpPtwGtv_pLawJGp6hET31CVDv1okiIAekzUrHVXjh4_iYN8keWkfTJZqdMBdvH4YRKyHbwP8oxEjbQwCzEReLT_8D2Bb5LRljaQBUwMWwOQ4438T11KmI8Sr39Putp8stGojZ23DENxPzIJcXZiwYOntBThJv-DCFS84DM9bdnxzf3-qwzgVN5xHJ124CCQTl1Er65Rkh-g%3Dw1280",
+      "inspection": "HTTP 403",
+      "state": "CONTENT_UNVERIFIED"
+    },
+    {
+      "id": "AST-004",
+      "page": "Le Cabinet",
+      "purpose": "Waiting-room seating area",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72vwgXJantYBJTf4smq_rl-mNg9qMZYmIt8Us5X4r6_GczR7Nz10tUFWUzKBN3pmqqPSf-We-yF0NiIgbk28O2nC0b_LPCEEaoa9E-EEnbhduI320ByLBT7RZLAQaq7ghAXwD9sD9DNZESxDmKdm1OB2el6UZ6_CE2mZIp2FUCF6PxJqAIZe4dJqGi4biTvwxK7lpWAFBRz8ipH1J9NxYQoHNYSSA5dpq1ISTXPv%3Dw1280",
+      "inspection": "Viewed",
+      "state": "SOURCE_IDENTIFIED"
+    },
+    {
+      "id": "AST-005",
+      "page": "Le Cabinet",
+      "purpose": "Air-conditioning unit/window",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72t2O_wCKnhxDvSyxFA_b0a40kDmHrKOfJVbCFrhe3cp2HoKUSezpzTscnQ3TFqb8ScOsRQZ-fon67Kwa3erKgNCKAfGPwTYfLshgf8dAlO7gME2dlBI3EW1bEhABGB-FSWtgQEZdVdg8EDWBwP2RznTRwqlhJ-Lmf15lwWno8BpqQA1v130-LIuODyTQRj9gtUKUC8yvTnS_Bxvtc8uBm_i2ZyVhtTlYw8jI96u%3Dw1280",
+      "inspection": "Viewed",
+      "state": "SOURCE_IDENTIFIED"
+    },
+    {
+      "id": "AST-006",
+      "page": "Le Cabinet",
+      "purpose": "Reading nook/bookshelf",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72tNs9tYCCAantKM6ttf8NNHAZrPiU1rgKfE3PZT4lAXobG4pHkCbvGWkJqrMKa5Vh_jLfyer4T4QnpeBvXTWd_hrgKux3fcjRAeHRBY123u3TNU9noTu1l4dAKzbXUe86e1sEmShPhRLdr4vxCfNLuvUisDGvONXy0K7wpNm1T9XEuRoal4mAqNXh4-VJNyPGjVe0NsUuJCgxLUW5XrOeaaUUJ2zTyl--OrDi5n%3Dw1280",
+      "inspection": "Viewed",
+      "state": "SOURCE_IDENTIFIED"
+    },
+    {
+      "id": "AST-007",
+      "page": "Le Cabinet",
+      "purpose": "Treatment/learning room",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72sJWac2HhFRU06QKCh159nZH2QFy3TdecIR7Om3clMGU4Drj5eIuDGRdkR01GghjPiTpkQZgcKLMjOWSECVOHzw_aaQH1GEf2fR5e9gn36i5t-XCDVxxMbDdTZLsg6fYC64DLsCQw9ajBmPTPqa37xxp7MH9dc2kA_0w3zvhnF-CyGVWQB_G_caLeHO6fqM9Y31FYTfdqYRWX3wVgxNqUExObFpmtT2SN2BTFatPTU%3Dw1280",
+      "inspection": "Viewed",
+      "state": "SOURCE_IDENTIFIED"
+    },
+    {
+      "id": "AST-008",
+      "page": "Accès - car",
+      "purpose": "Generic highway-driving image",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72td8j7NvhdwPp7hfHQei3J8dauMiGsOqojsk5xFbWi1UvI67oACfcK8txLComqkg88OjzllnoDizEAyVP0RmL8b2Uyu7zEwcPzbdb37iwHBqIpeKQsJBVR1RvHidTxe7pFXuu2Ry8FP7jS_CXjUxIHxt1QQQ95yy4Ge_M8uBh13MM_FxO2Lw7eLN-ApeHvFSgKI2kHqZ2lijTdkFr5oZVWi2UrK7XDpcZFAFBTKufU%3Dw1280",
+      "inspection": "Viewed; generic highway image, not route-specific",
+      "state": "RELEVANCE_REVIEW"
+    },
+    {
+      "id": "AST-009",
+      "page": "Accès - transport",
+      "purpose": "Generic bus-interior image",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72ukHSml3vr5Nuhd4IJobDFqUhYnzZdCR7Hgp3rkhzhrD3SelMlVrY9xevSN3l6dtgBSOGIce2bSsfTkhDIfZWchwlIuHq1eEma7-ch9gIE_jluVVm0xbBk-ZQyH8ursovoVIJVKTfUBbjeTmefEvqgFrmLHFIndbEsj1N9mTCVTqLI4CsLskIMDWf406rtLdlZ5LjNq5C4x_DFlCPUh1Jp4k5kyDRkmfP1Wkdw4HA8%3Dw1280",
+      "inspection": "Viewed; generic bus image, does not establish route",
+      "state": "RELEVANCE_REVIEW"
+    },
+    {
+      "id": "AST-010",
+      "page": "Accès - Street View heading",
+      "purpose": "Image under “Vue de la rue (Street View)”",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72vtwUq_QV6NA5h8r8NtAiMySPV2Xbnyhepa-jq1bKY5o7nPu9p0XbxypzsYPSzIQ6MKPT9bJyrt227bnHqXwdWiFE7tmxCi9uXb6MqXass7B2uFMVDoguHnvyYhOgC5UGqSggoRIeVo9IjQyt4Q6gplxzyQq8c_bk_V3qtdFlCYGRBNxACqnzhMMo9Vhs97QVxJqTLU-tUg3cxZOZzUQnKmB2lvW8cAK6zeSiDf_NQ%3Dw1280",
+      "inspection": "Viewed; children playing with blocks, not street panorama",
+      "state": "MISMATCH_BLOCKER",
+      "review": "Child imagery approval required"
+    },
+    {
+      "id": "AST-011",
+      "page": "Accès - family facilities",
+      "purpose": "Children doing a tabletop activity/craft",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72uo98GTsA-cuuXpu1ee5MXLvyze7Eg_2ihzHh7WPK6W0IGB2-hRwxSuKObwn3lw5SVbYvLj8utBPLLsDcmEbdpdZvTlNXJEGEWyoMYHQFLCG16Q0AFT068N9mAHVlbp5dekRBo8nCWGo375LD525DCPVcpZgVhzVa9ZKU3l39RglEYStbbe68g2JYX2R2DyyPFQ3MIjnDTHEDUSRfrCslzu6EZo_rPJD2-UpgBdiC4%3Dw1280",
+      "inspection": "Viewed; children/hands and craft material visible",
+      "state": "OWNER_APPROVAL_REVIEW"
+    },
+    {
+      "id": "AST-012",
+      "page": "L’Équipe - Edith Fautras",
+      "purpose": "Practitioner portrait",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72vgz4BQhVKgKko3l8s2qphztG_eCnhMibyw2FdaZLYOoq3TpJ5ZDf24ZidNgZ_VWoUwAhgeFTeC_M1OzVL2oiNlaLGOYyZOvuIVpRRoBWYk1kTJEUEaKJ2_E0HWkF7ABhshinKPUMUDaLvSOVNo0K8efPlaJ6jUWnzbp98NBJLEAfUERgoiV_A3x-TVNSE%3Dw1280",
+      "inspection": "Viewed",
+      "state": "SOURCE_IDENTIFIED"
+    },
+    {
+      "id": "AST-013",
+      "page": "L’Équipe - Edith Fautras",
+      "purpose": "Psychomotrician diploma scan",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72uockKVLH3LnH_A8evo1ISTwPlehzKh6dNM2nKEI9-KWIspZiWt9UMLYPjI5PGSlcbqsp-MMCXGN-YHVVtzk5bCqvCkPEVWu0Zke8KlxBhEE1SAlnZf6TOOrY7iCLKDSGHTzsXzBguUsWe2UFUSvsK3_PD25ahjLXjQKM4ruwOPYcdYrK4lwHj6bE-AkposievRDX9BwBzVtz6FrhJm_D-oO0o9d3y659LCbPb8%3Dw1280",
+      "inspection": "Viewed",
+      "state": "OWNER_APPROVAL_REQUIRED",
+      "review": "Date of birth and credential/serial identifiers visible"
+    },
+    {
+      "id": "AST-014",
+      "page": "L’Équipe - Edith Fautras",
+      "purpose": "FTF course completion certificate",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72uJVwCm6rfE6GrOcrjeFP8FgMYcZkFgM_0zdzJLU_ivjKG3Oqth60xTcGkGmIJILiuP2TJcOKb-8ncSOcL8vnIh6Lb0_Y-XDN2109zr6XLjuLftgbu4a4j7gAdujItY5OeFIlcN2l1gt3CfAMNHUKnKQZL9x90OyBmjaxcuIwMNdmOc3YKcE6s9o-QTKKF26FCPlA6xzfR9ZJ6cyadRIJICB21mxFQ6_c04MGyG%3Dw1280",
+      "inspection": "Viewed",
+      "state": "OWNER_APPROVAL_REQUIRED",
+      "review": "Contains personal/provider information"
+    },
+    {
+      "id": "AST-015",
+      "page": "L’Équipe - Edith Fautras",
+      "purpose": "Additional linked training image/certificate",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72sHampzv2VBCp2x0ukCFASFP8xO0SY4sUAbLqJTludV9rm1QAdKEvR_lbX-izV9YJi4srusSM2WHHC4OumPJo2gqLrel1e4RkFn4wNuHrXwdCJuwgFe5Ec2XoQXjI9YWFEBaIWnDw5lo9Wg7Zir3zqYyvUl1BjJk__3PxrAARdJQvnjp0yGxm5IU7iEVYp1vVk4bsGqf2wpGscbgmyntC9_NW0lc_8nkD0eCptl%3Dw1280",
+      "inspection": "HTTP 403",
+      "state": "CONTENT_UNVERIFIED"
+    },
+    {
+      "id": "AST-016",
+      "page": "L’Équipe - Edith Fautras",
+      "purpose": "Best of ABA 2025 certificate",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72sM_c5SbcTP0cckJZzaCwH3xEk7vCWm0Gwcw-BM_PFe0qWIVoA2HhzfzFveywvprJszp1LmzuYa8KbtL0a0zgTspK6p59ACeiXJWRaUzIw00gW_JeN0Ardlr5KZVlzacrQft_rvFZ-HJWe9I4kis9I29u0rZ1LXbrONj_FPFX8TNzxBbGRU_kUAYQ59W0dyDP6JW2j80k8OPiZpi7CbxFBt2CLhBO_SoYexgxsPXO8%3Dw1280",
+      "inspection": "Viewed",
+      "state": "OWNER_APPROVAL_REQUIRED"
+    },
+    {
+      "id": "AST-017",
+      "page": "L’Équipe - Edith Fautras",
+      "purpose": "Additional linked training image/certificate",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72v0X8eSybkYeWqYlxUOF0Du-I9_XHOP6C1eqwapp-vwA2d7uVtwCiumMspmddPzC-5tkxdVX6OUOxkBbQvB7HgrCyuivM4qWUiPs5j5Xe1-rf6m5k2GMkgQLQ4zShNYsC0ZKQ5-lwn35DTM5wSIgJHb-Y-9EJkSIWgauQUieLUOj5WvLZNILN5cqmQO7ZRXYtdi2KcPKgujlQ9H047rpMHIEPkrnc_0MoI0JVhJNFY%3Dw1280",
+      "inspection": "HTTP 403",
+      "state": "CONTENT_UNVERIFIED"
+    },
+    {
+      "id": "AST-018",
+      "page": "L’Équipe - Edith Fautras",
+      "purpose": "Additional linked training image/certificate",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72v1mXblp3VOT7vjRtp27_N4juEn55kRdliOrRZ6HPEy1oU4SpMM7z3j_syP8FtB82RseN6XRmTm0TJ2Qr1ri6mLZVYUbfI6JSe6_92RkzcSFPQzZFs6b2NbF-tw-GGox8DVUzoM4CQRhPM_gseG-8c04QPNfexGzCf-6WOZgBNYusj6fzugKYrxf5ozBM9U8XUsVnbNQ8G79IPTOUs_ONa2ibQhGqXQ1wK9jyJ4t70%3Dw1280",
+      "inspection": "HTTP 403",
+      "state": "CONTENT_UNVERIFIED"
+    },
+    {
+      "id": "AST-019",
+      "page": "L’Équipe - Edith Fautras",
+      "purpose": "Additional linked training image/certificate",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72vKl2K4kacbXIeCGW7-FOsJtwpFNbBkYClBR04mtZ-T9GF22PpNAIJ8tJX8fcUqyH0ZaYdEG3qbptqf4HnaKHE5MYnq-nUgj7FgchC-6IixAi6OaY-h2ETIj1JJ7rKmkc_n1YmF4rdF3eA74iQ0UlruAUEXlggrP7KDtfGYeiVkuro4e3SOOnSru_H1pfL_w9MCvsFNFw7UbB0UC-g82OKsSyPk33VbuB9viloNFMQ%3Dw1280",
+      "inspection": "HTTP 403",
+      "state": "CONTENT_UNVERIFIED"
+    },
+    {
+      "id": "AST-020",
+      "page": "L’Équipe - Jarod Florance",
+      "purpose": "Practitioner portrait",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72vx_vwk3Fb0JhquNL5xxmzsbNZlKg7LVZZKzMfRMWuazdJlDg3mQrgWghrU1LU3SUohxUT00Vg3ulL5MCNkxsm2DB4MYRlDDuGG7_LMI-snxE3pCnm3b72TTzmmpZ5LVufQAoNsarsQKnKW2NStdm5kyjk9J0fdJIKxwGRjrWp5EPZoJvbbI2fPdQ8Ah02EVw3rs6YVd0xYoceD1Xlx1PNPGqDnktcQWG4gxvcc%3Dw1280",
+      "inspection": "Viewed",
+      "state": "SOURCE_IDENTIFIED"
+    },
+    {
+      "id": "AST-021",
+      "page": "L’Équipe - Jarod Florance",
+      "purpose": "Psychomotrician diploma scan",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72uXZZh1b8rjdOsMMAy17AQYXFYYDvWZOHUxM__681xIg8TSL3wpkUl1GVo7dXqPRmW_UQQhrerYzNwv3sFHJhi5QBl8sdt1I5aKIzvwu7KnVFklO6EoWbO4coVIPuPa7aDV1Tv3bOyKPv-nTJiCTL35ISwzXEzCTD7u0qmm5pRamc31lpiSqM2uZU1pETqWLca9Fy1KmvO2faw8D3v6zP3mNJ8-1ioAdl3x6MnHBBE%3Dw1280",
+      "inspection": "Viewed",
+      "state": "OWNER_APPROVAL_REQUIRED",
+      "review": "Birth date and credential identifiers visible"
+    },
+    {
+      "id": "AST-022",
+      "page": "L’Équipe - Jarod Florance",
+      "purpose": "TSA specialization certificate",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72u5H57bheqHl4fTC7hCwmj9_fS718pAoYsA759zH7BLc3UKwoKFCAyC9VHvaO4UeYYyN0kSdWTt8VJiCztEyPHwZD2dWeHtkJzG4z_NcTJhBEC4AE72alSgsTI165i5qOMsGroJHrEKpfp4jrlzbQGccHsgAthDGuooRcLoVkh2n0NSHqxSKDKlu9BiHA5vpFSAWHmGmaYrff539a1OpzPm4AZWBkS4s7CT6nbh%3Dw1280",
+      "inspection": "Viewed",
+      "state": "OWNER_APPROVAL_REQUIRED"
+    },
+    {
+      "id": "AST-023",
+      "page": "L’Équipe - Bouhar Oubeidi",
+      "purpose": "Practitioner portrait",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72uxTGhBAgd4iCQaMdn6MuEUsSZQlou5S9aslQ6nUCs14sbRgXppLPT2zSwwQot59-5JGCAbKRWP9fMT2dtO8xb8PJJcbfsD2Y1z-SGgY1LVaAGTNVUZlfu3sPVk3u5SIPWg1G__t9coEagMdIcpmcr2KhtQgGCmBSGbrE7gOwajqaKVHKzv-cKrOVQykxzL0Q5S4VGUdP-YqNOuuVfpqUd33oFEen4Czz-JmcOp%3Dw1280",
+      "inspection": "HTTP 403",
+      "state": "CONTENT_UNVERIFIED"
+    },
+    {
+      "id": "AST-024",
+      "page": "L’Équipe - Bouhar Oubeidi",
+      "purpose": "Parental-guidance training certificate",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72sfds9Pj3XTSV1C-_KK1oupWAy4_mMjNf0ogBnicxRV33J7CPNZn9CNlxF4jsreJihRt7Ip5el0nySr16QbdA_DKuyztIP_ywAC-P3gwjwyEBvzfAR2VbRbYfvK_ylmVMk_jndY6J5NCQVrWxHwapwoRMHZcjSOq4RwU-Bfqvq5hTq61W7yiaCjhemS6symZxtYslKM8ki6xZDmxHeqbdlnD8GzzSo0qppOzGjYT6g%3Dw1280",
+      "inspection": "Viewed",
+      "state": "OWNER_APPROVAL_REQUIRED"
+    },
+    {
+      "id": "AST-025",
+      "page": "L’Équipe - Bouhar Oubeidi",
+      "purpose": "Master in Psychology certificate scan",
+      "url": "https://sites.google.com/sitesv-images-rt/AMxu72tQ9A6h8eUWZ4KG7ghK5G8ZMDFJloX6exNlR3ksyRHdE9oWZMx50pjt6jdwzZJgGyO3G1zqhpenl8AnkMAdxVST2UvAKBiqVgXCgoRtGm6aX3UJsGXXx5DCOkj-xXLc2lrcOryAF9JfJwF3Z2PcbScWkV_pwYcWUmll9gmztTZ4KyWRxpAghARAVZkJQb5bW28Xp_cwwFBPvLppOpuBgbMcqRBcnJwre4oRE5ixFEE%3Dw1280",
+      "inspection": "Viewed",
+      "state": "OWNER_APPROVAL_REQUIRED",
+      "review": "Birth date/identity details visible"
+    }
+  ]
+}
