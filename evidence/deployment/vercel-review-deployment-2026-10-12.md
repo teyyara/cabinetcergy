@@ -5,14 +5,14 @@
 - Project: `cabinetcergy` (`prj_BtttzMEh9f4SkBt2Z1IzUQ2NAenG`)
 - Detected framework: `astro`
 - Project Node.js version: `24.x`
-- Latest observed deployment ID: `dpl_HyKbY9SeQu2oh9gS7Q6HPcnNCyau`
+- Latest observed deployment ID: `dpl_cnHgm4GgSADX38Gi3EUxraniBUjf`
 - Deployment state: `READY`
 - Target: `production`
-- Git source metadata: repository `teyyara/cabinetcergy`, ref `main`, commit `27ca11f1c8b519d4f9ae493b8a1ffeb9795b94e9`
+- Git source metadata: repository `teyyara/cabinetcergy`, ref `main`, commit `a34acccef04c4b404b97366f3951059fe6c3fdf1`
 - Stable domain: `https://cabinetcergy.vercel.app`; Vercel domain API reported `verified: true`
 - Alias assignment had no reported alias error.
 
-The preceding merged site checkpoint has successful GitHub Actions build and route verification evidence: [run 38285884813](https://github.com/teyyara/cabinetcergy/actions/runs/38285884813). The project package scripts expose `npm run build`; Astro's static output is `dist/`. Astro documentation identifies `npm run build` and `dist` as the standard deployment settings, and Vercel automatically detects/configures Astro for a Git-connected project:
+The Vercel deployment is for the merged Loop 004 checkpoint from PR #3. Its successful GitHub Actions build and route verification are recorded in [run 38287965793](https://github.com/teyyara/cabinetcergy/actions/runs/38287965793). The project package scripts expose `npm run build`; Astro's static output is `dist/`. Astro documentation identifies `npm run build` and `dist` as the standard deployment settings, and Vercel automatically detects/configures Astro for a Git-connected project:
 
 - https://docs.astro.build/en/guides/deploy/
 - https://docs.astro.build/en/guides/deploy/vercel/
