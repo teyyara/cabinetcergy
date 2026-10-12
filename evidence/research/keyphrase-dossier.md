@@ -174,3 +174,19 @@ These URLs identify the same existing Google Form. Public inspection does **not*
 - Google Maps Embed API: https://developers.google.com/maps/documentation/embed/embedding-map
 
 **Research state: COMPLETE for keyphrase activation; incomplete for migration-grade visual and asset verification.** Do not treat the inventory above as proof that all content/assets have been fully migrated.
+
+
+## Loop 002 — expanded public source audit (2026-10-12)
+
+The detailed review is stored in [source-audit-2026-10-12.md](../source-audit-2026-10-12.md); source-image URLs, visual observations and approval states are in [assets/source-assets.json](../assets/source-assets.json).
+
+Newly recorded observations:
+- Text/section reconnaissance was completed for all ten named subroutes. The root URL without /accueil was not accessible in the inspection interface, so root-to-Accueil identity remains unknown.
+- The existing Google Form responder/embed URLs and ordered public field groups were identified. No responses were accessed and no submission was made. Owner-side delivery/notification settings remain unverified.
+- The original Maps iframe URL was captured from Accès, but runtime rendering remains unverified because the inspection tool could not load its Google Maps redirect.
+- The image below “Vue de la rue (Street View)” depicts children playing with blocks, not a street panorama. The source image/label mismatch is a release blocker until resolved.
+- The homepage's 1 September 2026 opening notice is past as of the audit date. The Form currently says no individual-care places are available but group places remain. Both require owner review; do not silently change either.
+- The two PDFs remain unresolved: their file names appear alongside a generic Google Drive icon, but actual document URLs and contents were not verified.
+- Twenty-five source image URLs have been recorded. Some return HTTP 403 in the inspection tool. Credential scans and child imagery are flagged for approval before republication.
+
+Research is complete for keyphrase activation, but migration-grade asset and browser verification is incomplete. The source audit is PARTIAL, not PASS.
