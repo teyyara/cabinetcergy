@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "audited_at": "2026-10-12",
-  "status": "SOURCE_INVENTORY_ONLY_NOT_LOCAL_MIGRATION",
-  "note": "URLs are original Google Sites image-gateway URLs surfaced by source page links. They have not been copied into local project assets. Some returned HTTP 403 in the inspection interface. Personal-identifier certificate scans and child imagery require owner review before republication.",
+  "status": "SOURCE_INVENTORY_PLUS_USER_SUPPLIED_PDF_AND_STREETVIEW_TARGETS",
+  "note": "URLs are original Google Sites image-gateway URLs surfaced by source page links. They have not been copied into local project assets. Some returned HTTP 403 in the inspection interface. Personal-identifier certificate scans and child imagery require owner review before republication. New PDF destinations and the Street View iframe URL were supplied by the project user on 2026-10-12. PDF contents/download behavior and Street View runtime rendering remain unverified. The Astro site uses the supplied Street View iframe and links to the supplied PDFs.",
   "items": [
     {
       "id": "AST-001",
@@ -82,8 +82,11 @@
       "purpose": "Image under “Vue de la rue (Street View)”",
       "url": "https://sites.google.com/sitesv-images-rt/AMxu72vtwUq_QV6NA5h8r8NtAiMySPV2Xbnyhepa-jq1bKY5o7nPu9p0XbxypzsYPSzIQ6MKPT9bJyrt227bnHqXwdWiFE7tmxCi9uXb6MqXass7B2uFMVDoguHnvyYhOgC5UGqSggoRIeVo9IjQyt4Q6gplxzyQq8c_bk_V3qtdFlCYGRBNxACqnzhMMo9Vhs97QVxJqTLU-tUg3cxZOZzUQnKmB2lvW8cAK6zeSiDf_NQ%3Dw1280",
       "inspection": "Viewed; children playing with blocks, not street panorama",
-      "state": "MISMATCH_BLOCKER",
-      "review": "Child imagery approval required"
+      "state": "SOURCE_MISMATCH_REPLACED_BY_USER_SUPPLIED_STREETVIEW_EMBED",
+      "review": "Do not use this child/play image as Street View; migrated Accès page uses a user-supplied real Google Street View panorama URL.",
+      "replacement_embed_src": "https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003",
+      "replacement_file": "src/pages/acces.astro",
+      "runtime_verified": false
     },
     {
       "id": "AST-011",
@@ -208,6 +211,42 @@
       "inspection": "Viewed",
       "state": "OWNER_APPROVAL_REQUIRED",
       "review": "Birth date/identity details visible"
+    }
+  ],
+  "documents": [
+    {
+      "id": "DOC-001",
+      "page": "Ressources utiles — Aide exceptionnelle à la CPAM",
+      "url": "https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view",
+      "source": "User-provided on 2026-10-12",
+      "destination_known": true,
+      "content_inspected": false,
+      "download_runtime_verified": false,
+      "implemented_at": "src/pages/ressources-utiles.astro",
+      "state": "DESTINATION_PROVIDED_CONTENT_UNINSPECTED"
+    },
+    {
+      "id": "DOC-002",
+      "page": "Ressources utiles — Dossier MDPH / projet de vie",
+      "url": "https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view",
+      "source": "User-provided on 2026-10-12",
+      "destination_known": true,
+      "content_inspected": false,
+      "download_runtime_verified": false,
+      "implemented_at": "src/pages/ressources-utiles.astro",
+      "state": "DESTINATION_PROVIDED_CONTENT_UNINSPECTED"
+    }
+  ],
+  "integrations": [
+    {
+      "id": "INT-003",
+      "type": "Google Street View iframe",
+      "source": "User-provided embed on 2026-10-12",
+      "src": "https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003",
+      "implemented_at": "src/pages/acces.astro",
+      "frame_title": "Google Street View — vue de la rue du Cabinet des Hérons",
+      "responsive_css": "src/styles/global.css .street-frame",
+      "runtime_verified": false
     }
   ]
 }

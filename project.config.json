@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
   "run_id": "cabinetcergy-2026-10-12",
@@ -17,7 +17,8 @@
       "no_force_push": true,
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
-    }
+    },
+    "current_working_branch": "aeos/loop-003-site-foundation"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -50,7 +51,7 @@
     "audience": "Families and professionals seeking public information about the practice",
     "language": "fr",
     "required_stack_candidate": "Astro + TypeScript (recommended candidate; not yet installed or validated)",
-    "selected_stack": null,
+    "selected_stack": "Astro 7.3.5 static output, file-based routes, CSS interface and TypeScript strictest tsconfig",
     "deployment_provider": null,
     "deployment_url": null,
     "third_party_data_services_permitted": false
@@ -61,7 +62,7 @@
     "deploy_only_to_a_verified_zero_cost_tier_compatible_with_usage_terms": true
   },
   "updated_at": "2026-10-12",
-  "contract_version": "1.1",
+  "contract_version": "1.2",
   "change_requests": [
     {
       "id": "CR-001",
@@ -69,6 +70,13 @@
       "state": "ACCEPTED",
       "requirement": "Every successfully validated work-loop checkpoint is merged into main at the end.",
       "implementation": "Use a GitHub pull request for each successful validated checkpoint, then verify the merged main ref. Never force-push. Main promotion does not itself authorize production deployment."
+    },
+    {
+      "id": "CR-002",
+      "date": "2026-10-12",
+      "state": "IMPLEMENTED_BUILD_PENDING",
+      "requirement": "Use the user-provided CPAM and MDPH PDF viewer URLs and correct Street View panorama embed.",
+      "implementation": "Both Drive links are implemented in src/pages/ressources-utiles.astro; the exact Street View src is implemented in src/pages/acces.astro with responsive CSS. PDF contents/downloads and Street View browser runtime remain unverified."
     }
   ]
 }

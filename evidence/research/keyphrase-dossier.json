@@ -40,16 +40,6 @@
       "reason": "Date is past relative to 2026-10-12; do not silently change."
     },
     {
-      "item": "Exact source PDF URLs and downloads",
-      "state": "UNKNOWN",
-      "reason": "Names are known but destination/download not verified."
-    },
-    {
-      "item": "Google Maps/Street View embeds",
-      "state": "UNKNOWN",
-      "reason": "Exact iframe URL and panorama behavior not verified."
-    },
-    {
       "item": "Root and /accueil relationship",
       "state": "UNKNOWN",
       "reason": "Root did not resolve in available inspection path."
@@ -63,11 +53,6 @@
       "item": "Root URL versus /accueil",
       "state": "UNKNOWN",
       "reason": "Root URL was not accessible in the inspection interface."
-    },
-    {
-      "item": "Street View image",
-      "state": "MISMATCH_BLOCKER",
-      "reason": "Image below Street View heading shows children playing with blocks, not a panorama."
     },
     {
       "item": "Waiting-list availability notice",
@@ -85,9 +70,19 @@
       "reason": "Some source image URLs returned HTTP 403 to the inspection tool."
     },
     {
-      "item": "Two linked PDF resources",
-      "state": "BLOCKED",
-      "reason": "Direct document URLs and contents were not verified."
+      "item": "Aide exceptionnelle à la CPAM PDF",
+      "state": "DESTINATION_PROVIDED_CONTENT_UNINSPECTED",
+      "reason": "User supplied an exact Google Drive viewer URL; PDF content and download behavior have not been independently checked."
+    },
+    {
+      "item": "Dossier MDPH PDF",
+      "state": "DESTINATION_PROVIDED_CONTENT_UNINSPECTED",
+      "reason": "User supplied an exact Google Drive viewer URL; PDF content and download behavior have not been independently checked."
+    },
+    {
+      "item": "Google Street View panorama",
+      "state": "SOURCE_PROVIDED_RUNTIME_PENDING",
+      "reason": "User supplied the exact embed URL and it is used in src/pages/acces.astro; browser rendering remains unverified."
     }
   ],
   "technology_research": {
@@ -106,6 +101,11 @@
     "vercel_hobby": {
       "state": "DO_NOT_ASSUME_ELIGIBLE_FOR_COMMERCIAL_USE",
       "url": "https://vercel.com/legal/terms"
+    },
+    "astro_static_site": {
+      "state": "IMPLEMENTED_BUILD_PENDING",
+      "version": "7.3.5",
+      "url": "https://docs.astro.build/en/concepts/why-astro/"
     }
   },
   "constraints": {
@@ -144,12 +144,39 @@
     "google_form_responder_url": "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform",
     "google_form_embed_url": "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform?embedded=true",
     "google_maps_embed_url": "https://maps-api-ssl.google.com/maps?hl=en-US&ll=49.049469%2C2.02295&output=embed&q=49.049538%2C2.022028&z=15",
-    "tamis": "https://www.tamis-autisme.org/"
+    "tamis": "https://www.tamis-autisme.org/",
+    "google_street_view_embed_url": "https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003",
+    "cpam_pdf_url": "https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view",
+    "mdph_pdf_url": "https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view"
   },
   "research_limitations": [
     "No full real-browser desktop/mobile scroll and screenshot audit.",
     "Google Maps runtime could not be inspected after redirect.",
-    "The two PDF entries did not expose downloadable documents.",
-    "Twenty-five source image URLs are inventoried, but several returned HTTP 403 and none have been migrated locally yet."
-  ]
+    "Twenty-five source image URLs are inventoried, but several returned HTTP 403 and none have been migrated locally yet.",
+    "User-provided PDF URLs are linked; PDF contents and download behavior have not been independently inspected.",
+    "The user-provided Street View iframe is integrated, but real-browser rendering has not been verified.",
+    "Original image files are not yet local; several Google Sites image-gateway URLs previously returned HTTP 403."
+  ],
+  "implementation": {
+    "branch": "aeos/loop-003-site-foundation",
+    "stack": "Astro 7.3.5 static output",
+    "route_files": [
+      "/",
+      "/accueil/",
+      "/le-cabinet/",
+      "/equipe/",
+      "/psychomotricite/",
+      "/psycho-education/",
+      "/prestations/",
+      "/prise-en-charge-de-groupe/",
+      "/acces/",
+      "/ressources-utiles/",
+      "/ressources-utiles/questions/",
+      "/questions/",
+      "/liste-attente/",
+      "/404.html"
+    ],
+    "build_verification": "PENDING_GITHUB_ACTIONS",
+    "deployment": "NOT_STARTED"
+  }
 }

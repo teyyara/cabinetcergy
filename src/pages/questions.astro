@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
+import FaqList from "../components/FaqList.astro";
+---
+<BaseLayout title="Questions fréquentes | Cabinet des Hérons — Cergy" description="Questions fréquentes du Cabinet des Hérons à Cergy." currentPath="/ressources-utiles/" noindex={true}>
+  <PageIntro eyebrow="Questions" title="Questions fréquentes." description="Cette route courte permet de retrouver la rubrique de questions tout en conservant la page complète sous Ressources utiles." compact />
+  <section class="section"><div class="container"><FaqList /><p class="section-action"><a class="text-link" href="/ressources-utiles/questions/">Accéder à la page Questions principale</a></p></div></section>
+</BaseLayout>

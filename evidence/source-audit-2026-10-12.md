@@ -128,11 +128,24 @@ These are health/child-related public field labels, not response content. No res
 - Public email on source: edith.fautras@gmail.com.
 - Tamis: https://www.tamis-autisme.org/
 - Exact maps URL above; runtime load not verified.
-- PDF filenames known but actual URLs/files unknown.
+- The PDF destinations are now supplied and linked from the new Resources page: “Aide exceptionnelle à la CPAM” (https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view) and “Dossier MDPH” (https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view). The actual PDF contents and successful downloads have not been independently inspected.
 - Root vs /accueil remains unknown.
-- True Street View target must be resolved; the current labelled image is demonstrably not Street View.
+- The exact Street View embed target has now been supplied by the user and inserted into the new Accès page; actual map/panorama runtime rendering remains unverified.
 - Credential scans and child imagery need owner approval before republication.
 - Some source image URLs returned 403.
 - Full browser page-scroll/mobile inspection, exhaustive link test, local asset migration, form display testing, build, accessibility/performance tests and deployment are outstanding.
 
 **Disposition:** observed text, form fields, map URL, Tamis link and several image sources are recorded. Full asset and responsive audit remains partial, not PASS.
+
+
+## Loop 003 — user-supplied source corrections and implementation (2026-10-12)
+
+The user supplied authoritative destinations for the two resource documents and the correct Street View panorama source:
+
+- Aide exceptionnelle à la CPAM: https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view
+- Dossier MDPH: https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view
+- Google Street View embed `src`: https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003
+
+The new Resources page links to the exact Google Drive URLs in a new tab and explicitly notes that the documents' contents were not reviewed during this implementation pass. The new Accès page uses the exact supplied Street View URL in an accessible, lazy-loaded iframe that is responsive through CSS. It replaces the old child/play image as the Street View presentation.
+
+A first Astro static-site foundation is now present on the working branch. Build/route verification is pending GitHub Actions; no deployment is claimed. The original waiting-list Google Form has not been recreated or modified.

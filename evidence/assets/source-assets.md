@@ -31,3 +31,19 @@ This is a **source URL and identity inventory**, not a completed asset migration
 - PDF documents verified/downloaded: **0**.
 - Verified Street View panorama source: **none**.
 - Approval-sensitive assets released for migration: **none**.
+
+
+## Loop 003 — new document and Street View sources (user-provided 2026-10-12)
+
+Two direct Google Drive viewer URLs are now recorded and linked on the Resources page:
+- **Aide exceptionnelle à la CPAM:** https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view
+- **Dossier MDPH / projet de vie:** https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view
+
+The links are available in the migrated site. Their actual PDF bytes/content and end-user download behavior have not been independently inspected, so they are marked as destinations supplied by the user rather than as fully verified documents.
+
+The user also supplied the correct Google Street View embed:
+```html
+<iframe src="https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+```
+
+The new Accès page embeds this exact `src` with a descriptive title; responsive width/aspect behavior is handled by CSS. Runtime panorama rendering remains to be validated in a browser. The old image under the Street View heading is not reused as a panorama.

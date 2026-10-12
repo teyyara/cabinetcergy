@@ -87,3 +87,12 @@ Key findings:
 - Browser screenshot/mobile audit, local asset migration, complete link testing and all build/runtime tests are still outstanding.
 
 This is a partial source audit, not a migration-completion PASS.
+
+
+## Loop 003 — user-supplied document and Street View sources
+
+- DOC-001 Aide exceptionnelle à la CPAM: https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view. Destination was supplied by the user; new Resources page link implemented; document content and download behavior uninspected.
+- DOC-002 Dossier MDPH / projet de vie: https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view. Destination was supplied by the user; new Resources page link implemented; document content and download behavior uninspected.
+- INT-003 Google Street View: `https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003`. Supplied by the user and implemented in `src/pages/acces.astro` using an iframe with descriptive title, lazy loading, the given `referrerpolicy`, and responsive CSS.
+- The old source image under “Vue de la rue (Street View)” is not used in the new page because it shows children playing with blocks.
+- Static site scaffold added on `aeos/loop-003-site-foundation`. CI build check is configured; local/browser rendering and actual form/map/PDF runtime checks remain pending.
