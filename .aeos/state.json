@@ -25,12 +25,19 @@
   "loop": {
     "current": 3,
     "label": "LOOP 003",
-    "objective": "Implement user-supplied CPAM and MDPH document links and correct Street View embed; establish the first static Astro site while preserving the existing Google Form; validate before promoting to main.",
+    "objective": "Implement the user-supplied CPAM and MDPH links and correct Street View source; build a static Astro foundation preserving the existing Google Form; validate before merge.",
     "phase": "static-site-foundation-and-source-integration",
-    "state": "BUILD_PENDING",
+    "state": "MERGE_PENDING",
     "candidate_id": "CABINET-STATIC-003",
     "completed_at": null,
-    "latest_work_checkpoint_commit": null,
+    "latest_work_checkpoint_commit": "cdef107dfaf5e3170b20062b5929742943f42718",
+    "validation": {
+      "first_ci_run_id": 38285550208,
+      "first_ci_conclusion": "success",
+      "first_ci_commit": "cdef107dfaf5e3170b20062b5929742943f42718",
+      "build_and_route_verifier": "PASS",
+      "latest_pr_head_ci": "PENDING_AFTER_STATUS_RECORD_UPDATE"
+    },
     "implementation_started": true,
     "framework": "Astro 7.3.5 static output",
     "implementation_branch": "aeos/loop-003-site-foundation",
@@ -41,16 +48,15 @@
     "real_form_submission_performed": false,
     "private_form_responses_accessed": false,
     "deployment_started": false,
-    "build_state": "PENDING_GITHUB_ACTIONS",
     "outstanding": [
-      "GitHub Actions static build and route verifier result",
+      "Pass the latest PR-head CI run",
       "Street View runtime rendering in a real browser",
       "PDF content and successful viewer/download behavior",
       "Source-image local asset migration and image-load verification",
-      "Full mobile, accessibility, link and performance audit",
+      "Full mobile, accessibility, outbound-link and performance audit",
       "Choose and verify an eligible free hosting option before deployment"
     ],
-    "next_high_value_work": "Inspect GitHub Actions build and route-verifier outcome, resolve failures, then merge the validated checkpoint into main and verify both remote refs."
+    "next_high_value_work": "Confirm latest PR-head CI success, merge PR #2 into main, verify remote refs, finalize state, and fast-forward progression."
   },
   "constraints": {
     "zero_paid_dependencies": true,
