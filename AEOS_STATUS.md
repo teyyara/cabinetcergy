@@ -3,13 +3,16 @@
 - **Active keyphrase:** Read the master strategy
 - **Run ID:** cabinetcergy-2026-10-12
 - **Current loop:** LOOP 002 — source and asset audit checkpoint
-- **State:** MERGE_PENDING
+- **State:** WAITING_FOR_CONTINUE
 - **Working branch:** aeos/progression
 - **Default / production branch:** main
 - **Loop candidate:** CABINET-AUDIT-002
 - **Runnable website:** NO — no package manifest, implementation or build scripts
 - **Deployment:** NOT STARTED; no live URL claimed
 - **Branch policy:** successfully validated loop checkpoints are merged into main at loop end; merging progress does not itself authorize production deployment.
+- **Merged checkpoint:** PR #1 — `bf2639eabbaad5dd6735a7f1f4d0e08ce01a32b8` (verified on remote `main`)
+- **Pull request:** https://github.com/teyyara/cabinetcergy/pull/1
+- **Latest verified remote main at merge:** `bf2639eabbaad5dd6735a7f1f4d0e08ce01a32b8`
 - **Last updated:** 2026-10-12
 
 ## Loop 002 work completed
@@ -35,7 +38,7 @@
 
 ## Next permitted work
 
-After this documentation checkpoint is merged and the remote `main` state verified, stop and wait for a standalone `CONTINUE`. Next highest-value task: try to resolve the real PDF links and true Street View target with a browser-capable inspection path, then plan the static scaffold with current free-hosting terms. Keep the original Form exactly as-is.
+The checkpoint has been merged to `main` and the merge SHA was verified. Stop here and wait for a standalone `CONTINUE`. Next highest-value task: try to resolve the real PDF links and true Street View target with a browser-capable inspection path, then plan the static scaffold with current free-hosting terms. Keep the original Form exactly as-is.
 
 ## Local run instructions
 
