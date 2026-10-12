@@ -56,3 +56,15 @@ Status values: `PENDING`, `UNKNOWN`, `BLOCKED`, `PASS`, `FAIL`. No requirement i
 - PDF names identified but exact targets/content unknown.
 - 25 image source URLs recorded; several 403; credential and child-image publication gates documented.
 - Migration audit status: PARTIAL_WITH_EXPLICIT_BLOCKERS. Do not mark the website content, assets, links or runtime as PASS.
+
+
+| REQ-022 | Publish the user-supplied CPAM and MDPH document links under their correct labels | R2 | Build output contains the exact supplied Google Drive URLs under “Aide exceptionnelle à la CPAM” and “Dossier MDPH”; PDF content/download behavior is separately marked unverified | LOOP 003 |
+| REQ-023 | Replace the misleading static image below the Street View heading with the exact user-supplied Google Street View embed | R3 | Build output contains the exact `src`; old child/play image is not used as a panorama; runtime rendering still requires browser validation | LOOP 003 |
+| REQ-024 | Establish the website as a static Astro build while preserving the existing Google Form integration | R4 | Static build succeeds, expected page routes exist, verify script confirms original Form responder/embed URLs; no response submission or new form processor | LOOP 003 |
+
+## Loop 003 traceability update
+
+- Supplied CPAM and MDPH links are recorded and inserted into the public resources route; PDF content is not independently inspected.
+- Supplied Street View URL is inserted into the public access route; rendered panorama is not yet browser-verified.
+- Astro static site and automated build verification are implemented on the progression branch; build test result pending CI.
+- The original Google Form responder and embed URLs remain unchanged and no submissions were made.
