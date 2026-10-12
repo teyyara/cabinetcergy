@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
   "run_id": "cabinetcergy-2026-10-12",
@@ -9,14 +9,25 @@
     "default_branch": "main",
     "progression_branch": "aeos/progression",
     "production_branch": "main",
-    "repository_was_empty_at_authorized_inspection": true
+    "repository_was_empty_at_authorized_inspection": true,
+    "promotion_policy": {
+      "successful_loop_checkpoints": "merge_to_main_at_loop_end",
+      "mechanism": "GitHub pull request merge",
+      "require_remote_verification": true,
+      "no_force_push": true,
+      "main_merge_does_not_imply_production_release": true,
+      "production_release_remains_separately_gated": true
+    }
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
     "project_brief": "evidence/project-master-strategy.md",
     "operating_rulebook": "evidence/AEOS-RULEBOOK.md",
     "research_dossier": "evidence/research/keyphrase-dossier.md",
-    "migration_manifest": "evidence/migration-manifest.md"
+    "migration_manifest": "evidence/migration-manifest.md",
+    "source_audit": "evidence/source-audit-2026-10-12.md",
+    "asset_inventory": "evidence/assets/source-assets.json",
+    "asset_inventory_human": "evidence/assets/source-assets.md"
   },
   "objective": "Migrate and improve the existing Cabinet des Hérons public informational website while retaining source content and existing operational integrations.",
   "constraints": {
@@ -49,5 +60,15 @@
     "do_not_claim_unobserved_tests": true,
     "deploy_only_to_a_verified_zero_cost_tier_compatible_with_usage_terms": true
   },
-  "updated_at": "2026-10-12"
+  "updated_at": "2026-10-12",
+  "contract_version": "1.1",
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "date": "2026-10-12",
+      "state": "ACCEPTED",
+      "requirement": "Every successfully validated work-loop checkpoint is merged into main at the end.",
+      "implementation": "Use a GitHub pull request for each successful validated checkpoint, then verify the merged main ref. Never force-push. Main promotion does not itself authorize production deployment."
+    }
+  ]
 }
