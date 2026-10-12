@@ -10,7 +10,7 @@
     "latest_known_commit_before_state_bundle": "b420b15d051f7394740bd35b6c50e09d2dc74a0d"
   },
   "research_status": "KEYPHRASE_RESEARCH_COMPLETE",
-  "migration_audit_status": "PARTIAL_RECONNAISSANCE_ONLY",
+  "migration_audit_status": "PARTIAL_WITH_EXPLICIT_BLOCKERS",
   "original_website": "https://sites.google.com/view/cabinetdesheronscergy/",
   "public_page_urls": [
     "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -58,6 +58,36 @@
       "item": "Full visual audit and asset migration",
       "state": "PENDING",
       "reason": "No real browser automation or full asset-level inspection performed."
+    },
+    {
+      "item": "Root URL versus /accueil",
+      "state": "UNKNOWN",
+      "reason": "Root URL was not accessible in the inspection interface."
+    },
+    {
+      "item": "Street View image",
+      "state": "MISMATCH_BLOCKER",
+      "reason": "Image below Street View heading shows children playing with blocks, not a panorama."
+    },
+    {
+      "item": "Waiting-list availability notice",
+      "state": "OWNER_VERIFICATION_REQUIRED",
+      "reason": "Current public Form notice says no individual places and some group places remain; no submission performed."
+    },
+    {
+      "item": "Practitioner credentials",
+      "state": "OWNER_APPROVAL_REQUIRED",
+      "reason": "Some diploma/certificate scans expose personal identifiers; require approval before republication."
+    },
+    {
+      "item": "Several original image URLs",
+      "state": "UNKNOWN",
+      "reason": "Some source image URLs returned HTTP 403 to the inspection tool."
+    },
+    {
+      "item": "Two linked PDF resources",
+      "state": "BLOCKED",
+      "reason": "Direct document URLs and contents were not verified."
     }
   ],
   "technology_research": {
@@ -100,5 +130,26 @@
     "Full page-by-page visual and responsive inventory",
     "Hosting/provider compatibility and production URL",
     "Actual build/browser/accessibility/performance test results"
+  ],
+  "source_audit": "evidence/source-audit-2026-10-12.md",
+  "asset_inventory": "evidence/assets/source-assets.json",
+  "merge_policy": {
+    "successful_loop_checkpoints": "merge_to_main_at_loop_end",
+    "mechanism": "GitHub pull request merge",
+    "require_remote_verification": true,
+    "no_force_push": true,
+    "main_merge_does_not_imply_production_release": true
+  },
+  "confirmed_integrations": {
+    "google_form_responder_url": "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform",
+    "google_form_embed_url": "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform?embedded=true",
+    "google_maps_embed_url": "https://maps-api-ssl.google.com/maps?hl=en-US&ll=49.049469%2C2.02295&output=embed&q=49.049538%2C2.022028&z=15",
+    "tamis": "https://www.tamis-autisme.org/"
+  },
+  "research_limitations": [
+    "No full real-browser desktop/mobile scroll and screenshot audit.",
+    "Google Maps runtime could not be inspected after redirect.",
+    "The two PDF entries did not expose downloadable documents.",
+    "Twenty-five source image URLs are inventoried, but several returned HTTP 403 and none have been migrated locally yet."
   ]
 }
