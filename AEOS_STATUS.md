@@ -1,45 +1,36 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-12
-- **Current loop:** LOOP 002 — source and asset audit checkpoint
-- **State:** WAITING_FOR_CONTINUE
-- **Working branch:** aeos/progression
+- **Run ID:** cabinetcergy-2026-10-12-loop-003
+- **Current loop:** LOOP 003 — static-site foundation and supplied integrations
+- **State:** BUILD_PENDING
+- **Working branch:** aeos/loop-003-site-foundation
 - **Default / production branch:** main
-- **Loop candidate:** CABINET-AUDIT-002
-- **Runnable website:** NO — no package manifest, implementation or build scripts
+- **Website candidate:** Astro 7.3.5, static output
 - **Deployment:** NOT STARTED; no live URL claimed
-- **Branch policy:** successfully validated loop checkpoints are merged into main at loop end; merging progress does not itself authorize production deployment.
-- **Merged checkpoint:** PR #1 — `bf2639eabbaad5dd6735a7f1f4d0e08ce01a32b8` (verified on remote `main`)
-- **Pull request:** https://github.com/teyyara/cabinetcergy/pull/1
-- **Latest verified remote main at merge:** `bf2639eabbaad5dd6735a7f1f4d0e08ce01a32b8`
+- **Branch policy:** every successfully validated loop checkpoint is merged to main at loop end, then the remote state is verified. Merge is not itself a production release.
 - **Last updated:** 2026-10-12
 
-## Loop 002 work completed
+## Loop 003 work completed so far
 
-- Conducted public text review of all ten named subroutes and the existing public waiting-list Google Form.
-- Recorded route-level source content including services, practitioner biographies, published fees, group programme schedules, transport directions and family-resource/FAQ topics.
-- Recorded the original public Form responder/embed URLs and public field order/options. No responses were accessed and no test submission was made.
-- Captured the exact original Google Maps iframe URL; runtime rendering remains unverified because the inspection tool could not load the redirect.
-- Added `evidence/source-audit-2026-10-12.md`.
-- Added `evidence/assets/source-assets.json` with 25 discovered image URLs, inspection outcomes and approval/mismatch states, plus a human-readable summary in `evidence/assets/source-assets.md`.
-- Updated research, migration-manifest and requirement traceability records.
-- Added CR-001 / REQ-021 recording the user's rule to merge each successful loop to `main` at loop end.
-- No website implementation, local asset migration, Form submission, build/runtime test or deployment has been claimed.
+- The user supplied the exact Google Drive viewer URLs for Aide exceptionnelle à la CPAM and Dossier MDPH. Both are linked from the new Resources route.
+- The user supplied the exact Google Street View iframe source. The new Accès route embeds it responsively; the incorrect child/play photo is not used as a Street View panorama.
+- An initial static Astro website has been added on the working branch: shared layout, navigation/footer, responsive styles, home/service/team/pricing/group/access/resources/FAQ/waiting-list routes, 404 page, package manifest, and GitHub Actions build/route verification.
+- The existing Google Form responder and embed URLs remain unchanged. No form responses were accessed and no test submission was made.
+- Research, asset, migration and requirement records were updated with the user-supplied URLs and current validation limits.
 
-## Confirmed issues and blockers
+## Validation state
 
-- Root URL without `/accueil` was not accessible through the inspection interface; alias behavior is UNKNOWN.
-- Image under “Vue de la rue (Street View)” shows children playing with blocks, not a street panorama. Correct destination is not yet verified.
-- The two named PDFs appear beside a generic Google Drive icon, but actual document URLs and file contents were not verified.
-- Several source images returned HTTP 403. Diploma/certificate scans and child imagery require owner approval before republication.
-- The homepage still displays an opening notice dated 1 September 2026. The public Form currently says no individual-care places are available but group places remain. Both need owner review; do not silently rewrite either.
-- Full browser/mobile screenshots, exact source downloads, complete link testing, local asset migration, framework/build, accessibility/performance and deployment tests remain outstanding.
+- Static build and route verifier: **pending GitHub Actions**.
+- Street View actual runtime rendering: not yet browser-verified.
+- The two PDF links were supplied by the user and are implemented; PDF bytes/content and download behavior were not independently inspected.
+- Original source images are still referenced by Google Sites URLs; local asset migration and complete image-load checks remain outstanding.
+- No production deployment or production smoke test has been claimed.
 
-## Next permitted work
+## Release blockers
 
-The checkpoint has been merged to `main` and the merge SHA was verified. Stop here and wait for a standalone `CONTINUE`. Next highest-value task: try to resolve the real PDF links and true Street View target with a browser-capable inspection path, then plan the static scaffold with current free-hosting terms. Keep the original Form exactly as-is.
-
-## Local run instructions
-
-No website code, package manifest or scripts exist yet. No build is applicable and no production URL is claimed.
+- Obtain a passing static build and route verifier result.
+- Verify the supplied Street View panorama and both PDF destinations in a real browser.
+- Complete source-image migration/review, mobile, accessibility, performance and link testing.
+- Select an eligible free hosting plan and verify its current usage terms before deployment.
+- Keep the existing waiting-list Google Form unchanged.
