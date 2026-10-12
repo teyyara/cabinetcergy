@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageIntro from "../../components/PageIntro.astro";
+import FaqList from "../../components/FaqList.astro";
+---
+<BaseLayout title="Questions fréquentes | Cabinet des Hérons — Cergy" description="Réponses aux questions fréquentes publiées par le Cabinet des Hérons sur la psychomotricité, la psychoéducation et les accompagnements." currentPath="/ressources-utiles/">
+  <PageIntro eyebrow="Ressources utiles" title="Questions fréquentes." description="Les réponses ci-dessous reprennent les explications publiées sur le site source." compact />
+  <section class="section"><div class="container"><FaqList /><p class="small-print section-action">Les informations sont reprises du site source. Pour une situation particulière, veuillez contacter directement le cabinet ou le professionnel concerné.</p><a class="text-link" href="/ressources-utiles/">Retour aux ressources utiles</a></div></section>
+</BaseLayout>

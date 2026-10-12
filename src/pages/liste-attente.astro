@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageIntro from "../components/PageIntro.astro";
+const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform";
+const embedUrl = "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform?embedded=true";
+---
+<BaseLayout title="Liste d’attente | Cabinet des Hérons — Cergy" description="Accès au formulaire Google de liste d’attente déjà utilisé par le Cabinet des Hérons." currentPath="/liste-attente/">
+  <PageIntro eyebrow="Liste d’attente" title="Le formulaire existant du cabinet." description="Le formulaire Google ci-dessous est l’intégration déjà utilisée par le cabinet. Il n’a pas été recréé, ses questions n’ont pas été copiées et aucun nouveau stockage de réponse n’a été ajouté." />
+  <section class="section"><div class="container"><div class="waitlist-intro"><div><h2>Inscription sur la liste d’attente</h2><p>Les informations et disponibilités affichées dans le formulaire proviennent directement du service existant. Pour ouvrir le formulaire dans un onglet séparé, utilisez le lien ci-dessous.</p></div><div class="notice-card"><p><strong>Besoin d’aide ?</strong></p><p>Contactez le cabinet directement si vous avez une question concernant le formulaire ou votre situation.</p><p><a href="tel:+33781243098">07 81 24 30 98</a><br /><a href="mailto:edith.fautras@gmail.com">edith.fautras@gmail.com</a></p><a class="text-link" href={formUrl} target="_blank" rel="noopener noreferrer">Ouvrir le formulaire Google ↗</a></div></div><div class="embed-card"><iframe class="form-frame" title="Formulaire Google existant — Liste d’attente psychomotricité et psychoéducation" src={embedUrl} loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p class="small-print">Ce site ne traite pas les réponses. La transmission continue via le formulaire existant et ses paramètres actuels, qui n’ont pas été modifiés.</p></div></section>
+</BaseLayout>
