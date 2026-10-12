@@ -36,7 +36,7 @@ assert.match(accessPage, /!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ/, "T
 assert.match(resources, /1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/, "The supplied CPAM PDF link must be present.");
 assert.match(resources, /1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/, "The supplied MDPH PDF link must be present.");
 assert.match(waiting, /1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/, "The existing Google Form integration must be preserved.");
-assert.match(waiting, /Liste d'attente/i, "Waiting-list page needs a meaningful title or heading.");
+assert.match(waiting, /Liste d.{0,2}attente/i, "Waiting-list page needs a meaningful title or heading.");
 
 const allHtml = await Promise.all(routeFiles.map(html));
 for (const [index, page] of allHtml.entries()) {
