@@ -9,7 +9,8 @@ This repository contains the static Astro implementation of the Cabinet des Hér
 - **Framework preset:** Astro
 - **Current deployment:** Vercel reports `READY` on the `production` target
 - **Deployed Git reference:** `main`
-- **Deployed commit:** `27ca11f1c8b519d4f9ae493b8a1ffeb9795b94e9`
+- **Deployed commit:** `a34acccef04c4b404b97366f3951059fe6c3fdf1`
+- **Deployment ID:** `dpl_cnHgm4GgSADX38Gi3EUxraniBUjf`
 - **Browser access:** Vercel's deployment API confirms the deployment and production alias; anonymous browser access and the embedded content have not yet been independently verified here.
 
 Use the stable project domain above for owner review rather than a one-off deployment URL. If that URL asks for Vercel authentication, review the project's Deployment Protection settings before sharing it with the owner; do not change account-wide security settings as a workaround.
