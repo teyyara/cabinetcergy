@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-004-vercel-readiness"
+    "current_working_branch": "aeos/progression"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -63,9 +63,9 @@
     "node_version": "24.x",
     "target": "production",
     "latest_state": "READY",
-    "deployment_id": "dpl_HyKbY9SeQu2oh9gS7Q6HPcnNCyau",
+    "deployment_id": "dpl_cnHgm4GgSADX38Gi3EUxraniBUjf",
     "git_branch": "main",
-    "git_sha": "27ca11f1c8b519d4f9ae493b8a1ffeb9795b94e9",
+    "git_sha": "a34acccef04c4b404b97366f3951059fe6c3fdf1",
     "stable_domain": "cabinetcergy.vercel.app",
     "domain_verified_by_vercel": true,
     "anonymous_browser_access": "NOT_VERIFIED",
