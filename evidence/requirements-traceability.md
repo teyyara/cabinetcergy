@@ -68,3 +68,12 @@ Status values: `PENDING`, `UNKNOWN`, `BLOCKED`, `PASS`, `FAIL`. No requirement i
 - Supplied Street View URL is inserted into the public access route; rendered panorama is not yet browser-verified.
 - Astro static site and automated build verification are implemented on the progression branch; build test result pending CI.
 - The original Google Form responder and embed URLs remain unchanged and no submissions were made.
+
+
+## Loop 003 CI evidence
+
+- **Initial CI run:** PASS — run [38285550208](https://github.com/teyyara/cabinetcergy/actions/runs/38285550208), commit `cdef107dfaf5e3170b20062b5929742943f42718`.
+- GitHub Actions successfully completed dependency installation, `npm run build`, and `npm run verify:build`.
+- The verifier checked 14 output entries (13 public routes plus 404), French language tag, non-empty titles, H1 presence, and the original Form endpoint, exact user-supplied CPAM/MDPH Drive viewer URLs, and exact Street View panorama source.
+- AEOS state/status updates made after this first pass are documentation/configuration only; PR-head CI must pass again before merge.
+- The test does **not** verify runtime loading of the external iframe/images/PDFs, accessibility with assistive technology, live hosting, or a production deployment.
