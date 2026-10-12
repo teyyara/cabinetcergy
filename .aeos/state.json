@@ -19,23 +19,23 @@
       "no_force_push": true,
       "production_release_separate": true
     },
-    "latest_verified_main_sha": "27ca11f1c8b519d4f9ae493b8a1ffeb9795b94e9",
-    "last_verified_main_merge": "d1821d3fc2b37439c623c70645b6c68bff296b05",
-    "current_working_branch": "aeos/loop-004-vercel-readiness"
+    "latest_verified_main_sha": "a34acccef04c4b404b97366f3951059fe6c3fdf1",
+    "last_verified_main_merge": "a34acccef04c4b404b97366f3951059fe6c3fdf1",
+    "current_working_branch": "aeos/progression"
   },
   "loop": {
     "current": 4,
     "label": "LOOP 004",
     "objective": "Verify Vercel compatibility for the main branch, document the actual production-target deployment and review URL, align project status, validate the checkpoint, and promote it to main.",
     "phase": "vercel-main-deployment-readiness",
-    "state": "IN_PROGRESS",
+    "state": "WAITING_FOR_CONTINUE",
     "candidate_id": "CABINET-VERCEL-004",
     "started_at": "2026-10-12",
-    "latest_work_checkpoint_commit": null,
-    "merged_to_main": false,
-    "pull_request_number": null,
-    "pull_request_url": null,
-    "merge_commit_sha": null,
+    "latest_work_checkpoint_commit": "a34acccef04c4b404b97366f3951059fe6c3fdf1",
+    "merged_to_main": true,
+    "pull_request_number": 3,
+    "pull_request_url": "https://github.com/teyyara/cabinetcergy/pull/3",
+    "merge_commit_sha": "a34acccef04c4b404b97366f3951059fe6c3fdf1",
     "implementation_started": true,
     "framework": "Astro 7.3.5 static output (Vite is managed by Astro)",
     "implementation_branch": "aeos/loop-004-vercel-readiness",
@@ -43,8 +43,8 @@
       "previous_loop_ci_run_id": 38285884813,
       "previous_loop_ci_conclusion": "success",
       "previous_loop_main_sha": "27ca11f1c8b519d4f9ae493b8a1ffeb9795b94e9",
-      "build": "PASS on previous loop checkpoint",
-      "route_and_integration_verifier": "PASS on previous loop checkpoint",
+      "build": "PASS on PR head; Astro generated all 14 static routes",
+      "route_and_integration_verifier": "PASS — 14 HTML files checked; original Form, both user-supplied Drive destinations and exact Street View URL present",
       "vercel_deployment_state": "READY",
       "vercel_target": "production",
       "vercel_deployment_id": "dpl_HyKbY9SeQu2oh9gS7Q6HPcnNCyau",
@@ -53,7 +53,15 @@
       "vercel_framework": "astro",
       "vercel_node": "24.x",
       "stable_domain_verified": true,
-      "anonymous_browser_access": "NOT_VERIFIED"
+      "anonymous_browser_access": "NOT_VERIFIED",
+      "pr_ci_run_id": 38287965793,
+      "pr_ci_conclusion": "success",
+      "pr_ci_head_sha": "affe876bfdf7bda8bc37d2317263c79350f92673",
+      "latest_vercel_deployment_state": "READY",
+      "latest_vercel_deployment_id": "dpl_cnHgm4GgSADX38Gi3EUxraniBUjf",
+      "latest_vercel_target": "production",
+      "latest_vercel_commit": "a34acccef04c4b404b97366f3951059fe6c3fdf1",
+      "latest_vercel_git_ref": "main"
     },
     "deployment_started": true,
     "deployment_status": "READY_FOR_OWNER_REVIEW_BROWSER_ACCESS_UNVERIFIED",
@@ -66,7 +74,14 @@
       "Full mobile, accessibility, outbound-link, keyboard and performance audit",
       "Final public-launch QA signoff after owner review"
     ],
-    "next_high_value_work": "After standalone CONTINUE, continue browser/runtime QA and source-image remediation; preserve the original form and the static/no-storage architecture."
+    "next_high_value_work": "Wait for standalone CONTINUE; prioritize real-browser/runtime QA and approved image asset remediation without changing the original Form or adding storage.",
+    "completed_at": "2026-10-12",
+    "user_supplied_pdf_links_recorded": true,
+    "user_supplied_street_view_embed_implemented": true,
+    "original_form_recreated": false,
+    "original_form_modified": false,
+    "real_form_submission_performed": false,
+    "private_form_responses_accessed": false
   },
   "constraints": {
     "zero_paid_dependencies": true,
@@ -86,17 +101,16 @@
   "implementation": {
     "started": true,
     "selected_framework": "Astro 7.3.5 static output",
-    "build_test_state": "PASS_ON_PREVIOUS_MAIN_CHECKPOINT",
+    "build_test_state": "PASS_ON_PR_HEAD",
     "deployment_state": "READY_FOR_OWNER_REVIEW_BROWSER_ACCESS_UNVERIFIED"
   },
   "unresolved_critical_items": [
-    "Verify public URL access without Vercel login",
-    "Complete source page-by-page visual/content QA",
-    "Verify Street View source and runtime behavior",
-    "Verify two actual PDF viewer/download destinations",
-    "Record actual image asset URLs and approved local copies",
-    "Verify all routes and keyboard behavior in a real browser",
-    "Complete mobile and accessibility audit"
+    "Verify anonymous browser access to the stable Vercel domain",
+    "Street View runtime rendering in a real browser",
+    "PDF viewer/download behavior in a real browser",
+    "Source-image local asset migration and approved asset load verification",
+    "Full mobile, accessibility, outbound-link, keyboard and performance audit",
+    "Final public-launch QA signoff after owner review"
   ],
   "last_updated": "2026-10-12"
 }
