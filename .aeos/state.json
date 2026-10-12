@@ -18,17 +18,18 @@
       "remote_verification_required": true,
       "no_force_push": true,
       "production_release_separate": true
-    }
+    },
+    "last_verified_main_merge": "bf2639eabbaad5dd6735a7f1f4d0e08ce01a32b8"
   },
   "loop": {
     "current": 2,
     "label": "LOOP 002",
     "objective": "Audit all named public source routes and known assets, record existing Form/Maps endpoints and unresolved migration risks, and persist the user-requested main promotion policy.",
     "phase": "source-audit-and-migration-evidence",
-    "state": "MERGE_PENDING",
+    "state": "WAITING_FOR_CONTINUE",
     "candidate_id": "CABINET-AUDIT-002",
-    "completed_at": null,
-    "latest_work_checkpoint_commit": null,
+    "completed_at": "2026-10-12",
+    "latest_work_checkpoint_commit": "bf2639eabbaad5dd6735a7f1f4d0e08ce01a32b8",
     "source_audit_status": "PARTIAL_WITH_EXPLICIT_BLOCKERS",
     "assets_inventoried": 25,
     "form_submission_performed": false,
@@ -44,7 +45,11 @@
       "Full real-browser and responsive audit",
       "Framework/build/accessibility/performance/runtime verification"
     ],
-    "next_high_value_work": "Resolve blocked PDF downloads and correct Street View source with browser-capable inspection, then select/build the static site only after source fidelity risks are mapped."
+    "next_high_value_work": "Resolve the true Street View source and two actual PDF download destinations with browser-capable inspection; continue source asset approval review before building.",
+    "merged_to_main": true,
+    "pull_request_url": "https://github.com/teyyara/cabinetcergy/pull/1",
+    "pull_request_number": 1,
+    "merge_commit_sha": "bf2639eabbaad5dd6735a7f1f4d0e08ce01a32b8"
   },
   "constraints": {
     "zero_paid_dependencies": true,
