@@ -1,0 +1,74 @@
+{
+  "schema_version": 2,
+  "project_id": "cabinet-des-herons-website",
+  "active_keyphrase": "Read the master strategy",
+  "run_id": "cabinetcergy-2026-10-12",
+  "repository": {
+    "full_name": "teyyara/cabinetcergy",
+    "visibility": "private",
+    "default_branch": "main",
+    "progression_branch": "aeos/progression",
+    "production_branch": "main",
+    "repository_was_empty_at_authorized_inspection": true,
+    "promotion_policy": {
+      "successful_loop_checkpoints": "merge_to_main_at_loop_end",
+      "mechanism": "GitHub pull request merge",
+      "require_remote_verification": true,
+      "no_force_push": true,
+      "main_merge_does_not_imply_production_release": true,
+      "production_release_remains_separately_gated": true
+    }
+  },
+  "source": {
+    "website": "https://sites.google.com/view/cabinetdesheronscergy/",
+    "project_brief": "evidence/project-master-strategy.md",
+    "operating_rulebook": "evidence/AEOS-RULEBOOK.md",
+    "research_dossier": "evidence/research/keyphrase-dossier.md",
+    "migration_manifest": "evidence/migration-manifest.md",
+    "source_audit": "evidence/source-audit-2026-10-12.md",
+    "asset_inventory": "evidence/assets/source-assets.json",
+    "asset_inventory_human": "evidence/assets/source-assets.md"
+  },
+  "objective": "Migrate and improve the existing Cabinet des Hérons public informational website while retaining source content and existing operational integrations.",
+  "constraints": {
+    "zero_paid_dependencies": true,
+    "no_new_backend": true,
+    "no_database": true,
+    "no_custom_api": true,
+    "no_new_persistent_data_storage": true,
+    "no_new_analytics_or_tracking": true,
+    "preserve_existing_waitlist_google_form_without_recreation": true,
+    "do_not_access_or_copy_form_responses": true,
+    "do_not_submit_real_form_test_responses": true,
+    "preserve_original_maps_street_view_links_and_downloads": true,
+    "no_fabricated_healthcare_claims_credentials_prices_hours_or_testimonials": true,
+    "accessibility_target": "WCAG 2.2 AA",
+    "respect_reduced_motion": true
+  },
+  "product": {
+    "type": "Public informational healthcare-practice website",
+    "audience": "Families and professionals seeking public information about the practice",
+    "language": "fr",
+    "required_stack_candidate": "Astro + TypeScript (recommended candidate; not yet installed or validated)",
+    "selected_stack": null,
+    "deployment_provider": null,
+    "deployment_url": null,
+    "third_party_data_services_permitted": false
+  },
+  "release_policy": {
+    "no_production_release_before_content_functional_and_technical_validation": true,
+    "do_not_claim_unobserved_tests": true,
+    "deploy_only_to_a_verified_zero_cost_tier_compatible_with_usage_terms": true
+  },
+  "updated_at": "2026-10-12",
+  "contract_version": "1.1",
+  "change_requests": [
+    {
+      "id": "CR-001",
+      "date": "2026-10-12",
+      "state": "ACCEPTED",
+      "requirement": "Every successfully validated work-loop checkpoint is merged into main at the end.",
+      "implementation": "Use a GitHub pull request for each successful validated checkpoint, then verify the merged main ref. Never force-push. Main promotion does not itself authorize production deployment."
+    }
+  ]
+}
