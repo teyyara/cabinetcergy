@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-005-local-assets"
+    "current_working_branch": "main"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -104,9 +104,19 @@
     {
       "id": "CR-004",
       "date": "2026-10-12",
-      "state": "IMPLEMENTED_PENDING_CI",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Migrate essential images and branding from the source Google Sites website into local static assets to eliminate dependency on the fragile Google Sites image gateway.",
-      "implementation": "Loop 005 copies the current logo, three selected interior photographs and three practitioner portraits into public/images/ as optimized WebP files, updates their page references, and adds build checks for local asset presence and removal of the image-gateway dependency."
+      "implementation": "Loop 005 migrated the source-site logo, three selected interior photographs and three practitioner portraits into public/images/ as optimized WebP files. Header/footer, homepage, cabinet gallery and team page references are local. GitHub Actions runs 38296393083 (PR head) and 38296509134 (merged main commit) passed the static build and asset verifier. New-site visual browser QA remains open."
     }
-  ]
+  ],
+  "validation_evidence": {
+    "asset_migration_pr": 4,
+    "asset_migration_merge_commit": "6dfda6286b47ca2d5d4b8694cc84c73d71ab1a26",
+    "pr_ci_run_id": 38296393083,
+    "main_ci_run_id": 38296509134,
+    "main_ci_conclusion": "success",
+    "local_image_files": 7,
+    "image_gateway_references_in_generated_html": 0,
+    "browser_runtime_qa": "NOT_RUN"
+  }
 }

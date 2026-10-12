@@ -9,7 +9,7 @@
     "authorized_commit": true,
     "authorized_push": true,
     "authorized_branch_creation": true,
-    "current_progression_branch": "aeos/loop-005-local-assets",
+    "current_progression_branch": "main",
     "initial_repository_state": "empty: no branches, no commits, no source files",
     "authenticated_local_git_checkout": "not available through the current verified workflow",
     "secrets_or_tokens_in_repository": false
@@ -20,13 +20,13 @@
     "full_real_browser_scroll_audit": false,
     "browser_automation_playwright": false,
     "screenshot_capture": false,
-    "repository_build_or_typecheck": "PASS — GitHub Actions run 38287965793 succeeded for PR head affe876bfdf7bda8bc37d2317263c79350f92673; Vercel reports a READY production-target deployment for merged main commit a34acccef04c4b404b97366f3951059fe6c3fdf1.",
+    "repository_build_or_typecheck": "PASS — PR-head CI run 38296393083 and merged-main CI run 38296509134 succeeded for main commit 6dfda6286b47ca2d5d4b8694cc84c73d71ab1a26.",
     "local_asset_decode_or_image_inventory": true,
     "pdf_download_and_content_verification": false,
     "form_display_and_submission_test": "public fields inspected only; no test submission",
     "real_form_submission": "prohibited",
     "private_form_response_access": "prohibited",
-    "live_deployment_access": "Vercel API verifies READY state, production target, main ref, deployed merge SHA and stable domain; anonymous browser access is not independently verified.",
+    "live_deployment_access": "Vercel API state was not checked after the Loop 005 merge; previous deployment evidence does not establish the new commit's deployment status.",
     "production_smoke_test": "NOT_RUN in a real browser",
     "public_page_text_reconnaissance": true,
     "full_source_route_text_review": true,
@@ -42,10 +42,10 @@
     "pdf_downloads": "Links integrated from user-provided URLs; PDF contents and runtime download behavior not inspected.",
     "full_browser_scroll_audit": false,
     "mobile_responsive_audit": false,
-    "static_route_check": "PASS — run 38285760541 completed npm run verify:build against the validated PR head; 14 generated HTML files and preserved integration URLs were checked.",
+    "static_route_check": "PASS — run 38296393083 passed on PR head and run 38296509134 passed on the merged main commit; all 14 static HTML routes were checked alongside existing integrations.",
     "locally_migrated_image_assets": 7,
     "local_image_capture_method": "Rendered public Google Sites pages in Chromium; selected image response bytes saved and optimized to WebP",
-    "local_asset_verification": "PENDING_PR_CI — verifier checks all seven local image files, key rendered local references, and absence of Google Sites image-gateway URLs in generated HTML."
+    "local_asset_verification": "PASS — seven local WebP files were present and non-empty, key generated references were confirmed, and generated HTML was checked for absence of sites.google.com/sitesv-images-rt."
   },
   "policy": {
     "paid_dependencies_allowed": false,
@@ -77,8 +77,8 @@
     "user_supplied_pdf_links_integrated": true,
     "user_supplied_street_view_embed_integrated": true,
     "build_workflow_added": ".github/workflows/ci.yml",
-    "build_state": "PASS_ON_PR_HEAD",
-    "browser_runtime_checks": "NOT_RUN on the migrated Astro deployment",
+    "build_state": "PASS_ON_PR_AND_MERGED_MAIN",
+    "browser_runtime_checks": "NOT_RUN on the migrated Astro site",
     "deployment": "READY_FOR_OWNER_REVIEW_BROWSER_ACCESS_UNVERIFIED",
     "vercel_project": "cabinetcergy",
     "stable_domain": "https://cabinetcergy.vercel.app",
@@ -89,6 +89,7 @@
     "local_assets_migrated": 7,
     "logo_local": true,
     "team_portraits_local": true,
-    "interior_photography_local": true
+    "interior_photography_local": true,
+    "local_image_gateway_dependencies": "NONE_IN_GENERATED_HTML"
   }
 }
