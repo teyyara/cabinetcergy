@@ -18,8 +18,12 @@
     "label": "LOOP 001",
     "objective": "Establish a trustworthy repository baseline, persist the canonical rulebook and project brief, and record the initial evidence-backed source inventory and constraints.",
     "phase": "reconnaissance-and-repository-bootstrap",
-    "state": "IN_PROGRESS",
-    "candidate_id": "CABINET-RECON-001"
+    "state": "WAITING_FOR_CONTINUE",
+    "candidate_id": "CABINET-RECON-001",
+    "completed_at": "2026-10-12",
+    "latest_work_checkpoint_commit": "2a780c25b2353fb6aef667bccf8de3e083170948",
+    "status_record_commit": "947b19c8809fb185d1040650bed590073b2fd976",
+    "next_high_value_work": "Complete page-by-page source audit and exact asset/link inventory, including the original map/Street View sources and both PDF download destinations."
   },
   "constraints": {
     "zero_paid_dependencies": true,
