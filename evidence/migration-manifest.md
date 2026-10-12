@@ -70,3 +70,20 @@ Before final launch, mark each relevant item with evidence:
 - Any inaccessible/uncertain content and owner-review items.
 
 **Current completion:** Pages and key integrations are identified; detailed visual audit, asset inventory, exact map/PDF URL verification, implementation and testing remain outstanding.
+
+
+## Loop 002 — source and asset audit supplement (2026-10-12)
+
+See [source-audit-2026-10-12.md](source-audit-2026-10-12.md) for route-by-route content findings, exact Maps and Form URLs, public field groups and unresolved issues. See [assets/source-assets.json](assets/source-assets.json) and [assets/source-assets.md](assets/source-assets.md) for 25 image source URLs and their inspection/approval states.
+
+Key findings:
+- Text and section reconnaissance is complete for all ten named subroutes, but the root URL vs. `/accueil` relationship could not be verified.
+- Existing Form responder and embed URLs are identified. Public field order was inspected without viewing responses or submitting. Owner-side delivery/settings remain unverified.
+- The original Google Maps iframe URL is recorded; runtime rendering could not be verified because the tool could not load the redirect.
+- The image currently under “Vue de la rue (Street View)” is a photograph of children playing with blocks, not Street View. This is a release blocker until corrected with a verified source or an appropriately approved presentation.
+- The two PDF filenames are visible, but no direct download URL/file contents could be verified. These remain UNKNOWN/BLOCKED.
+- A number of source images returned HTTP 403. Credential scans and child imagery require owner approval before republication.
+- The homepage opening notice is dated 1 September 2026, now past. The live Form notice currently says no individual-care places but some group places remain. Both should be reviewed by the owner; do not silently rewrite either.
+- Browser screenshot/mobile audit, local asset migration, complete link testing and all build/runtime tests are still outstanding.
+
+This is a partial source audit, not a migration-completion PASS.
