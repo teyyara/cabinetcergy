@@ -1,0 +1,61 @@
+---
+interface Props {
+  currentPath?: string;
+}
+const { currentPath = "/" } = Astro.props;
+
+const links = [
+  { label: "Le cabinet", href: "/le-cabinet/" },
+  { label: "L’équipe", href: "/equipe/" },
+  { label: "Les services", href: "/#services" },
+  { label: "Tarifs & groupes", href: "/prestations/" },
+  { label: "Accès", href: "/acces/" },
+  { label: "Ressources", href: "/ressources-utiles/" },
+];
+const logoUrl = "https://sites.google.com/sitesv-images-rt/AMxu72s8NDSj2gj8E_Ai74FbCWtScKi8Ct4mVAzhHc2NZBkAeUqUdfqQ4vYiQxR8uIgV80KlkkiYyVEzS4ejMOdwJm5dd6hsHBKSgQO1b--snoNEeVZ3NManAizXq6P2qhI1vhYVJKqrFVqU0JUgsvW3tXiR6skp3Ec0NBsHUF_TSrm_PrM9ajfAbufnbqR0PKxxgxpH9B5k_u7TyVVQe6MuqXFwHtC9kd9ufUMofN2N%3Dw1280";
+---
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" href="/" aria-label="Cabinet des Hérons — accueil">
+      <img
+        class="brand-logo"
+        src={logoUrl}
+        width="62"
+        height="62"
+        alt=""
+        decoding="async"
+        fetchpriority="high"
+      />
+      <span class="brand-copy">
+        <strong>Cabinet des Hérons</strong>
+        <span>Cergy · Psychomotricité & psychoéducation</span>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class:list={["nav-link", currentPath === link.href ? "is-active" : ""]}
+          aria-current={currentPath === link.href ? "page" : undefined}
+        >{link.label}</a>
+      ))}
+    </nav>
+
+    <a class="button button-small header-cta" href="/liste-attente/">
+      Liste d’attente <span aria-hidden="true">↗</span>
+    </a>
+
+    <details class="mobile-menu">
+      <summary aria-label="Ouvrir le menu de navigation">
+        <span class="menu-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+      </summary>
+      <nav aria-label="Navigation mobile">
+        {links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+        <a class="mobile-menu-cta" href="/liste-attente/">Accéder à la liste d’attente ↗</a>
+      </nav>
+    </details>
+  </div>
+</header>

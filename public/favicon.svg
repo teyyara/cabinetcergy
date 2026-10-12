@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cabinet des Hérons">
+  <rect width="64" height="64" rx="18" fill="#a9cecc"/>
+  <path d="M16 43c9 0 13-7 16-16 2-7 4-12 10-15-1 8-4 13-9 18 6 1 10-2 14-6-1 11-8 17-18 16-3 5-7 8-13 8z" fill="none" stroke="#20383d" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="44" cy="12" r="2" fill="#20383d"/>
+</svg>
