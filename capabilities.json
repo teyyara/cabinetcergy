@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-12",
+  "repository": {
+    "github_connector_available": true,
+    "repository_identity_verified": true,
+    "authorized_read": true,
+    "authorized_write": true,
+    "authorized_commit": true,
+    "authorized_push": true,
+    "authorized_branch_creation": true,
+    "current_progression_branch": "aeos/progression",
+    "initial_repository_state": "empty: no branches, no commits, no source files",
+    "authenticated_local_git_checkout": "not available through the current verified workflow",
+    "secrets_or_tokens_in_repository": false
+  },
+  "research_and_validation": {
+    "public_web_research": true,
+    "source_page_text_reconnaissance": true,
+    "full_real_browser_scroll_audit": false,
+    "browser_automation_playwright": false,
+    "screenshot_capture": false,
+    "repository_build_or_typecheck": "not applicable yet: no project code or package manifest",
+    "local_asset_decode_or_image_inventory": false,
+    "pdf_download_and_content_verification": false,
+    "form_display_and_submission_test": false,
+    "real_form_submission": "prohibited",
+    "private_form_response_access": "prohibited",
+    "live_deployment_access": "not tested",
+    "production_smoke_test": "not available until an actual deployment exists"
+  },
+  "policy": {
+    "paid_dependencies_allowed": false,
+    "new_backend_or_database_allowed": false,
+    "new_persistent_form_storage_allowed": false,
+    "unverified_observations_may_be_marked_pass": false
+  },
+  "rule": "If a required capability is unavailable, document the limitation, seek a free valid alternative where appropriate, and otherwise mark the affected requirement BLOCKED or UNKNOWN rather than PASS."
+}

@@ -1,0 +1,104 @@
+{
+  "active_keyphrase": "Read the master strategy",
+  "research_date": "2026-10-12",
+  "repository": {
+    "full_name": "teyyara/cabinetcergy",
+    "authorized": true,
+    "default_branch": "main",
+    "progression_branch": "aeos/progression",
+    "initial_state": "empty",
+    "latest_known_commit_before_state_bundle": "b420b15d051f7394740bd35b6c50e09d2dc74a0d"
+  },
+  "research_status": "KEYPHRASE_RESEARCH_COMPLETE",
+  "migration_audit_status": "PARTIAL_RECONNAISSANCE_ONLY",
+  "original_website": "https://sites.google.com/view/cabinetdesheronscergy/",
+  "public_page_urls": [
+    "https://sites.google.com/view/cabinetdesheronscergy/",
+    "https://sites.google.com/view/cabinetdesheronscergy/accueil",
+    "https://sites.google.com/view/cabinetdesheronscergy/le-cabinet",
+    "https://sites.google.com/view/cabinetdesheronscergy/l%C3%A9quipe",
+    "https://sites.google.com/view/cabinetdesheronscergy/prestations",
+    "https://sites.google.com/view/cabinetdesheronscergy/prise-en-charge-de-groupe",
+    "https://sites.google.com/view/cabinetdesheronscergy/acc%C3%A8s",
+    "https://sites.google.com/view/cabinetdesheronscergy/psychomotricit%C3%A9",
+    "https://sites.google.com/view/cabinetdesheronscergy/psycho-%C3%A9ducation",
+    "https://sites.google.com/view/cabinetdesheronscergy/ressources-utiles",
+    "https://sites.google.com/view/cabinetdesheronscergy/ressources-utiles/questions"
+  ],
+  "form": {
+    "responder_url": "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform",
+    "embedded_url": "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform?embedded=true",
+    "public_url_identified": true,
+    "owner_side_delivery_verified": false,
+    "private_responses_accessed": false,
+    "test_response_submitted": false
+  },
+  "source_review_items": [
+    {
+      "item": "Opening notice: 1 September 2026",
+      "state": "OWNER_VERIFICATION_REQUIRED",
+      "reason": "Date is past relative to 2026-10-12; do not silently change."
+    },
+    {
+      "item": "Exact source PDF URLs and downloads",
+      "state": "UNKNOWN",
+      "reason": "Names are known but destination/download not verified."
+    },
+    {
+      "item": "Google Maps/Street View embeds",
+      "state": "UNKNOWN",
+      "reason": "Exact iframe URL and panorama behavior not verified."
+    },
+    {
+      "item": "Root and /accueil relationship",
+      "state": "UNKNOWN",
+      "reason": "Root did not resolve in available inspection path."
+    },
+    {
+      "item": "Full visual audit and asset migration",
+      "state": "PENDING",
+      "reason": "No real browser automation or full asset-level inspection performed."
+    }
+  ],
+  "technology_research": {
+    "astro_typescript": {
+      "state": "CANDIDATE_NOT_SELECTED",
+      "url": "https://docs.astro.build/en/concepts/why-astro/"
+    },
+    "cloudflare_pages": {
+      "state": "POTENTIAL_FREE_STATIC_HOST_NEEDS_POLICY_RECHECK",
+      "url": "https://developers.cloudflare.com/pages/platform/limits/"
+    },
+    "github_pages": {
+      "state": "POLICY_COMPATIBILITY_REVIEW_REQUIRED",
+      "url": "https://github.com/github/docs/blob/main/content/pages/getting-started-with-github-pages/github-pages-limits.md"
+    },
+    "vercel_hobby": {
+      "state": "DO_NOT_ASSUME_ELIGIBLE_FOR_COMMERCIAL_USE",
+      "url": "https://vercel.com/legal/terms"
+    }
+  },
+  "constraints": {
+    "zero_paid_dependencies": true,
+    "no_new_backend": true,
+    "no_database": true,
+    "no_custom_api": true,
+    "no_new_persistent_data_storage": true,
+    "no_new_analytics_or_tracking": true,
+    "preserve_existing_waitlist_google_form_without_recreation": true,
+    "do_not_access_or_copy_form_responses": true,
+    "do_not_submit_real_form_test_responses": true,
+    "preserve_original_maps_street_view_links_and_downloads": true,
+    "no_fabricated_healthcare_claims_credentials_prices_hours_or_testimonials": true,
+    "accessibility_target": "WCAG 2.2 AA",
+    "respect_reduced_motion": true
+  },
+  "unknowns": [
+    "Actual image sources and approved local copies",
+    "PDF file destinations and document content",
+    "Map/Street View sources and behavior",
+    "Full page-by-page visual and responsive inventory",
+    "Hosting/provider compatibility and production URL",
+    "Actual build/browser/accessibility/performance test results"
+  ]
+}

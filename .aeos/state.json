@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "project_id": "cabinet-des-herons-website",
+  "run_id": "cabinetcergy-2026-10-12",
+  "active_keyphrase": "Read the master strategy",
+  "rulebook_path": "evidence/AEOS-RULEBOOK.md",
+  "product_contract_path": "evidence/requirements-traceability.md",
+  "research_dossier_path": "evidence/research/keyphrase-dossier.md",
+  "migration_manifest_path": "evidence/migration-manifest.md",
+  "repository": {
+    "full_name": "teyyara/cabinetcergy",
+    "default_branch": "main",
+    "progression_branch": "aeos/progression",
+    "latest_verified_parent_before_bundle": "b420b15d051f7394740bd35b6c50e09d2dc74a0d"
+  },
+  "loop": {
+    "current": 1,
+    "label": "LOOP 001",
+    "objective": "Establish a trustworthy repository baseline, persist the canonical rulebook and project brief, and record the initial evidence-backed source inventory and constraints.",
+    "phase": "reconnaissance-and-repository-bootstrap",
+    "state": "IN_PROGRESS",
+    "candidate_id": "CABINET-RECON-001"
+  },
+  "constraints": {
+    "zero_paid_dependencies": true,
+    "no_new_backend": true,
+    "no_database": true,
+    "no_custom_api": true,
+    "no_new_persistent_data_storage": true,
+    "no_new_analytics_or_tracking": true,
+    "preserve_existing_waitlist_google_form_without_recreation": true,
+    "do_not_access_or_copy_form_responses": true,
+    "do_not_submit_real_form_test_responses": true,
+    "preserve_original_maps_street_view_links_and_downloads": true,
+    "no_fabricated_healthcare_claims_credentials_prices_hours_or_testimonials": true,
+    "accessibility_target": "WCAG 2.2 AA",
+    "respect_reduced_motion": true
+  },
+  "implementation": {
+    "started": false,
+    "selected_framework": null,
+    "build_test_state": "NOT_APPLICABLE_NO_IMPLEMENTATION",
+    "deployment_state": "NOT_STARTED"
+  },
+  "unresolved_critical_items": [
+    "Complete source page-by-page visual/content audit",
+    "Map Street View source and behavior",
+    "Resolve and verify the two actual PDF download URLs",
+    "Record actual image asset URLs and approved local copies",
+    "Verify root / versus /accueil behavior",
+    "Select and validate a zero-cost hosting option under applicable terms"
+  ],
+  "last_updated": "2026-10-12"
+}
