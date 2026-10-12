@@ -20,7 +20,7 @@
     "full_real_browser_scroll_audit": false,
     "browser_automation_playwright": false,
     "screenshot_capture": false,
-    "repository_build_or_typecheck": "PENDING_GITHUB_ACTIONS",
+    "repository_build_or_typecheck": "PASS for commit cdef107dfaf5e3170b20062b5929742943f42718; initial GitHub Actions run 38285550208 succeeded. Latest documentation-only PR-head update triggers a final rerun.",
     "local_asset_decode_or_image_inventory": false,
     "pdf_download_and_content_verification": false,
     "form_display_and_submission_test": "public fields inspected only; no test submission",
@@ -42,7 +42,7 @@
     "pdf_downloads": "User-provided viewer URLs linked; PDF content and runtime download behavior not inspected.",
     "full_browser_scroll_audit": false,
     "mobile_responsive_audit": false,
-    "static_route_check": "Defined in scripts/verify-build.mjs; CI result pending."
+    "static_route_check": "PASS on commit cdef107dfaf5e3170b20062b5929742943f42718; exact routes, form, PDF URLs and Street View source verified in generated output by scripts/verify-build.mjs. Final PR-head rerun pending."
   },
   "policy": {
     "paid_dependencies_allowed": false,
@@ -72,8 +72,10 @@
     "user_supplied_pdf_links_integrated": true,
     "user_supplied_street_view_embed_integrated": true,
     "build_workflow_added": ".github/workflows/ci.yml",
-    "build_state": "PENDING_GITHUB_ACTIONS",
+    "build_state": "PASS_ON_INITIAL_CI_HEAD_FINAL_PR_HEAD_RUN_PENDING",
     "browser_runtime_checks": "NOT_RUN",
-    "deployment": "NOT_STARTED"
+    "deployment": "NOT_STARTED",
+    "initial_ci_run_id": 38285550208,
+    "initial_ci_commit": "cdef107dfaf5e3170b20062b5929742943f42718"
   }
 }
