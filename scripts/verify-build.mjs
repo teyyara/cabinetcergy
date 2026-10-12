@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
 const dist = path.resolve("dist");
@@ -45,4 +45,29 @@ for (const [index, page] of allHtml.entries()) {
   assert.match(page, /<h1[ >]/i, `${routeFiles[index]} must include a top-level heading.`);
 }
 
-console.log(`Build verification passed: ${routeFiles.length} static routes checked; Form, Street View and both PDF destinations are present.`);
+
+const localImages = [
+  "images/cabinet-des-herons-logo.webp",
+  "images/cabinet-room-01.webp",
+  "images/cabinet-room-03.webp",
+  "images/cabinet-room-05.webp",
+  "images/edith-fautras.webp",
+  "images/jarod-florance.webp",
+  "images/bouhar-obeidi.webp",
+];
+for (const image of localImages) {
+  const imagePath = path.join(dist, image);
+  await access(imagePath);
+  const imageInfo = await stat(imagePath);
+  assert.ok(imageInfo.size > 1_000, `${image} must be a non-empty local image asset.`);
+}
+
+assert.ok(home.includes('src="/images/cabinet-des-herons-logo.webp"'), "The site header must use the local logo.");
+assert.ok(home.includes('src="/images/cabinet-room-01.webp"'), "The homepage must use local room photography.");
+const teamPage = await html("equipe/index.html");
+assert.ok(teamPage.includes('src="/images/edith-fautras.webp"'), "The team page must show Edith Fautras’s local portrait.");
+assert.ok(teamPage.includes('src="/images/jarod-florance.webp"'), "The team page must show Jarod Florance’s local portrait.");
+assert.ok(teamPage.includes('src="/images/bouhar-obeidi.webp"'), "The team page must show Bouhar Oubeidi’s local portrait.");
+assert.ok(!allHtml.join("\n").includes("sites.google.com/sitesv-images-rt"), "Rendered pages must not depend on Google Sites’ image gateway.");
+
+console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, Form, Street View and both PDF destinations are present.`);

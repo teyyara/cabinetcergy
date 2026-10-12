@@ -1,6 +1,6 @@
 # Source Asset Inventory — 12 October 2026
 
-This is a **source URL and identity inventory**, not a completed asset migration. The exact 25 discovered image-gateway URLs, source-page placement, inspection result and review state are tracked in [source-assets.json](source-assets.json). None have yet been copied into local project assets.
+This inventory tracks the source URLs, review states and local migration paths. The initial reconnaissance recorded 25 source image-gateway URLs. Loop 005 migrated seven selected assets into `public/images/` as optimized WebP files: the original logo, three interior photos and three team portraits. See [source-assets.json](source-assets.json) for each source page, capture URL, dimensions and size.
 
 ## Findings
 
@@ -24,10 +24,10 @@ This is a **source URL and identity inventory**, not a completed asset migration
 7. Run a broken-image check and responsive-crop review once the app exists.
 8. Any item marked `OWNER_APPROVAL_REQUIRED`, `MISMATCH_BLOCKER`, `OWNER_APPROVAL_REVIEW` or `CONTENT_UNVERIFIED` is not approved for automatic republication.
 
-## State at Loop 002
+## Historical baseline at Loop 002
 
 - Source image inventory: **25 URLs recorded**.
-- Local image copies created: **0**.
+- Local image copies created at that time: **0** (superseded by Loop 005).
 - PDF documents verified/downloaded: **0**.
 - Verified Street View panorama source: **none**.
 - Approval-sensitive assets released for migration: **none**.
@@ -47,3 +47,22 @@ The user also supplied the correct Google Street View embed:
 ```
 
 The new Accès page embeds this exact `src` with a descriptive title; responsive width/aspect behavior is handled by CSS. Runtime panorama rendering remains to be validated in a browser. The old image under the Street View heading is not reused as a panorama.
+
+
+## Loop 005 — local asset migration (12 October 2026)
+
+The public Google Sites pages return their rendered images to a real browser even though direct HTTP retrieval of the image gateway returns 403 in this inspection environment. The assets were captured from successful browser image responses and optimized locally.
+
+| Asset | Local file | Dimensions | Local size |
+|---|---|---:|---:|
+| Original practice logo | `public/images/cabinet-des-herons-logo.webp` | 220 × 220 | 16.9 KB |
+| Interior photograph 1 | `public/images/cabinet-room-01.webp` | 500 × 325 | 9.9 KB |
+| Interior photograph 2 | `public/images/cabinet-room-03.webp` | 400 × 373 | 12.0 KB |
+| Interior photograph 3 | `public/images/cabinet-room-05.webp` | 400 × 400 | 13.4 KB |
+| Edith Fautras portrait | `public/images/edith-fautras.webp` | 400 × 507 | 8.8 KB |
+| Jarod Florance portrait | `public/images/jarod-florance.webp` | 285 × 346 | 6.1 KB |
+| Bouhar Oubeidi portrait | `public/images/bouhar-obeidi.webp` | 394 × 478 | 10.8 KB |
+
+The Home, Le Cabinet, header/footer and Équipe components now use local paths. The build verifier checks that all seven files are present and non-empty, confirms the logo/photo/portrait paths are rendered, and prevents regressions to the `sitesv-images-rt` gateway in generated HTML.
+
+No diploma/certificate scans were republished because they show personal credential information. Child-activity imagery remains excluded pending owner approval. The three selected interior photos and portraits were captured from the relevant current public source-page sections; they are not generic replacements. Full responsive browser testing of the new site remains pending.

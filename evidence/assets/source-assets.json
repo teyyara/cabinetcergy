@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "audited_at": "2026-10-12",
-  "status": "SOURCE_INVENTORY_PLUS_USER_SUPPLIED_PDF_AND_STREETVIEW_TARGETS",
-  "note": "URLs are original Google Sites image-gateway URLs surfaced by source page links. They have not been copied into local project assets. Some returned HTTP 403 in the inspection interface. Personal-identifier certificate scans and child imagery require owner review before republication. New PDF destinations and the Street View iframe URL were supplied by the project user on 2026-10-12. PDF contents/download behavior and Street View runtime rendering remain unverified. The Astro site uses the supplied Street View iframe and links to the supplied PDFs.",
+  "status": "PARTIAL_LOCAL_ASSET_MIGRATION",
+  "note": "Loop 005 captures selected original images through the publicly rendered Google Sites pages (direct image-gateway requests returned 403 in the inspection environment), preserves selected visual assets as optimized local WebP files, and routes the new site to those local copies. Seven website assets were migrated: brand logo, three selected interior photographs, and three practitioner portraits. Certificate/diploma scans and child-activity imagery were not republished without owner review. Local files are decoded and dimension-checked; new-site browser rendering remains pending.",
   "items": [
     {
       "id": "AST-001",
@@ -10,7 +10,10 @@
       "purpose": "Official logo/brand mark",
       "url": "https://sites.google.com/sitesv-images-rt/AMxu72s8NDSj2gj8E_Ai74FbCWtScKi8Ct4mVAzhHc2NZBkAeUqUdfqQ4vYiQxR8uIgV80KlkkiYyVEzS4ejMOdwJm5dd6hsHBKSgQO1b--snoNEeVZ3NManAizXq6P2qhI1vhYVJKqrFVqU0JUgsvW3tXiR6skp3Ec0NBsHUF_TSrm_PrM9ajfAbufnbqR0PKxxgxpH9B5k_u7TyVVQe6MuqXFwHtC9kd9ufUMofN2N%3Dw1280",
       "inspection": "Viewed; includes heron, brain, children, wording and tagline",
-      "state": "SOURCE_IDENTIFIED"
+      "state": "MIGRATED_LOCAL",
+      "capture_source_url": "https://sites.google.com/sitesv-images-rt/AMxu72s2Kzu1WhP9tWygdLys3DaZZC-vSCZWKOn8B_84eIUopEG-udzG-YMVtP4ErlLW5k0yJfNBvVmGi16f-2j24k7OuyLGdaYlr5UZrVgmdFt0yXO3qRNLhmmv82R0AqDb23zLaXGXMwLgdIXbgvodOF_nY_r95bol7899MLtDSlyUZNBeUgY6gx60YrJazik=w16383",
+      "local_path": "public/images/cabinet-des-herons-logo.webp",
+      "migrated_in_loop": 5
     },
     {
       "id": "AST-002",
@@ -102,7 +105,10 @@
       "purpose": "Practitioner portrait",
       "url": "https://sites.google.com/sitesv-images-rt/AMxu72vgz4BQhVKgKko3l8s2qphztG_eCnhMibyw2FdaZLYOoq3TpJ5ZDf24ZidNgZ_VWoUwAhgeFTeC_M1OzVL2oiNlaLGOYyZOvuIVpRRoBWYk1kTJEUEaKJ2_E0HWkF7ABhshinKPUMUDaLvSOVNo0K8efPlaJ6jUWnzbp98NBJLEAfUERgoiV_A3x-TVNSE%3Dw1280",
       "inspection": "Viewed",
-      "state": "SOURCE_IDENTIFIED"
+      "state": "MIGRATED_LOCAL",
+      "capture_source_url": "https://sites.google.com/sitesv-images-rt/AMxu72v9gTwGPWmd8-scBIPat5BNEQ7CYv61ST7mdz_yXnmWut5SYVIw0H-MTK0mBzMjq14Op3mL0X52ym8VYDum2jPMGWqLtSW7RKKIpQYmkvMvvLh83sGEmsEuL5Rdv5mmf52nEiweggX9riBCjfLH7DY4UZYMJcWyvTd1c44ncGhOCM65tyIX0P9Hiqj9RHc=w1280",
+      "local_path": "public/images/edith-fautras.webp",
+      "migrated_in_loop": 5
     },
     {
       "id": "AST-013",
@@ -168,7 +174,10 @@
       "purpose": "Practitioner portrait",
       "url": "https://sites.google.com/sitesv-images-rt/AMxu72vx_vwk3Fb0JhquNL5xxmzsbNZlKg7LVZZKzMfRMWuazdJlDg3mQrgWghrU1LU3SUohxUT00Vg3ulL5MCNkxsm2DB4MYRlDDuGG7_LMI-snxE3pCnm3b72TTzmmpZ5LVufQAoNsarsQKnKW2NStdm5kyjk9J0fdJIKxwGRjrWp5EPZoJvbbI2fPdQ8Ah02EVw3rs6YVd0xYoceD1Xlx1PNPGqDnktcQWG4gxvcc%3Dw1280",
       "inspection": "Viewed",
-      "state": "SOURCE_IDENTIFIED"
+      "state": "MIGRATED_LOCAL",
+      "capture_source_url": "https://sites.google.com/sitesv-images-rt/AMxu72vyZg7TOJYq5LnNmjCvWDVV2n2s63W1WonTEzbDQtihwjs6aRr8yoDxt0TzZFHr8SG241a8Nq2mkAR8rAZaiGCmdb6vm2uvdEZufbYI_g6bPu7sDbkJkPlAkKuUMMQconpzx_XEEuX59AnGBI2wO6eajcvQCTKwVnDJCB95K-swcvwQFh_piMtlrbZ5bh1MfcbKONUybVQRbMjxJV8yKpXR7RVDH6Nikkt_t0xH=w1280",
+      "local_path": "public/images/jarod-florance.webp",
+      "migrated_in_loop": 5
     },
     {
       "id": "AST-021",
@@ -193,7 +202,10 @@
       "purpose": "Practitioner portrait",
       "url": "https://sites.google.com/sitesv-images-rt/AMxu72uxTGhBAgd4iCQaMdn6MuEUsSZQlou5S9aslQ6nUCs14sbRgXppLPT2zSwwQot59-5JGCAbKRWP9fMT2dtO8xb8PJJcbfsD2Y1z-SGgY1LVaAGTNVUZlfu3sPVk3u5SIPWg1G__t9coEagMdIcpmcr2KhtQgGCmBSGbrE7gOwajqaKVHKzv-cKrOVQykxzL0Q5S4VGUdP-YqNOuuVfpqUd33oFEen4Czz-JmcOp%3Dw1280",
       "inspection": "HTTP 403",
-      "state": "CONTENT_UNVERIFIED"
+      "state": "MIGRATED_LOCAL",
+      "capture_source_url": "https://sites.google.com/sitesv-images-rt/AMxu72s8AzTGyJ20DCGclcieppLdKOgo4lF7xCgN6m7hazt0oWW-txYcPfZbHoDO76BQWQBjc0NaUCnhANLkA0QTyhpNGW7uTXEAujvfnu3y-pPCw7ipz-9Y-KHVlB46QrPn5a2UE_qXmrAIKRXunBM7frAK3s7wANd2xhHioA0esQmiBu0Qiah9lUw_XWF4kzi0cHQfZTdfaAIx0M8MOcdO6uhWHtEDZVTyrEyUizFN=w1280",
+      "local_path": "public/images/bouhar-obeidi.webp",
+      "migrated_in_loop": 5
     },
     {
       "id": "AST-024",
@@ -247,6 +259,106 @@
       "frame_title": "Google Street View — vue de la rue du Cabinet des Hérons",
       "responsive_css": "src/styles/global.css .street-frame",
       "runtime_verified": false
+    }
+  ],
+  "local_migrations": [
+    {
+      "id": "LOCAL-001",
+      "source_page_url": "https://sites.google.com/view/cabinetdesheronscergy/",
+      "source_image_url": "https://sites.google.com/sitesv-images-rt/AMxu72s2Kzu1WhP9tWygdLys3DaZZC-vSCZWKOn8B_84eIUopEG-udzG-YMVtP4ErlLW5k0yJfNBvVmGi16f-2j24k7OuyLGdaYlr5UZrVgmdFt0yXO3qRNLhmmv82R0AqDb23zLaXGXMwLgdIXbgvodOF_nY_r95bol7899MLtDSlyUZNBeUgY6gx60YrJazik=w16383",
+      "local_path": "public/images/cabinet-des-herons-logo.webp",
+      "format": "WebP",
+      "width": 220,
+      "height": 220,
+      "source_bytes": 153203,
+      "local_bytes": 16880,
+      "purpose": "Original header logo, reused in site header and footer",
+      "capture_method": "Rendered original public Google Sites page in Chromium and saved the successful image response",
+      "review_state": "MIGRATED_LOCAL"
+    },
+    {
+      "id": "LOCAL-002",
+      "source_page_url": "https://sites.google.com/view/cabinetdesheronscergy/le-cabinet",
+      "source_image_url": "https://sites.google.com/sitesv-images-rt/AMxu72tTE1y_OWeMeJRNCzvUgXJSYGH8SHkaFz3rfU_SjfPzIlvgyW4AQDFtGsgzeCRkW-tKbE04vhs2YONv7_JPhyhlIGiUo3YS194b7gjHxVx2GbJSOxBWY7H4_bzOuFt-aNrayXO5_uxbX3BEWsGw7x0MX0DLuLrBoWoQ1bezDolr8_2iYT8qHfkhU0OUa2PbBXVVzUtwp5wL_qROFBGJHxNi8an1_ZA-1BRiSe3=w1280",
+      "local_path": "public/images/cabinet-room-01.webp",
+      "format": "WebP",
+      "width": 500,
+      "height": 325,
+      "source_bytes": 128637,
+      "local_bytes": 9870,
+      "purpose": "Interior photo used in homepage hero and cabinet gallery",
+      "capture_method": "Rendered original public Google Sites page in Chromium and saved the successful image response",
+      "review_state": "MIGRATED_LOCAL"
+    },
+    {
+      "id": "LOCAL-003",
+      "source_page_url": "https://sites.google.com/view/cabinetdesheronscergy/le-cabinet",
+      "source_image_url": "https://sites.google.com/sitesv-images-rt/AMxu72tw80_50RtT26VAxPaTkgq9qOJH9vm_IW9yUnsz2PVeiWOiFUCe0R9hZ3-IqZJBQht4K1XwtxKSw8M2ATXzpCplmYOsNGiwfARc_OHRnMsVl4P1X__zz5q1YvtSswukIZxZLImgE4eA4DXacvusfpjc6DQbyH_uivFhgu7qNXZmA7L71vRmphZiLrbWKWU58DIDATPm5cOQbT05fUE2z_FYngcXWjv359BIzpOW=w1280",
+      "local_path": "public/images/cabinet-room-03.webp",
+      "format": "WebP",
+      "width": 400,
+      "height": 373,
+      "source_bytes": 267350,
+      "local_bytes": 12014,
+      "purpose": "Interior photo used in homepage hero and cabinet gallery",
+      "capture_method": "Rendered original public Google Sites page in Chromium and saved the successful image response",
+      "review_state": "MIGRATED_LOCAL"
+    },
+    {
+      "id": "LOCAL-004",
+      "source_page_url": "https://sites.google.com/view/cabinetdesheronscergy/le-cabinet",
+      "source_image_url": "https://sites.google.com/sitesv-images-rt/AMxu72sHSNXsgiw27g5OCHGOYr_RFwXOb0C_QhM38rhYtupBG3GW52XnrwWU55tsJLNeWaw659-RS8UUE16qxUJX6hriUiLGWzLJJ_OhjdnsCK_SdURKJe4kAFEJVCfCPHKkD8bF98QHmIPsrHMqJdJYLY9iqlRnAgjqAWysLiIDSXQXsrkLKlu816deCBXDOjO7QR-gMFnjZgzyaOo8yCbB6UcY2-Ca43ZWoECthq5WDNE=w1280",
+      "local_path": "public/images/cabinet-room-05.webp",
+      "format": "WebP",
+      "width": 400,
+      "height": 400,
+      "source_bytes": 284266,
+      "local_bytes": 13420,
+      "purpose": "Interior photo used in homepage hero and cabinet gallery",
+      "capture_method": "Rendered original public Google Sites page in Chromium and saved the successful image response",
+      "review_state": "MIGRATED_LOCAL"
+    },
+    {
+      "id": "LOCAL-005",
+      "source_page_url": "https://sites.google.com/view/cabinetdesheronscergy/l%C3%A9quipe",
+      "source_image_url": "https://sites.google.com/sitesv-images-rt/AMxu72v9gTwGPWmd8-scBIPat5BNEQ7CYv61ST7mdz_yXnmWut5SYVIw0H-MTK0mBzMjq14Op3mL0X52ym8VYDum2jPMGWqLtSW7RKKIpQYmkvMvvLh83sGEmsEuL5Rdv5mmf52nEiweggX9riBCjfLH7DY4UZYMJcWyvTd1c44ncGhOCM65tyIX0P9Hiqj9RHc=w1280",
+      "local_path": "public/images/edith-fautras.webp",
+      "format": "WebP",
+      "width": 400,
+      "height": 507,
+      "source_bytes": 285073,
+      "local_bytes": 8846,
+      "purpose": "Practitioner portrait displayed on Home and Team pages",
+      "capture_method": "Rendered original public Google Sites page in Chromium and saved the successful image response",
+      "review_state": "MIGRATED_LOCAL"
+    },
+    {
+      "id": "LOCAL-006",
+      "source_page_url": "https://sites.google.com/view/cabinetdesheronscergy/l%C3%A9quipe",
+      "source_image_url": "https://sites.google.com/sitesv-images-rt/AMxu72vyZg7TOJYq5LnNmjCvWDVV2n2s63W1WonTEzbDQtihwjs6aRr8yoDxt0TzZFHr8SG241a8Nq2mkAR8rAZaiGCmdb6vm2uvdEZufbYI_g6bPu7sDbkJkPlAkKuUMMQconpzx_XEEuX59AnGBI2wO6eajcvQCTKwVnDJCB95K-swcvwQFh_piMtlrbZ5bh1MfcbKONUybVQRbMjxJV8yKpXR7RVDH6Nikkt_t0xH=w1280",
+      "local_path": "public/images/jarod-florance.webp",
+      "format": "WebP",
+      "width": 285,
+      "height": 346,
+      "source_bytes": 121754,
+      "local_bytes": 6098,
+      "purpose": "Practitioner portrait displayed on Home and Team pages",
+      "capture_method": "Rendered original public Google Sites page in Chromium and saved the successful image response",
+      "review_state": "MIGRATED_LOCAL"
+    },
+    {
+      "id": "LOCAL-007",
+      "source_page_url": "https://sites.google.com/view/cabinetdesheronscergy/l%C3%A9quipe",
+      "source_image_url": "https://sites.google.com/sitesv-images-rt/AMxu72s8AzTGyJ20DCGclcieppLdKOgo4lF7xCgN6m7hazt0oWW-txYcPfZbHoDO76BQWQBjc0NaUCnhANLkA0QTyhpNGW7uTXEAujvfnu3y-pPCw7ipz-9Y-KHVlB46QrPn5a2UE_qXmrAIKRXunBM7frAK3s7wANd2xhHioA0esQmiBu0Qiah9lUw_XWF4kzi0cHQfZTdfaAIx0M8MOcdO6uhWHtEDZVTyrEyUizFN=w1280",
+      "local_path": "public/images/bouhar-obeidi.webp",
+      "format": "WebP",
+      "width": 394,
+      "height": 478,
+      "source_bytes": 223712,
+      "local_bytes": 10768,
+      "purpose": "Practitioner portrait displayed on Home and Team pages",
+      "capture_method": "Rendered original public Google Sites page in Chromium and saved the successful image response",
+      "review_state": "MIGRATED_LOCAL"
     }
   ]
 }
