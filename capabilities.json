@@ -20,7 +20,7 @@
     "full_real_browser_scroll_audit": false,
     "browser_automation_playwright": false,
     "screenshot_capture": false,
-    "repository_build_or_typecheck": "not applicable yet: no project code or package manifest",
+    "repository_build_or_typecheck": "PENDING_GITHUB_ACTIONS",
     "local_asset_decode_or_image_inventory": false,
     "pdf_download_and_content_verification": false,
     "form_display_and_submission_test": "public fields inspected only; no test submission",
@@ -37,11 +37,12 @@
     "some_source_image_urls_return_403": true,
     "waiting_list_public_form_fields_reviewed_without_submission": true,
     "google_maps_embed_url_identified": true,
-    "google_maps_runtime": "BLOCKED: inspection tool could not load Google Maps redirect",
-    "street_view_target": "BLOCKED: image under Street View heading shows children playing with blocks, not a panorama",
-    "pdf_downloads": "BLOCKED: filenames visible but direct document URLs and file contents not verified",
+    "google_maps_runtime": "Pending real-browser runtime check.",
+    "street_view_target": "Exact user-supplied iframe URL implemented; runtime rendering not verified.",
+    "pdf_downloads": "User-provided viewer URLs linked; PDF content and runtime download behavior not inspected.",
     "full_browser_scroll_audit": false,
-    "mobile_responsive_audit": false
+    "mobile_responsive_audit": false,
+    "static_route_check": "Defined in scripts/verify-build.mjs; CI result pending."
   },
   "policy": {
     "paid_dependencies_allowed": false,
@@ -55,6 +56,24 @@
     "merge_mechanism": "GitHub pull request",
     "merge_requires_checkpoint_validation": true,
     "verify_main_remote_after_merge": true,
-    "no_automatic_production_deployment": true
+    "no_automatic_production_deployment": true,
+    "successful_loop_checkpoint_to_main": true,
+    "merge_requires_validation": true,
+    "verify_remote_main_after_merge": true,
+    "production_release_separate": true
+  },
+  "implementation": {
+    "stack": "Astro 7.3.5 static output",
+    "branch": "aeos/loop-003-site-foundation",
+    "package_manifest_added": true,
+    "static_route_files": 14,
+    "shared_layout_and_styles": true,
+    "original_google_form_preserved": true,
+    "user_supplied_pdf_links_integrated": true,
+    "user_supplied_street_view_embed_integrated": true,
+    "build_workflow_added": ".github/workflows/ci.yml",
+    "build_state": "PENDING_GITHUB_ACTIONS",
+    "browser_runtime_checks": "NOT_RUN",
+    "deployment": "NOT_STARTED"
   }
 }
