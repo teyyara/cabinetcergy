@@ -19,28 +19,32 @@
       "no_force_push": true,
       "production_release_separate": true
     },
-    "last_verified_main_merge": "bf2639eabbaad5dd6735a7f1f4d0e08ce01a32b8",
-    "current_working_branch": "aeos/loop-003-site-foundation"
+    "last_verified_main_merge": "d1821d3fc2b37439c623c70645b6c68bff296b05",
+    "current_working_branch": "aeos/progression"
   },
   "loop": {
     "current": 3,
     "label": "LOOP 003",
-    "objective": "Implement the user-supplied CPAM and MDPH links and correct Street View source; build a static Astro foundation preserving the existing Google Form; validate before merge.",
+    "objective": "Implement user-supplied CPAM and MDPH links and correct Street View embed; establish the first static Astro website preserving the existing Form; validate and promote the checkpoint to main.",
     "phase": "static-site-foundation-and-source-integration",
-    "state": "MERGE_PENDING",
+    "state": "WAITING_FOR_CONTINUE",
     "candidate_id": "CABINET-STATIC-003",
-    "completed_at": null,
-    "latest_work_checkpoint_commit": "cdef107dfaf5e3170b20062b5929742943f42718",
-    "validation": {
-      "first_ci_run_id": 38285550208,
-      "first_ci_conclusion": "success",
-      "first_ci_commit": "cdef107dfaf5e3170b20062b5929742943f42718",
-      "build_and_route_verifier": "PASS",
-      "latest_pr_head_ci": "PENDING_AFTER_STATUS_RECORD_UPDATE"
-    },
+    "completed_at": "2026-10-12",
+    "latest_work_checkpoint_commit": "d1821d3fc2b37439c623c70645b6c68bff296b05",
+    "merged_to_main": true,
+    "pull_request_number": 2,
+    "pull_request_url": "https://github.com/teyyara/cabinetcergy/pull/2",
+    "merge_commit_sha": "d1821d3fc2b37439c623c70645b6c68bff296b05",
     "implementation_started": true,
     "framework": "Astro 7.3.5 static output",
     "implementation_branch": "aeos/loop-003-site-foundation",
+    "validation": {
+      "final_ci_run_id": 38285760541,
+      "final_ci_conclusion": "success",
+      "final_ci_commit": "e94bc3ae95e59a42bcc4eac64d0073d778880cb2",
+      "build": "PASS",
+      "route_and_integration_verifier": "PASS"
+    },
     "user_supplied_pdf_links_recorded": true,
     "user_supplied_street_view_embed_implemented": true,
     "original_form_recreated": false,
@@ -49,14 +53,13 @@
     "private_form_responses_accessed": false,
     "deployment_started": false,
     "outstanding": [
-      "Pass the latest PR-head CI run",
       "Street View runtime rendering in a real browser",
       "PDF content and successful viewer/download behavior",
       "Source-image local asset migration and image-load verification",
       "Full mobile, accessibility, outbound-link and performance audit",
       "Choose and verify an eligible free hosting option before deployment"
     ],
-    "next_high_value_work": "Confirm latest PR-head CI success, merge PR #2 into main, verify remote refs, finalize state, and fast-forward progression."
+    "next_high_value_work": "Wait for standalone CONTINUE; perform browser-based validation of Street View/PDF links and approved local asset migration before further implementation/deployment."
   },
   "constraints": {
     "zero_paid_dependencies": true,
