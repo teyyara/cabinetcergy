@@ -20,7 +20,7 @@
     "full_real_browser_scroll_audit": false,
     "browser_automation_playwright": false,
     "screenshot_capture": false,
-    "repository_build_or_typecheck": "PASS for commit cdef107dfaf5e3170b20062b5929742943f42718; initial GitHub Actions run 38285550208 succeeded. Latest documentation-only PR-head update triggers a final rerun.",
+    "repository_build_or_typecheck": "PASS — GitHub Actions run 38285760541 succeeded for commit e94bc3ae95e59a42bcc4eac64d0073d778880cb2; merge commit d1821d3fc2b37439c623c70645b6c68bff296b05 includes the validated code plus status/evidence records.",
     "local_asset_decode_or_image_inventory": false,
     "pdf_download_and_content_verification": false,
     "form_display_and_submission_test": "public fields inspected only; no test submission",
@@ -39,10 +39,10 @@
     "google_maps_embed_url_identified": true,
     "google_maps_runtime": "Pending real-browser runtime check.",
     "street_view_target": "Exact user-supplied iframe URL implemented; runtime rendering not verified.",
-    "pdf_downloads": "User-provided viewer URLs linked; PDF content and runtime download behavior not inspected.",
+    "pdf_downloads": "Links are integrated from user-provided URLs; PDF content and runtime download behavior not inspected.",
     "full_browser_scroll_audit": false,
     "mobile_responsive_audit": false,
-    "static_route_check": "PASS on commit cdef107dfaf5e3170b20062b5929742943f42718; exact routes, form, PDF URLs and Street View source verified in generated output by scripts/verify-build.mjs. Final PR-head rerun pending."
+    "static_route_check": "PASS — run 38285760541 completed npm run verify:build against commit e94bc3ae95e59a42bcc4eac64d0073d778880cb2; 14 generated HTML files and preserved integration URLs were checked."
   },
   "policy": {
     "paid_dependencies_allowed": false,
@@ -64,7 +64,7 @@
   },
   "implementation": {
     "stack": "Astro 7.3.5 static output",
-    "branch": "aeos/loop-003-site-foundation",
+    "branch": "main",
     "package_manifest_added": true,
     "static_route_files": 14,
     "shared_layout_and_styles": true,
@@ -72,10 +72,13 @@
     "user_supplied_pdf_links_integrated": true,
     "user_supplied_street_view_embed_integrated": true,
     "build_workflow_added": ".github/workflows/ci.yml",
-    "build_state": "PASS_ON_INITIAL_CI_HEAD_FINAL_PR_HEAD_RUN_PENDING",
+    "build_state": "PASS",
     "browser_runtime_checks": "NOT_RUN",
     "deployment": "NOT_STARTED",
     "initial_ci_run_id": 38285550208,
-    "initial_ci_commit": "cdef107dfaf5e3170b20062b5929742943f42718"
+    "initial_ci_commit": "cdef107dfaf5e3170b20062b5929742943f42718",
+    "final_ci_run_id": 38285760541,
+    "final_ci_commit": "e94bc3ae95e59a42bcc4eac64d0073d778880cb2",
+    "merged_commit": "d1821d3fc2b37439c623c70645b6c68bff296b05"
   }
 }
