@@ -302,3 +302,36 @@ td strong { color: var(--ink); }
   .profile-section { grid-template-columns: 1fr; gap: 1rem; padding-block: 2rem; }
   .profile-side h2 { margin-bottom: .2rem; }
 }
+
+/* Locally hosted and optimised source-site photography. */
+.team-card-portrait {
+  display: block;
+  width: 5.25rem;
+  height: 5.25rem;
+  margin-bottom: 1.1rem;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  object-position: center 28%;
+  background: var(--teal-pale);
+}
+.profile-portrait {
+  display: block;
+  width: min(100%, 14rem);
+  height: 15rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  object-position: center 28%;
+  background: var(--teal-pale);
+  box-shadow: var(--shadow-card);
+}
+.footer-logo {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: .6rem;
+  background: #fff;
+}

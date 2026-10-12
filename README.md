@@ -77,3 +77,10 @@ The verifier checks 14 generated HTML files (13 content routes plus 404), French
 - Google Street View iframe src: https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003
 
 PDF content/download behavior, real-browser Street View rendering, source image availability, anonymous public URL access, and full mobile/accessibility/performance audits remain open QA items.
+
+
+## Locally hosted image assets
+
+Loop 005 adds the source practice logo, three selected interior photographs and three practitioner portraits under `public/images/`. Astro copies these static files to the build output, so the new pages do not need the Google Sites image gateway for their header, home/gallery photography or team portraits. `npm run verify:build` checks all seven local assets and rejects a generated page that still references the Google Sites image-gateway host.
+
+The migration deliberately excludes diploma/certificate scans and child-activity imagery pending owner review. The check verifies generated paths and file presence; it does not replace a visual browser review of responsive crops.

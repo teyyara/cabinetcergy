@@ -9,7 +9,7 @@
     "authorized_commit": true,
     "authorized_push": true,
     "authorized_branch_creation": true,
-    "current_progression_branch": "aeos/progression",
+    "current_progression_branch": "aeos/loop-005-local-assets",
     "initial_repository_state": "empty: no branches, no commits, no source files",
     "authenticated_local_git_checkout": "not available through the current verified workflow",
     "secrets_or_tokens_in_repository": false
@@ -21,7 +21,7 @@
     "browser_automation_playwright": false,
     "screenshot_capture": false,
     "repository_build_or_typecheck": "PASS — GitHub Actions run 38287965793 succeeded for PR head affe876bfdf7bda8bc37d2317263c79350f92673; Vercel reports a READY production-target deployment for merged main commit a34acccef04c4b404b97366f3951059fe6c3fdf1.",
-    "local_asset_decode_or_image_inventory": false,
+    "local_asset_decode_or_image_inventory": true,
     "pdf_download_and_content_verification": false,
     "form_display_and_submission_test": "public fields inspected only; no test submission",
     "real_form_submission": "prohibited",
@@ -42,7 +42,10 @@
     "pdf_downloads": "Links integrated from user-provided URLs; PDF contents and runtime download behavior not inspected.",
     "full_browser_scroll_audit": false,
     "mobile_responsive_audit": false,
-    "static_route_check": "PASS — run 38285760541 completed npm run verify:build against the validated PR head; 14 generated HTML files and preserved integration URLs were checked."
+    "static_route_check": "PASS — run 38285760541 completed npm run verify:build against the validated PR head; 14 generated HTML files and preserved integration URLs were checked.",
+    "locally_migrated_image_assets": 7,
+    "local_image_capture_method": "Rendered public Google Sites pages in Chromium; selected image response bytes saved and optimized to WebP",
+    "local_asset_verification": "PENDING_PR_CI — verifier checks all seven local image files, key rendered local references, and absence of Google Sites image-gateway URLs in generated HTML."
   },
   "policy": {
     "paid_dependencies_allowed": false,
@@ -75,13 +78,17 @@
     "user_supplied_street_view_embed_integrated": true,
     "build_workflow_added": ".github/workflows/ci.yml",
     "build_state": "PASS_ON_PR_HEAD",
-    "browser_runtime_checks": "NOT_RUN",
+    "browser_runtime_checks": "NOT_RUN on the migrated Astro deployment",
     "deployment": "READY_FOR_OWNER_REVIEW_BROWSER_ACCESS_UNVERIFIED",
     "vercel_project": "cabinetcergy",
     "stable_domain": "https://cabinetcergy.vercel.app",
     "deployment_id": "dpl_cnHgm4GgSADX38Gi3EUxraniBUjf",
     "deployment_commit": "a34acccef04c4b404b97366f3951059fe6c3fdf1",
     "deployment_target": "production",
-    "node_version": "24.x"
+    "node_version": "24.x",
+    "local_assets_migrated": 7,
+    "logo_local": true,
+    "team_portraits_local": true,
+    "interior_photography_local": true
   }
 }

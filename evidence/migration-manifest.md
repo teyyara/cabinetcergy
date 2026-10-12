@@ -96,3 +96,14 @@ This is a partial source audit, not a migration-completion PASS.
 - INT-003 Google Street View: `https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003`. Supplied by the user and implemented in `src/pages/acces.astro` using an iframe with descriptive title, lazy loading, the given `referrerpolicy`, and responsive CSS.
 - The old source image under “Vue de la rue (Street View)” is not used in the new page because it shows children playing with blocks.
 - Static site scaffold added on `aeos/loop-003-site-foundation`. CI build check is configured; local/browser rendering and actual form/map/PDF runtime checks remain pending.
+
+
+## Loop 005 — selected source assets migrated locally (12 October 2026)
+
+- Captured the source website’s currently-rendered header logo, three selected interior photos on the Le Cabinet page, and portraits for Edith Fautras, Jarod Florance and Bouhar Oubeidi.
+- Saved optimized WebP derivatives to `public/images/` and replaced external Google Sites gateway references in `SiteHeader.astro`, `HomeContent.astro`, `le-cabinet.astro` and `equipe.astro`. The footer now also uses the local logo.
+- The local images preserve the identified source imagery; dimensions and file sizes are recorded in `evidence/assets/source-assets.json`. Direct image-gateway HTTP fetches returned 403, so retrieval used successful image responses from the rendered public pages in Chromium.
+- The build verifier now requires the seven local assets to exist, checks that each is non-empty, verifies key local references in generated pages, and fails if a generated HTML page still references `sites.google.com/sitesv-images-rt`.
+- Diploma/certificate scans and child-activity images remain excluded from republication pending owner approval. No replacement imagery was fabricated.
+- The original Google Form iframe and responder URL, user-provided Drive document links, and user-provided Street View iframe were not changed by this asset-migration loop.
+- New-site browser screenshot/runtime checks remain pending; passing CI will confirm the build and generated asset references, not a full visual acceptance test.

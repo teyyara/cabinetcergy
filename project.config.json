@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-12-loop-004",
+  "run_id": "cabinetcergy-2026-10-12-loop-005",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/progression"
+    "current_working_branch": "aeos/loop-005-local-assets"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -100,6 +100,13 @@
       "state": "DEPLOYMENT_READY_BROWSER_ACCESS_UNVERIFIED",
       "requirement": "Make the main branch compatible with Vercel so the owner can inspect the site using a URL.",
       "implementation": "Vercel already detects Astro and reports a READY production-target deployment for main. Stable project URL and settings are recorded; anonymous browser access and runtime QA remain unverified."
+    },
+    {
+      "id": "CR-004",
+      "date": "2026-10-12",
+      "state": "IMPLEMENTED_PENDING_CI",
+      "requirement": "Migrate essential images and branding from the source Google Sites website into local static assets to eliminate dependency on the fragile Google Sites image gateway.",
+      "implementation": "Loop 005 copies the current logo, three selected interior photographs and three practitioner portraits into public/images/ as optimized WebP files, updates their page references, and adds build checks for local asset presence and removal of the image-gateway dependency."
     }
   ]
 }
