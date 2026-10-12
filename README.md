@@ -28,3 +28,8 @@ The next workspace checkpoint will establish the AEOS status, project configurat
 ## Local development
 
 Implementation framework and scripts are **not selected yet** because no website code exists in this repository. Inspect the source assets and available constraints before choosing an architecture. Do not claim a build or deployment has succeeded until it is actually run and observed.
+
+
+## Autonomous loop and main-branch promotion
+
+Work proceeds on `aeos/progression`. At the end of each successfully validated loop, open and merge the checkpoint into `main`, then verify that GitHub's remote `main` reflects the expected merge. Preserve history; do not force-push. This merge records verified progress and does not itself mean the website is production-ready or authorize deployment. Deployment remains separately gated by content fidelity, existing integrations, accessibility, performance, tests and release criteria.
