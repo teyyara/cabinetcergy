@@ -4,7 +4,7 @@
 - **Run ID:** cabinetcergy-2026-10-14-loop-014
 - **Current loop:** LOOP 014 — accessible pricing table navigation
 - **Working branch:** `aeos/loop-014-accessible-pricing-tables`
-- **Checkpoint PR:** Pending creation after the loop checkpoint is committed
+- **Checkpoint PR:** [PR #15 — accessible pricing table navigation](https://github.com/teyyara/cabinetcergy/pull/15)
 - **Promotion branch:** `main`
 - **Main baseline:** `9ee3cb600f560e83551361c2138b6cbbc0cbc1be`
 - **Website stack:** Astro 7.3.5 static output
