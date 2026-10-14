@@ -1909,3 +1909,124 @@ th {
     overflow-wrap: anywhere;
   }
 }
+
+
+/* Loop 021 — visual polish: calmer spacing, clean footer links, consistent embed captions */
+.section {
+  padding-block: clamp(3.8rem, 6vw, 6.2rem);
+}
+
+.section-heading {
+  gap: clamp(1rem, 2.5vw, 2rem);
+  margin-bottom: clamp(1.6rem, 2.6vw, 2.1rem);
+}
+
+.site-footer {
+  padding: clamp(2.8rem, 4.4vw, 3.8rem) 0 1.25rem;
+}
+
+.footer-grid {
+  gap: clamp(1.2rem, 2.5vw, 1.85rem);
+}
+
+.footer-heading {
+  margin-bottom: 0.8rem;
+}
+
+.site-footer address {
+  margin-bottom: 0.6rem;
+}
+
+.site-footer a {
+  margin-bottom: 0;
+  line-height: 1.55;
+  text-decoration: none;
+  text-underline-offset: 0.23em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+.footer-contact-links,
+.footer-links {
+  display: grid;
+  justify-items: start;
+}
+
+.footer-contact-links {
+  gap: 0.35rem;
+}
+
+.footer-links {
+  gap: 0.3rem;
+}
+
+.footer-contact-links a,
+.footer-links a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.footer-waitlist {
+  display: inline-flex;
+  margin-top: 0.55rem;
+  font-weight: 750;
+}
+
+.embed-caption {
+  margin: 0;
+  padding: 1rem 1.3rem;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 700px) {
+  .section {
+    padding-block: 3.1rem;
+  }
+
+  .section-heading {
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .site-footer {
+    padding-top: 3rem;
+  }
+
+  .footer-grid {
+    gap: 1.6rem;
+  }
+
+  .footer-bottom {
+    margin-top: 2.25rem;
+    padding-top: 1rem;
+  }
+
+  .embed-caption {
+    padding: 0.9rem 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .section {
+    padding-block: 2.75rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.35rem;
+  }
+
+  .footer-bottom {
+    gap: 0.7rem;
+  }
+}
