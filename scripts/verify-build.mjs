@@ -8,6 +8,7 @@ const dist = path.resolve("dist");
 
 const headerSource = await readFile(path.resolve("src/components/SiteHeader.astro"), "utf8");
 assert.match(headerSource, /IntersectionObserver/, "The homepage Services navigation must track the visible section.");
+assert.ok(headerSource.includes('rootMargin: "-96px 0px -55% 0px"'), "IntersectionObserver must use supported pixel/percentage rootMargin units.");
 assert.ok(headerSource.includes('href="/#services"'), "Desktop and mobile navigation must both target the homepage Services section.");
 assert.ok(headerSource.includes('link.classList.toggle("is-active", isCurrent)'), "The Services item must track the current visual navigation state.");
 assert.ok(headerSource.includes('link.setAttribute("aria-current", "location")'), "The active Services link must expose its current location accessibly.");
