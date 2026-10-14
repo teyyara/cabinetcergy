@@ -92,3 +92,8 @@ The build emits `/robots.txt` and `/sitemap.xml`. Canonical and Open Graph URL m
 The static verifier checks every generated route for one H1, one main landmark, image `alt` attributes, titled iframes, detectable link names, safe `rel=noopener` values for new-tab links, heading-level progression, and contrast ratios for key text/design-token pairs. These are automated regression checks, not a substitute for manual keyboard, screen-reader, visual or professional content approval.
 
 For healthcare/business content, verify current fees, group schedules, practitioner information, availability notices and the exact PDF contents with the cabinet owner. Do not change the operational Google Form, submit test data or copy responses.
+
+
+## Exact integration regression guards
+
+The static build verifier compares the generated HTML's actual link and iframe destinations with the approved public URLs for the existing Google Form (both responder and embedded forms), CPAM and MDPH Drive viewers, the original Google Maps embed and full supplied Street View panorama, Maps directions, Tamis, telephone and email. These are source-level regression guards: they protect URL identity without submitting the form, accessing responses, or certifying third-party content or runtime availability.
