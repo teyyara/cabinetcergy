@@ -410,3 +410,9 @@ assert.ok(teamPage.includes('src="/images/bouhar-obeidi.webp"'), "The team page 
 assert.ok(!allHtml.join("\n").includes("sites.google.com/sitesv-images-rt"), "Rendered pages must not depend on Google Sites’ image gateway.");
 
 console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, canonical/Open Graph metadata, sitemap/robots, accessibility semantics and contrast checks, exact existing Form/Maps/Street View/PDF/contact destinations, and build fingerprint (${buildInfo.commitSha}) are present.`);
+
+
+// Loop 023 — service-card links align despite different paragraph lengths.
+const globalCss = cssSource;
+assert.match(globalCss, /\.cards-grid\s*>\s*\.card\s*\{[^}]*display:\s*flex;[^}]*flex-direction:\s*column;/s, "Service cards must use a vertical flex layout so actions can align consistently.");
+assert.match(globalCss, /\.cards-grid\s*>\s*\.card\s*>\s*\.text-link\s*\{[^}]*margin-top:\s*auto;/s, "Service-card action links must sit at the bottom of cards with different copy lengths.");
