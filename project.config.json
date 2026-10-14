@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-009",
+  "run_id": "cabinetcergy-2026-10-14-loop-010",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-009-exact-integration-guards"
+    "current_working_branch": "aeos/loop-010-visual-design-polish"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -127,6 +127,13 @@
       "state": "IMPLEMENTED",
       "requirement": "Protect the exact existing public operational destinations from accidental URL drift in future changes.",
       "implementation": "Loop 009 extends scripts/verify-build.mjs with strict generated-HTML checks for the existing Google Form responder/embed URLs, supplied CPAM/MDPH viewer URLs, original Maps and full user-provided Street View iframe URLs, Maps directions, Tamis, public phone and email. No form submission or response access occurs. PR Actions remain the required validation gate."
+    },
+    {
+      "id": "CR-008",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_BUILD_PENDING",
+      "requirement": "Improve the public website's visual design, information hierarchy, responsiveness and interaction polish without altering clinical/business content or existing integrations.",
+      "implementation": "Loop 010 adds a responsive editorial CSS refinement to the shared design system: home hero, brand/navigation, contact strip, section rhythm, cards, staff portraits, page intros, resource/FAQ/table panels and footer. Lightweight transitions honor prefers-reduced-motion; no new JavaScript, dependencies, external assets, or data storage are introduced. Full runtime visual acceptance remains pending."
     }
   ],
   "validation_evidence": {
@@ -144,6 +151,7 @@
     "accessibility_contrast": "Muted text token updated from #657b7e to #566b6f; static CI verifier now enforces >=4.5:1 against --paper and white backgrounds.",
     "loop_008_pr": 9,
     "accessibility": "PR #9: automated semantic/contrast checks and parent-section navigation fix; manual screen-reader and complete WCAG audit remain outstanding.",
-    "loop_009": "Exact operational destination guards added to the static build verifier on aeos/loop-009-exact-integration-guards; see Loop 009 pull-request Actions for CI outcome. Production remains unverified until the owner deploys."
+    "loop_009": "Exact operational destination guards added to the static build verifier on aeos/loop-009-exact-integration-guards; see Loop 009 pull-request Actions for CI outcome. Production remains unverified until the owner deploys.",
+    "loop_010": "Responsive CSS design refinement committed on aeos/loop-010-visual-design-polish. CI and static verifier on PR #11 are required. No production deploy or post-change browser acceptance has been performed."
   }
 }

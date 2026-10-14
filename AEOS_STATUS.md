@@ -1,17 +1,27 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-009
-- **Current loop:** LOOP 009 — exact integration destination guards
-- **Working branch:** `aeos/loop-009-exact-integration-guards`
-- **Checkpoint PR:** [PR #10 — exact integration destination guards](https://github.com/teyyara/cabinetcergy/pull/10)
+- **Run ID:** cabinetcergy-2026-10-14-loop-010
+- **Current loop:** LOOP 010 — editorial visual design polish
+- **Working branch:** `aeos/loop-010-visual-design-polish`
+- **Checkpoint PR:** [PR #11 — editorial visual design polish](https://github.com/teyyara/cabinetcergy/pull/11)
 - **Promotion branch:** `main`
-- **Main baseline:** `1d050559b363558b188f9039ddae01911fb777b7`
+- **Main baseline:** `9cde7e483c7131c01eb38f8d4be3fd9148db307c`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008 and Loop 009 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–010 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 010 — editorial visual design polish
+
+- Reworked the shared visual language through a documented CSS-only override layer: softer layered paper backgrounds, a clearer editorial hero, refined brand/navigation chrome, a raised contact strip, more consistent section spacing, calmer surfaces, and more deliberate treatment of cards, practitioner portraits, accordions, tables, resource cards and dark callout panels.
+- Improved the home hero's typography, visual balance and collage treatment while keeping the same locally hosted source photographs, original copy, current CTAs and contact links.
+- Added restrained hover feedback and a short hero entrance transition; the existing reduced-motion preference is explicitly honored by disabling hero entrance and image transitions.
+- Tuned the compact-navigation, hero collage, trust strip and card layouts at the existing tablet/mobile breakpoints without adding JavaScript, libraries, external fonts, stock imagery, new data services or costs.
+- No practitioner claims, prices, hours, schedules, health information or operational URLs were changed.
+- **Validation:** build and static verifier must pass on PR #11 before merge. Automated build success will not certify visual quality in all browsers; production visual verification remains gated on the user's manual deployment.
+- **Production:** no Vercel deployment or retry was initiated.
 
 ## Loop 009 — exact integration destination guards
 
