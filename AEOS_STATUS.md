@@ -1,17 +1,25 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-008
-- **Current loop:** LOOP 008 — source fidelity and accessibility verification
-- **Working branch:** `aeos/loop-008-a11y-content-verification`
-- **Checkpoint PR:** [PR #9 — accessibility checks and contrast](https://github.com/teyyara/cabinetcergy/pull/9)
+- **Run ID:** cabinetcergy-2026-10-14-loop-009
+- **Current loop:** LOOP 009 — exact integration destination guards
+- **Working branch:** `aeos/loop-009-exact-integration-guards`
+- **Checkpoint PR:** [PR #10 — exact integration destination guards](https://github.com/teyyara/cabinetcergy/pull/10)
 - **Promotion branch:** `main`
-- **Main baseline:** `3aa164c4fd1808f2ea1b027d5dce591fb10a1168`
+- **Main baseline:** `1d050559b363558b188f9039ddae01911fb777b7`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008 changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008 and Loop 009 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 009 — exact integration destination guards
+
+- Strengthened `scripts/verify-build.mjs` to compare actual generated HTML attribute values against exact approved destinations, normalizing only common HTML attribute entities before comparison.
+- Protects the existing Google Form responder and embed URLs on the homepage and waiting-list page; the exact CPAM and MDPH Drive viewer URLs; the original Google Maps iframe URL and user-supplied full Street View panorama URL; the Google Maps directions link; the Tamis directory link; and the public telephone/email links on key routes.
+- This is a regression guard only: it does not request or submit the Form, access responses, fetch private data, change the supplied destinations, or assert that third-party documents contain the expected material.
+- **Validation gate:** the GitHub Actions workflow on the Loop 009 pull request must pass before merge. The PR's check results are the authoritative CI evidence.
+- **Production state:** no production browser check or deployment was initiated for this loop. The owner remains responsible for Vercel deployment.
 
 ## Loop 008 — changes in PR #9
 
