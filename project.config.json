@@ -166,9 +166,9 @@
     {
       "id": "CR-013",
       "date": "2026-10-14",
-      "state": "IMPLEMENTED_CI_PENDING",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Improve inner-page card composition and prevent cramped wrapping at narrow mobile widths without changing clinic content or integrations.",
-      "implementation": "Loop 015 adds CSS-only compact responsive adjustments for resource cards, schedule headings/badges, section headings, embed headers, and long contact/notice text at <=420px. Static build assertions guard the responsive rules. No copy, prices, destinations, dependencies, JavaScript, or Vercel deployment changed."
+      "implementation": "Loop 015 adds CSS-only compact responsive adjustments for resource cards, schedule headings/badges, section headings, embed headers, and long contact/notice text at <=420px. Static assertions were added. GitHub Actions run 38622265170 passed the build and verifier on the final PR head before merge. PR #16 merged to main as 54b142545f03ba507c0252d6fee4e47ad0bb2d06. Full browser visual acceptance still awaits manual deployment by the owner. No copy, prices, destinations, dependencies, JavaScript, or Vercel deployment changed."
     }
   ],
   "validation_evidence": {
@@ -192,6 +192,6 @@
     "loop_012": "Consistent inline SVG line-icon treatment committed on aeos/loop-012-consistent-iconography. PR #13 GitHub Actions build/static verification is the merge gate; post-deploy visual acceptance remains pending. No deployment initiated.",
     "loop_013": "Responsive mobile navigation CSS and regression assertions are implemented on aeos/loop-013-mobile-interaction-polish. The pull-request GitHub Actions build/static verifier must pass before merge. No content or URLs changed, no dependency or JavaScript added, and no Vercel deployment initiated. Production visual acceptance remains pending.",
     "loop_014": "Pricing table wrappers on the Prestations page now have named keyboard-focusable regions and hidden table captions, with responsive scrollbar/focus styling. Static build verifier now checks all three pricing tables. GitHub Actions on the loop PR remains the merge gate; no prices or service labels are changed, and no Vercel deployment initiated.",
-    "loop_015": "Compact responsive inner-page CSS and static regression assertions are implemented on aeos/loop-015-narrow-screen-layouts. PR Actions must pass before merge; visual browser acceptance remains pending manual deployment. No Vercel deployment initiated."
+    "loop_015": "GitHub Actions run #52 (38622265170) completed successfully on PR #16's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #16 merged to main as 54b142545f03ba507c0252d6fee4e47ad0bb2d06. Live visual acceptance remains pending manual deployment; no Vercel deployment initiated."
   }
 }
