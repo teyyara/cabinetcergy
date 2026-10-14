@@ -173,9 +173,9 @@
     {
       "id": "CR-014",
       "date": "2026-10-14",
-      "state": "IMPLEMENTED_CI_PENDING",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Make the native mobile navigation clearer and easier to operate with keyboard interaction while preserving all navigation destinations.",
-      "implementation": "Loop 016 adds a local script to synchronize the mobile menu summary's aria-label with its open/closed state, close on Escape while restoring focus to the trigger, and close after choosing a mobile nav link. Static verifier assertions guard each behavior. No dependencies, remote services, storage, clinic copy, prices, form behavior, or URLs changed. Manual browser confirmation remains pending owner deployment."
+      "implementation": "Loop 016 adds a local script to synchronize the mobile menu summary's aria-label with its open/closed state, close on Escape while restoring focus to the trigger, and close after choosing a mobile nav link. Static verifier assertions guard each behavior. GitHub Actions run #58 (38623015583) passed dependency installation, Astro static build, and route/integration verification on the final PR head. PR #18 merged to main as 82afde0b4c2a718af39a8ba99fce3b58cbe69313. No dependencies, remote services, storage, clinic copy, prices, form behavior, or URLs changed. Manual browser review remains pending owner deployment."
     }
   ],
   "validation_evidence": {
@@ -200,6 +200,6 @@
     "loop_013": "Responsive mobile navigation CSS and regression assertions are implemented on aeos/loop-013-mobile-interaction-polish. The pull-request GitHub Actions build/static verifier must pass before merge. No content or URLs changed, no dependency or JavaScript added, and no Vercel deployment initiated. Production visual acceptance remains pending.",
     "loop_014": "Pricing table wrappers on the Prestations page now have named keyboard-focusable regions and hidden table captions, with responsive scrollbar/focus styling. Static build verifier now checks all three pricing tables. GitHub Actions on the loop PR remains the merge gate; no prices or service labels are changed, and no Vercel deployment initiated.",
     "loop_015": "GitHub Actions run #52 (38622265170) completed successfully on PR #16's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #16 merged to main as 54b142545f03ba507c0252d6fee4e47ad0bb2d06. Live visual acceptance remains pending manual deployment; no Vercel deployment initiated.",
-    "loop_016": "Mobile menu label synchronization, Escape/focus restoration, and close-on-link behavior implemented in src/components/SiteHeader.astro with static verifier assertions. PR #18 GitHub Actions build and integration regression checks are the merge gate. No Vercel deployment initiated; manual keyboard/browser review remains pending."
+    "loop_016": "GitHub Actions run #58 (38623015583) completed successfully on PR #18's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #18 merged to main as 82afde0b4c2a718af39a8ba99fce3b58cbe69313. Live visual and keyboard acceptance remains pending manual deployment; no Vercel deployment initiated."
   }
 }
