@@ -18,8 +18,9 @@
 - Tuned narrow-screen layouts for resource cards so the action link sits below the title and description rather than competing for the same horizontal space.
 - Allowed schedule heading/badge combinations to wrap cleanly, reduced embed-heading padding, stacked section-heading content, and guarded long contact/notice text against overflow at widths of 420px and below.
 - Added static regression assertions for the responsive rules. This is CSS-only; no wording, clinic details, prices, URLs, forms, dependencies, JavaScript or external services changed.
-- **Validation:** GitHub Actions build/static verification is the merge gate; browser visual acceptance remains unverified until the owner manually deploys.
-- **Production:** no Vercel deployment, retry or promotion was initiated.
+- **Validation:** [GitHub Actions run #52](https://github.com/teyyara/cabinetcergy/actions/runs/38622265170) passed dependency installation, static build, and route/integration regression checks for the final PR head before merge.
+- **Merge:** PR [#16](https://github.com/teyyara/cabinetcergy/pull/16) merged to `main` as [`54b1425`](https://github.com/teyyara/cabinetcergy/commit/54b142545f03ba507c0252d6fee4e47ad0bb2d06).
+- **Production:** no Vercel deployment, retry or promotion was initiated; live visual acceptance remains pending owner deployment.
 
 ## Loop 014 — accessible pricing table navigation
 
