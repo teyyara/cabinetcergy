@@ -6,7 +6,7 @@
 - **Working branch:** `aeos/loop-016-mobile-menu-keyboard-behavior`
 - **Checkpoint PR:** [PR #18 — mobile menu keyboard behavior](https://github.com/teyyara/cabinetcergy/pull/18)
 - **Promotion branch:** `main`
-- **Main baseline:** `82afde0b4c2a718af39a8ba99fce3b58cbe69313`
+- **Main baseline:** `77cf59c7a784f6a969a662de6f4a1913779490d4`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
