@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-020",
+  "run_id": "cabinetcergy-2026-10-14-loop-021",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-020-labelled-groups"
+    "current_working_branch": "aeos/loop-021-visual-rhythm-links"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -204,6 +204,13 @@
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Make homepage photo-gallery and practical contact-strip accessible labels meaningful to assistive technology by adding name-permitting grouping semantics and guarding the pattern in generated HTML.",
       "implementation": "Loop 020 adds role=\"group\" to the homepage .hero-visual and .trust-strip containers while preserving their aria-labels and all visual presentation. The generated-HTML verifier explicitly checks both named groups and generally guards div/span aria-label usage against generic, none, and presentation roles. PR #28 final head 4fa621932a9a772efb124411fcfce228c069107c passed GitHub Actions run 38631475971; merged to main as 6c83b63f4a5b51589754376267e596da0b1f4852 and post-merge run 38631652346 passed. No public facts/links or external integration changed; no Vercel deployment initiated. Browser/screen-reader acceptance remains pending owner-managed deployment."
+    },
+    {
+      "id": "CR-019",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
+      "requirement": "Improve the site's visual rhythm and remove unintended visual noise from footer links and nested access-page captions, while preserving public content and operational destinations.",
+      "implementation": "Loop 021 reduces vertical padding for content sections on desktop and mobile, tightens section-heading spacing, removes default underlines from footer links while retaining hover/focus indication, lays footer contact/explore links out as consistent stacks, and replaces nested card styling below Maps/Street View with a shared simple caption row. Existing content and all operational destinations remain unchanged. PR #30 final head 2fbfe587aa9b664329bc6d7b1e4ff5cd6d69ef53 passed Actions run 38633696207; merged to main as 38a42fd2caba162d3573624f451c62bf76110f95; main Actions run 38633853515 passed. No browser visual QA or Vercel deployment was initiated; owner-managed deployment/acceptance remains pending."
     }
   ],
   "validation_evidence": {
@@ -232,6 +239,7 @@
     "loop_017": "GitHub Actions run 38624739343 (https://github.com/teyyara/cabinetcergy/actions/runs/38624739343) completed successfully on final PR #21 head a8038e69bc581cc2b3443eed84a4eccab6de139e: dependency installation, Astro static build, and route/integration regression verification all passed. PR #21 merged to main as bae8024e8308806991823fdb5059560a2bc49e75. Visitor-facing copy cleaned across 11 public content/component files, with a generated-HTML regression guard. Existing clinic facts, costs, schedules, maps/forms/contact and external links preserved. No Vercel deployment initiated; post-merge live visual acceptance awaits manual deployment.",
     "loop_018": "GitHub Actions run 38628378188 (https://github.com/teyyara/cabinetcergy/actions/runs/38628378188) completed successfully on final PR #24 head 71ee7ce409d9c294d157466acbaf696e265ae4be: dependency installation, Astro static build, and route/integration regression verification all passed. PR #24 merged to main as 69f1fc2cb5ea5820fdadcfa467e6f7d030143432. Resources page no longer duplicates the ten-item FAQ; FAQ destination and all ten answers remain; internal Google Drive migration/audit note removed; external operational destinations preserved. No Vercel deployment initiated; live acceptance awaits owner-managed deployment.",
     "loop_019": "PR #26 (https://github.com/teyyara/cabinetcergy/pull/26) final head a05184e53bf9491405555f86f3f4194f4e4b9947; Actions run 38629848669 PASS: dependency installation, Astro static build, route/integration verifier. Initial run 38629675502 exposed a duplicate const in scripts/verify-build.mjs and failed verifier; duplicate declaration removed before final run. Main merge commit 1a5f87ff84e2bb111aff771cf2d70916019a5112; main Actions run 38630043007 PASS. Homepage Services section current-state logic is implemented for desktop/mobile; no browser interaction QA or Vercel deployment initiated; owner-managed deployment and runtime acceptance remain pending.",
-    "loop_020": "PR #28 https://github.com/teyyara/cabinetcergy/pull/28 final head 4fa621932a9a772efb124411fcfce228c069107c; Actions run 38631475971 PASS (dependency install, Astro static build, route/integration/accessibility verifier). Main merge commit 6c83b63f4a5b51589754376267e596da0b1f4852; post-merge Actions run 38631652346 PASS. Both homepage named generic containers now use role=group; regression guard checks labels against semantic roles. Visual and screen-reader QA not run; no Vercel deployment initiated."
+    "loop_020": "PR #28 https://github.com/teyyara/cabinetcergy/pull/28 final head 4fa621932a9a772efb124411fcfce228c069107c; Actions run 38631475971 PASS (dependency install, Astro static build, route/integration/accessibility verifier). Main merge commit 6c83b63f4a5b51589754376267e596da0b1f4852; post-merge Actions run 38631652346 PASS. Both homepage named generic containers now use role=group; regression guard checks labels against semantic roles. Visual and screen-reader QA not run; no Vercel deployment initiated.",
+    "loop_021": "PR #30 https://github.com/teyyara/cabinetcergy/pull/30 final head 2fbfe587aa9b664329bc6d7b1e4ff5cd6d69ef53; Actions run 38633696207 PASS: dependency installation, Astro static build, and route/integration verifier. Main merge commit 38a42fd2caba162d3573624f451c62bf76110f95; post-merge main run 38633853515 PASS. Source-level checks confirm tighter responsive section spacing, footer links un-underlined at rest but underlined on hover/focus, consistent stacked footer links, and map/Street View captions without nested cards. Visual browser QA not run; no Vercel deployment initiated."
   }
 }
