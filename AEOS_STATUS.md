@@ -1,17 +1,26 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-015
-- **Current loop:** LOOP 015 — compact inner-page layouts
-- **Working branch:** `aeos/loop-015-narrow-screen-layouts`
-- **Checkpoint PR:** [PR #16 — compact inner-page layouts](https://github.com/teyyara/cabinetcergy/pull/16)
+- **Run ID:** cabinetcergy-2026-10-14-loop-016
+- **Current loop:** LOOP 016 — mobile menu keyboard behavior
+- **Working branch:** `aeos/loop-016-mobile-menu-keyboard-behavior`
+- **Checkpoint PR:** [PR #18 — mobile menu keyboard behavior](https://github.com/teyyara/cabinetcergy/pull/18)
 - **Promotion branch:** `main`
-- **Main baseline:** `84e71f24052c3968d7cffe40e554633c3d5cc20c`
+- **Main baseline:** `77cf59c7a784f6a969a662de6f4a1913779490d4`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–015 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–016 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 016 — mobile menu keyboard behavior
+
+- Added a small local script to the existing native mobile navigation: the trigger's accessible label now changes between “Ouvrir le menu de navigation” and “Fermer le menu de navigation” in step with the open state.
+- Pressing Escape while the menu is open closes it and returns keyboard focus to the summary trigger. Activating any mobile navigation link also closes the panel, including the same-page homepage section anchor.
+- Extended the static build verifier to guard the label synchronization, Escape/focus handling, and link-close behavior in the source component.
+- This is a small self-hosted script with no package, network request, storage, analytics, backend, or third-party service. No visible clinic copy, prices, schedules, form workflow or external destination was changed.
+- **Validation:** GitHub Actions build and route/integration checks are the merge gate. Keyboard behavior has source assertions but still needs manual browser review after owner deployment.
+- **Production:** no Vercel deployment, retry or promotion was initiated.
 
 ## Loop 015 — compact inner-page layouts
 
