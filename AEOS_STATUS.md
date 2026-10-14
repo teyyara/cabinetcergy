@@ -4,7 +4,7 @@
 - **Run ID:** cabinetcergy-2026-10-14-loop-009
 - **Current loop:** LOOP 009 — exact integration destination guards
 - **Working branch:** `aeos/loop-009-exact-integration-guards`
-- **Checkpoint PR:** [PR #9 — accessibility checks and contrast](https://github.com/teyyara/cabinetcergy/pull/9)
+- **Checkpoint PR:** [PR #10 — exact integration destination guards](https://github.com/teyyara/cabinetcergy/pull/10)
 - **Promotion branch:** `main`
 - **Main baseline:** `1d050559b363558b188f9039ddae01911fb777b7`
 - **Website stack:** Astro 7.3.5 static output
@@ -18,14 +18,6 @@
 - Strengthened `scripts/verify-build.mjs` to compare actual generated HTML attribute values against exact approved destinations, normalizing only common HTML attribute entities before comparison.
 - Protects the existing Google Form responder and embed URLs on the homepage and waiting-list page; the exact CPAM and MDPH Drive viewer URLs; the original Google Maps iframe URL and user-supplied full Street View panorama URL; the Google Maps directions link; the Tamis directory link; and the public telephone/email links on key routes.
 - This is a regression guard only: it does not request or submit the Form, access responses, fetch private data, change the supplied destinations, or assert that third-party documents contain the expected material.
-- **Validation gate:** the GitHub Actions workflow on the Loop 009 pull request must pass before merge. The PR's check results are the authoritative CI evidence.
-- **Production state:** no production browser check or deployment was initiated for this loop. The owner remains responsible for Vercel deployment.
-
-## Loop 009 — exact integration destination guards
-
-- Strengthened `scripts/verify-build.mjs` to compare actual generated HTML attribute values against exact approved destinations, normalizing only common HTML attribute entities before comparison.
-- Protects the existing Google Form responder and embed URLs on the homepage and waiting-list page; the exact CPAM and MDPH Drive viewer URLs; the original Google Maps iframe URL and user-supplied full Street View panorama URL; the Google Maps directions link; the Tamis directory link; and the public telephone/email links on key routes.
-- This is a regression guard only: it does not submit the Form, access responses, change supplied destinations, or assert that third-party documents contain the expected material.
 - **Validation gate:** the GitHub Actions workflow on the Loop 009 pull request must pass before merge. The PR's check results are the authoritative CI evidence.
 - **Production state:** no production browser check or deployment was initiated for this loop. The owner remains responsible for Vercel deployment.
 
