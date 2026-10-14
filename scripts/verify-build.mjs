@@ -255,9 +255,9 @@ assert.deepEqual(homeFormEmbeds, [expectedIntegrationUrls.formEmbed], "Homepage 
 assert.deepEqual(waitingFormEmbeds, [expectedIntegrationUrls.formEmbed], "Waiting-list page must preserve exactly one unchanged embedded Google Form destination.");
 
 
-assert.match(accessPage, /<p class="embed-caption map-link">[\\s\\S]*?<\\/p>/i, "The map destination must use a simple caption row, not a nested card.");
-assert.match(accessPage, /<p class="embed-caption small-print street-view-caption">[\\s\\S]*?<\\/p>/i, "The Street View explanation must use the same simple caption treatment.");
-assert.doesNotMatch(accessPage, /class="card (?:map-link|small-print)"/i, "Map and Street View captions must not create nested cards inside the embed cards.");
+assert.ok(accessPage.includes('<p class="embed-caption map-link">') && accessPage.includes("Ouvrir dans Google Maps"), "The map destination must use a simple caption row, not a nested card.");
+assert.ok(accessPage.includes('<p class="embed-caption small-print street-view-caption">'), "The Street View explanation must use the same simple caption treatment.");
+assert.ok(!accessPage.includes('class="card map-link"') && !accessPage.includes('class="card small-print"'), "Map and Street View captions must not create nested cards inside the embed cards.");
 
 const accessEmbedUrls = attributeValues(accessPage, "iframe", "src");
 assertExactDestination(accessEmbedUrls, expectedIntegrationUrls.mapEmbed, "Original Google Maps iframe");
