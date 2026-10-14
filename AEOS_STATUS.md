@@ -1,17 +1,27 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-022
-- **Current loop:** LOOP 022 — quieter contact links and cleaner waiting-list spacing
-- **Working branch:** `aeos/loop-022-quiet-contact-links`
-- **Checkpoint PR:** [PR #32 — polish standalone contact links and waiting-list spacing](https://github.com/teyyara/cabinetcergy/pull/32)
+- **Run ID:** cabinetcergy-2026-10-14-loop-023
+- **Current loop:** LOOP 023 — consistent service-card action alignment
+- **Working branch:** `aeos/loop-023-service-card-alignment`
+- **Checkpoint PR:** [PR #34 — align service-card actions across uneven copy lengths](https://github.com/teyyara/cabinetcergy/pull/34)
 - **Promotion branch:** `main`
 - **Main baseline:** `ee0ec38f8d8ed099dccc3be00783bfc809450c33`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–022 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–023 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 023 — consistent service-card action alignment
+
+- Homepage service cards now use a vertical flex layout, so action links align along the bottom edge rather than jumping according to paragraph length.
+- Added responsive breathing room above each action while keeping the existing grid, card styling, content and links unchanged.
+- Extended `scripts/verify-build.mjs` with regression checks for the flex layout and auto top margin on service-card actions.
+- **Validation:** [GitHub Actions run 38636516595](https://github.com/teyyara/cabinetcergy/actions/runs/38636516595) passed on final PR #34 head e9ba5112be8d84b7aef3997404714e857f019ba7.
+- **Main verification:** [GitHub Actions run 38636673583](https://github.com/teyyara/cabinetcergy/actions/runs/38636673583) passed on merge commit a54eb81a28257bded1cc6c2be38e4d0a9abd5984.
+- **Merge:** [PR #34](https://github.com/teyyara/cabinetcergy/pull/34) merged to `main` as [a54eb81a28257bded1cc6c2be38e4d0a9abd5984](https://github.com/teyyara/cabinetcergy/commit/a54eb81a28257bded1cc6c2be38e4d0a9abd5984).
+- **Production:** no Vercel deployment/retry/promotion initiated. Browser visual QA remains pending owner-managed deployment.
 
 ## Loop 022 — quieter contact links and cleaner waiting-list spacing
 
