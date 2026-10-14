@@ -250,6 +250,15 @@ const groupPage = await html("prise-en-charge-de-groupe/index.html");
 assert.match(groupPage, /aria-current="location"/, "Group-support route must correctly mark its parent Tarifs & groupes navigation item as the current location.");
 
 const allHtml = await Promise.all(routeFiles.map(html));
+
+// Loop 017 — catch migration-only notes accidentally exposed in public copy.
+for (const [index, page] of allHtml.entries()) {
+  assert.doesNotMatch(
+    page,
+    /\\b(?:the site source|the source site|source site|source page|content source|site source|page source)\\b|replace the incorrectly placed static image/i,
+    routeFiles[index] + " must not expose internal migration notes to visitors.",
+  );
+}
 for (const [index, page] of allHtml.entries()) {
   const file = routeFiles[index];
   assert.match(page, /<html[^>]+lang="fr"/i, file + " must declare French as its language.");
