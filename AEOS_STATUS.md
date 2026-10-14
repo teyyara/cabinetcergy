@@ -1,17 +1,28 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-012
-- **Current loop:** LOOP 012 — consistent iconography and contact cues
-- **Working branch:** `aeos/loop-012-consistent-iconography`
-- **Checkpoint PR:** [PR #13 — consistent iconography and contact cues](https://github.com/teyyara/cabinetcergy/pull/13)
+- **Run ID:** cabinetcergy-2026-10-14-loop-013
+- **Current loop:** LOOP 013 — responsive navigation interaction polish
+- **Working branch:** `aeos/loop-013-mobile-interaction-polish`
+- **Checkpoint PR:** Pending creation after the loop checkpoint is committed
 - **Promotion branch:** `main`
-- **Main baseline:** `10f124d2a9767e23826e23a120d5f1745ddc8f62`
+- **Main baseline:** `0546b500bba17088fa0b2a88b862023bd369896a`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–012 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–013 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 013 — responsive navigation interaction polish
+
+- Added a clearer visual state to the native mobile menu button when the menu is open; the three-line mark transitions into a close symbol, and the menu panel enters with a restrained reveal.
+- Corrected the mobile waiting-list CTA's hover/focus surface: it now stays white-on-deep-teal instead of inheriting the generic pale hover background that weakened contrast with its white text.
+- Added subtle pressed feedback to buttons and hover-only enhancements for fine-pointer devices, while keeping the existing keyboard focus outline.
+- Explicitly disables the menu reveal and interaction transitions when `prefers-reduced-motion: reduce` is enabled.
+- Extended `scripts/verify-build.mjs` to guard the menu open state, CTA foreground/background contrast intent, and reduced-motion behavior.
+- CSS and verifier only: no new JavaScript, packages, remote assets, storage, form changes, clinic wording, or destination URL changes.
+- **Validation:** PR GitHub Actions build/static verification remains the merge gate. Browser visual acceptance after this change remains pending the owner's manual production deployment.
+- **Production:** no Vercel deployment, retry or promotion action was initiated.
 
 ## Loop 012 — consistent iconography and contact cues
 
