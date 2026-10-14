@@ -5,6 +5,14 @@ import path from "node:path";
 const dist = path.resolve("dist");
 
 
+
+const headerSource = await readFile(path.resolve("src/components/SiteHeader.astro"), "utf8");
+assert.match(headerSource, /IntersectionObserver/, "The homepage Services navigation must track the visible section.");
+assert.match(headerSource, /href="\\/#services"/, "Desktop and mobile navigation must both target the homepage Services section.");
+assert.match(headerSource, /classList\\.toggle\\("is-active", isCurrent\\)/, "The Services item must track the current visual navigation state.");
+assert.match(headerSource, /setAttribute\\("aria-current", "location"\\)/, "The active Services link must expose its current location accessibly.");
+assert.match(headerSource, /removeAttribute\\("aria-current"\\)/, "The Services link must clear its current location state when the section is no longer active.");
+
 const cssSource = await readFile(path.resolve("src/styles/global.css"), "utf8");
 const getColorToken = (name) => {
   const match = cssSource.match(new RegExp(name + ":\\s*(#[0-9a-fA-F]{6})"));
@@ -189,6 +197,8 @@ const assertExactDestination = (values, expected, description) => {
   );
 };
 
+assert.ok(home.includes('href="/#services"'), "Homepage navigation must retain the Services section link.");
+assert.ok(home.includes('id="services"'), "Homepage must retain the Services section target.");
 assert.match(home, /Cabinet des Hérons/i, "Homepage must include the practice name.");
 assert.match(home, /liste-attente/i, "Homepage must expose the waiting-list path.");
 assert.match(waiting, /Liste d.{0,2}attente/i, "Waiting-list page needs a meaningful title or heading.");
