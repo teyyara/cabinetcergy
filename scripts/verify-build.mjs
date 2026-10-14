@@ -8,10 +8,10 @@ const dist = path.resolve("dist");
 
 const headerSource = await readFile(path.resolve("src/components/SiteHeader.astro"), "utf8");
 assert.match(headerSource, /IntersectionObserver/, "The homepage Services navigation must track the visible section.");
-assert.match(headerSource, /href="\\/#services"/, "Desktop and mobile navigation must both target the homepage Services section.");
-assert.match(headerSource, /classList\\.toggle\\("is-active", isCurrent\\)/, "The Services item must track the current visual navigation state.");
-assert.match(headerSource, /setAttribute\\("aria-current", "location"\\)/, "The active Services link must expose its current location accessibly.");
-assert.match(headerSource, /removeAttribute\\("aria-current"\\)/, "The Services link must clear its current location state when the section is no longer active.");
+assert.ok(headerSource.includes('href="/#services"'), "Desktop and mobile navigation must both target the homepage Services section.");
+assert.ok(headerSource.includes('link.classList.toggle("is-active", isCurrent)'), "The Services item must track the current visual navigation state.");
+assert.ok(headerSource.includes('link.setAttribute("aria-current", "location")'), "The active Services link must expose its current location accessibly.");
+assert.ok(headerSource.includes('link.removeAttribute("aria-current")'), "The Services link must clear its current location state when the section is no longer active.");
 
 const cssSource = await readFile(path.resolve("src/styles/global.css"), "utf8");
 const getColorToken = (name) => {
