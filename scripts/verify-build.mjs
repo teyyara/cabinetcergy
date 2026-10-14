@@ -57,6 +57,13 @@ assert.ok(loop015Css.includes("grid-column: 1 / -1"), "Resource actions must mov
 assert.ok(loop015Css.includes("flex-wrap: wrap"), "Schedule headings and badges must wrap instead of forcing overflow.");
 assert.ok(loop015Css.includes("padding: 1.05rem"), "Embed headings must use compact padding on narrow screens.");
 
+// Loop 016 — guard the mobile menu's keyboard and open/closed behavior.
+const headerSource = await readFile(path.resolve("src/components/SiteHeader.astro"), "utf8");
+assert.ok(headerSource.includes('menu.addEventListener("toggle", syncMenuLabel)'), "The mobile menu's accessible action label must follow its open state.");
+assert.ok(headerSource.includes('menu.open ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"'), "The mobile menu must announce the action appropriate to its current state.");
+assert.ok(headerSource.includes('if (event.key !== "Escape" || !menu.open) return;') && headerSource.includes("menu.open = false;") && headerSource.includes("summary?.focus();"), "Escape must close the open mobile menu and return focus to its trigger.");
+assert.ok(headerSource.includes('menu.querySelectorAll("nav a")') && headerSource.includes('link.addEventListener("click", () => {') && headerSource.includes("menu.open = false;"), "Choosing a mobile navigation link must close the menu.");
+
 const buildInfo = JSON.parse(await readFile(path.join(dist, "build-info.json"), "utf8"));
 assert.equal(buildInfo.application, "cabinet-des-herons", "Build fingerprint must identify this site.");
 assert.equal(buildInfo.formatVersion, 1, "Build fingerprint format must be supported.");
