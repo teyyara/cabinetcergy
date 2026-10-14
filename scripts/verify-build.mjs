@@ -5,6 +5,15 @@ import path from "node:path";
 const dist = path.resolve("dist");
 
 
+
+const headerSource = await readFile(path.resolve("src/components/SiteHeader.astro"), "utf8");
+assert.match(headerSource, /IntersectionObserver/, "The homepage Services navigation must track the visible section.");
+assert.ok(headerSource.includes('rootMargin: "-96px 0px -55% 0px"'), "IntersectionObserver must use supported pixel/percentage rootMargin units.");
+assert.ok(headerSource.includes('href="/#services"'), "Desktop and mobile navigation must both target the homepage Services section.");
+assert.ok(headerSource.includes('link.classList.toggle("is-active", isCurrent)'), "The Services item must track the current visual navigation state.");
+assert.ok(headerSource.includes('link.setAttribute("aria-current", "location")'), "The active Services link must expose its current location accessibly.");
+assert.ok(headerSource.includes('link.removeAttribute("aria-current")'), "The Services link must clear its current location state when the section is no longer active.");
+
 const cssSource = await readFile(path.resolve("src/styles/global.css"), "utf8");
 const getColorToken = (name) => {
   const match = cssSource.match(new RegExp(name + ":\\s*(#[0-9a-fA-F]{6})"));
@@ -58,7 +67,6 @@ assert.ok(loop015Css.includes("flex-wrap: wrap"), "Schedule headings and badges 
 assert.ok(loop015Css.includes("padding: 1.05rem"), "Embed headings must use compact padding on narrow screens.");
 
 // Loop 016 — guard the mobile menu's keyboard and open/closed behavior.
-const headerSource = await readFile(path.resolve("src/components/SiteHeader.astro"), "utf8");
 assert.ok(headerSource.includes('menu.addEventListener("toggle", syncMenuLabel)'), "The mobile menu's accessible action label must follow its open state.");
 assert.ok(headerSource.includes('menu.open ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"'), "The mobile menu must announce the action appropriate to its current state.");
 assert.ok(headerSource.includes('if (event.key !== "Escape" || !menu.open) return;') && headerSource.includes("menu.open = false;") && headerSource.includes("summary?.focus();"), "Escape must close the open mobile menu and return focus to its trigger.");
@@ -189,6 +197,8 @@ const assertExactDestination = (values, expected, description) => {
   );
 };
 
+assert.ok(home.includes('href="/#services"'), "Homepage navigation must retain the Services section link.");
+assert.ok(home.includes('id="services"'), "Homepage must retain the Services section target.");
 assert.match(home, /Cabinet des Hérons/i, "Homepage must include the practice name.");
 assert.match(home, /liste-attente/i, "Homepage must expose the waiting-list path.");
 assert.match(waiting, /Liste d.{0,2}attente/i, "Waiting-list page needs a meaningful title or heading.");

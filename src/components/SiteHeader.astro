@@ -92,4 +92,35 @@ const isCurrentSection = (href: string) =>
       });
     });
   });
+
+  // The Services item is an in-page link, so keep its current-location state in
+  // sync with the section the visitor is actually reading.
+  const serviceSection = document.querySelector<HTMLElement>("#services");
+  const serviceLinks = document.querySelectorAll<HTMLAnchorElement>(
+    '.desktop-nav a[href="/#services"], .mobile-menu nav a[href="/#services"]',
+  );
+
+  const updateServiceNavigation = (isCurrent: boolean) => {
+    serviceLinks.forEach((link) => {
+      link.classList.toggle("is-active", isCurrent);
+      if (isCurrent) {
+        link.setAttribute("aria-current", "location");
+      } else if (link.getAttribute("aria-current") === "location") {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  if (serviceSection && serviceLinks.length > 0 && "IntersectionObserver" in window) {
+    const serviceSectionObserver = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry) updateServiceNavigation(entry.isIntersecting);
+    }, {
+      rootMargin: "-96px 0px -55% 0px",
+      threshold: 0,
+    });
+
+    serviceSectionObserver.observe(serviceSection);
+  }
+
 </script>
