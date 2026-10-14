@@ -123,3 +123,8 @@ The icons are stored directly in the Astro markup and require no remote requests
 ## Mobile navigation and interaction states
 
 Loop 013 adds a more legible open state to the native mobile menu, a restrained close-icon/panel transition, and subtle button press feedback. The mobile waiting-list CTA keeps white text on a dark teal background in hover and keyboard-focus states rather than receiving the generic pale link-hover surface. Reduced-motion preferences disable the new movement. Regression assertions cover these source-level states; final browser acceptance remains pending the owner's manual deployment. No content, integrations, dependencies, or runtime JavaScript were added.
+
+
+## Accessible pricing-table navigation
+
+Loop 014 makes each practitioner pricing-table scroll area keyboard-focusable and exposes it as a named region. Each table includes a visually-hidden caption identifying the tariff table and practitioner. A visible focus ring, scroll positioning and slim scrollbar styling improve navigation on narrower screens when horizontal scrolling is required. Automated checks guard all three table regions and captions. No published prices or other clinic content were changed; live browser review remains pending the owner's manual deployment.
