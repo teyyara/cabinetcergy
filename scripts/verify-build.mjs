@@ -136,13 +136,72 @@ const accessPage = await html("acces/index.html");
 const resources = await html("ressources-utiles/index.html");
 const waiting = await html("liste-attente/index.html");
 
+// Protect the exact operational destinations from accidental URL drift.
+// Astro HTML-escapes ampersands inside attributes; decode only the common
+// attribute entities before comparing URLs, without changing page output.
+const decodeHtmlAttribute = (value) =>
+  value
+    .replace(/&amp;/gi, "&")
+    .replace(/&#38;/gi, "&")
+    .replace(/&#x26;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/gi, "'")
+    .replace(/&#x27;/gi, "'");
+const attributeValues = (markup, tagName, attributeName) =>
+  [...markup.matchAll(new RegExp(`<${tagName}\\b([^>]*)>`, "gi"))]
+    .map((tag) => tag[1].match(new RegExp(`\\b${attributeName}\\s*=\\s*["']([^"']*)["']`, "i"))?.[1])
+    .filter((value) => value !== undefined)
+    .map(decodeHtmlAttribute);
+const assertExactDestination = (values, expected, description) => {
+  assert.ok(
+    values.includes(expected),
+    `${description} must retain its exact approved destination: ${expected}`,
+  );
+};
+
 assert.match(home, /Cabinet des Hérons/i, "Homepage must include the practice name.");
 assert.match(home, /liste-attente/i, "Homepage must expose the waiting-list path.");
-assert.match(accessPage, /!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ/, "The user-supplied Street View panorama must be present.");
-assert.match(resources, /1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/, "The supplied CPAM PDF link must be present.");
-assert.match(resources, /1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/, "The supplied MDPH PDF link must be present.");
-assert.match(waiting, /1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/, "The existing Google Form integration must be preserved.");
 assert.match(waiting, /Liste d.{0,2}attente/i, "Waiting-list page needs a meaningful title or heading.");
+
+const expectedIntegrationUrls = {
+  form: "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform",
+  formEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform?embedded=true",
+  cpamPdf: "https://drive.google.com/file/d/1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/view",
+  mdphPdf: "https://drive.google.com/file/d/1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/view",
+  mapEmbed: "https://maps-api-ssl.google.com/maps?hl=en-US&ll=49.049469%2C2.02295&output=embed&q=49.049538%2C2.022028&z=15",
+  streetViewEmbed: "https://www.google.com/maps/embed?pb=!4v1791825647154!6m8!1m7!1sDsd4mnK4aCy6rATid4JkwQ!2m2!1d49.04966665723625!2d2.022063723216358!3f194.6892389321645!4f-10.290917139043856!5f1.0839813137111003",
+  mapDirections: "https://www.google.com/maps/search/?api=1&query=27+Avenue+des+H%C3%A9rons%2C+95800+Cergy%2C+France",
+  tamis: "https://www.tamis-autisme.org/",
+  telephone: "tel:+33781243098",
+  email: "mailto:edith.fautras@gmail.com",
+};
+
+const homeLinks = attributeValues(home, "a", "href");
+const accessLinks = attributeValues(accessPage, "a", "href");
+const resourceLinks = attributeValues(resources, "a", "href");
+const waitingLinks = attributeValues(waiting, "a", "href");
+
+assertExactDestination(homeLinks, expectedIntegrationUrls.form, "Homepage's existing Google Form link");
+assertExactDestination(waitingLinks, expectedIntegrationUrls.form, "Waiting-list page's existing Google Form link");
+assertExactDestination(resourceLinks, expectedIntegrationUrls.cpamPdf, "CPAM document link");
+assertExactDestination(resourceLinks, expectedIntegrationUrls.mdphPdf, "MDPH document link");
+assertExactDestination(accessLinks, expectedIntegrationUrls.mapDirections, "Google Maps directions link");
+assertExactDestination(resourceLinks, expectedIntegrationUrls.tamis, "Tamis directory link");
+
+const homeFormEmbeds = attributeValues(home, "iframe", "src").filter((value) => value.includes("docs.google.com/forms/"));
+const waitingFormEmbeds = attributeValues(waiting, "iframe", "src").filter((value) => value.includes("docs.google.com/forms/"));
+assert.deepEqual(homeFormEmbeds, [expectedIntegrationUrls.formEmbed], "Homepage must preserve exactly one unchanged embedded Google Form destination.");
+assert.deepEqual(waitingFormEmbeds, [expectedIntegrationUrls.formEmbed], "Waiting-list page must preserve exactly one unchanged embedded Google Form destination.");
+
+const accessEmbedUrls = attributeValues(accessPage, "iframe", "src");
+assertExactDestination(accessEmbedUrls, expectedIntegrationUrls.mapEmbed, "Original Google Maps iframe");
+assertExactDestination(accessEmbedUrls, expectedIntegrationUrls.streetViewEmbed, "User-supplied Google Street View panorama iframe");
+
+for (const [pageName, page] of [["homepage", home], ["access", accessPage], ["resources", resources], ["waiting-list", waiting]]) {
+  const links = attributeValues(page, "a", "href");
+  assertExactDestination(links, expectedIntegrationUrls.telephone, `${pageName} public phone link`);
+  assertExactDestination(links, expectedIntegrationUrls.email, `${pageName} public email link`);
+}
 const groupPage = await html("prise-en-charge-de-groupe/index.html");
 assert.match(groupPage, /aria-current="location"/, "Group-support route must correctly mark its parent Tarifs & groupes navigation item as the current location.");
 
@@ -221,4 +280,4 @@ assert.ok(teamPage.includes('src="/images/jarod-florance.webp"'), "The team page
 assert.ok(teamPage.includes('src="/images/bouhar-obeidi.webp"'), "The team page must show Bouhar Oubeidi’s local portrait.");
 assert.ok(!allHtml.join("\n").includes("sites.google.com/sitesv-images-rt"), "Rendered pages must not depend on Google Sites’ image gateway.");
 
-console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, canonical/Open Graph metadata, sitemap/robots, accessibility semantics and contrast checks, Form, Street View, both PDF destinations and build fingerprint (${buildInfo.commitSha}) are present.`);
+console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, canonical/Open Graph metadata, sitemap/robots, accessibility semantics and contrast checks, exact existing Form/Maps/Street View/PDF/contact destinations, and build fingerprint (${buildInfo.commitSha}) are present.`);
