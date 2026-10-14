@@ -4,13 +4,13 @@
 - **Run ID:** cabinetcergy-2026-10-14-loop-015
 - **Current loop:** LOOP 015 — compact inner-page layouts
 - **Working branch:** `aeos/loop-015-narrow-screen-layouts`
-- **Checkpoint PR:** [PR #16 — compact inner-page layouts](https://github.com/teyyara/cabinetcergy/pull/15)
+- **Checkpoint PR:** [PR #16 — compact inner-page layouts](https://github.com/teyyara/cabinetcergy/pull/16)
 - **Promotion branch:** `main`
 - **Main baseline:** `84e71f24052c3968d7cffe40e554633c3d5cc20c`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–014 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–015 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
 
 ## Loop 015 — compact inner-page layouts
