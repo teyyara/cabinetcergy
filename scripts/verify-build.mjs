@@ -67,7 +67,6 @@ assert.ok(loop015Css.includes("flex-wrap: wrap"), "Schedule headings and badges 
 assert.ok(loop015Css.includes("padding: 1.05rem"), "Embed headings must use compact padding on narrow screens.");
 
 // Loop 016 — guard the mobile menu's keyboard and open/closed behavior.
-const headerSource = await readFile(path.resolve("src/components/SiteHeader.astro"), "utf8");
 assert.ok(headerSource.includes('menu.addEventListener("toggle", syncMenuLabel)'), "The mobile menu's accessible action label must follow its open state.");
 assert.ok(headerSource.includes('menu.open ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"'), "The mobile menu must announce the action appropriate to its current state.");
 assert.ok(headerSource.includes('if (event.key !== "Escape" || !menu.open) return;') && headerSource.includes("menu.open = false;") && headerSource.includes("summary?.focus();"), "Escape must close the open mobile menu and return focus to its trigger.");
