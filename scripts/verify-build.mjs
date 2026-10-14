@@ -7,7 +7,7 @@ const dist = path.resolve("dist");
 
 const cssSource = await readFile(path.resolve("src/styles/global.css"), "utf8");
 const getColorToken = (name) => {
-  const match = cssSource.match(new RegExp(name + ":\\\\s*(#[0-9a-fA-F]{6})"));
+  const match = cssSource.match(new RegExp(name + ":\\s*(#[0-9a-fA-F]{6})"));
   assert.ok(match, `Missing CSS design token ${name}.`);
   return match[1];
 };
