@@ -143,6 +143,8 @@ assert.match(resources, /1msvVUC-UMOAHLfb6ggOwVt2cNfNjnqob/, "The supplied CPAM 
 assert.match(resources, /1w2jvSMQVWMltH1D9XMiW7NSLr6LwlFHj/, "The supplied MDPH PDF link must be present.");
 assert.match(waiting, /1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/, "The existing Google Form integration must be preserved.");
 assert.match(waiting, /Liste d.{0,2}attente/i, "Waiting-list page needs a meaningful title or heading.");
+const groupPage = await html("prise-en-charge-de-groupe/index.html");
+assert.match(groupPage, /aria-current="location"/, "Group-support route must correctly mark its parent Tarifs & groupes navigation item as the current location.");
 
 const allHtml = await Promise.all(routeFiles.map(html));
 for (const [index, page] of allHtml.entries()) {
