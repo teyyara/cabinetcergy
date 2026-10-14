@@ -85,3 +85,10 @@ The migration deliberately excludes diploma/certificate scans and child-activity
 ## Search discovery and canonical URLs
 
 The build emits `/robots.txt` and `/sitemap.xml`. Canonical and Open Graph URL metadata point at the stable public hostname, and the legacy `/accueil/` and short `/questions/` aliases are marked `noindex` and canonicalized to their primary content routes. The custom 404 page is also marked `noindex`.
+
+
+## Accessibility and content QA gate
+
+The static verifier checks every generated route for one H1, one main landmark, image `alt` attributes, titled iframes, detectable link names, safe `rel=noopener` values for new-tab links, heading-level progression, and contrast ratios for key text/design-token pairs. These are automated regression checks, not a substitute for manual keyboard, screen-reader, visual or professional content approval.
+
+For healthcare/business content, verify current fees, group schedules, practitioner information, availability notices and the exact PDF contents with the cabinet owner. Do not change the operational Google Form, submit test data or copy responses.
