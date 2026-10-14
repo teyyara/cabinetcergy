@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-010",
+  "run_id": "cabinetcergy-2026-10-14-loop-011",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-010-visual-design-polish"
+    "current_working_branch": "aeos/loop-011-inner-page-design"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -134,6 +134,13 @@
       "state": "IMPLEMENTED_BUILD_PENDING",
       "requirement": "Improve the public website's visual design, information hierarchy, responsiveness and interaction polish without altering clinical/business content or existing integrations.",
       "implementation": "Loop 010 adds a responsive editorial CSS refinement to the shared design system: home hero, brand/navigation, contact strip, section rhythm, cards, staff portraits, page intros, resource/FAQ/table panels and footer. Lightweight transitions honor prefers-reduced-motion; no new JavaScript, dependencies, external assets, or data storage are introduced. Full runtime visual acceptance remains pending."
+    },
+    {
+      "id": "CR-009",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_BUILD_PENDING",
+      "requirement": "Improve the visual quality and responsive presentation of inner informational pages without changing source-approved healthcare/business content or external integrations.",
+      "implementation": "Loop 011 adds CSS-only refinement for PageIntro, editorial prose, pricing tables, group schedule cards, service-domain cards, practitioner-profile layouts, gallery panels, resource cards, FAQ details, map/embed headings and small-print rhythm. Practitioner profiles collapse into compact portrait/name headers on narrow mobile. Content values and external destinations unchanged; CI and later owner visual acceptance remain separate gates."
     }
   ],
   "validation_evidence": {
@@ -152,6 +159,7 @@
     "loop_008_pr": 9,
     "accessibility": "PR #9: automated semantic/contrast checks and parent-section navigation fix; manual screen-reader and complete WCAG audit remain outstanding.",
     "loop_009": "Exact operational destination guards added to the static build verifier on aeos/loop-009-exact-integration-guards; see Loop 009 pull-request Actions for CI outcome. Production remains unverified until the owner deploys.",
-    "loop_010": "Responsive CSS design refinement committed on aeos/loop-010-visual-design-polish. CI and static verifier on PR #11 are required. No production deploy or post-change browser acceptance has been performed."
+    "loop_010": "Responsive CSS design refinement committed on aeos/loop-010-visual-design-polish. CI and static verifier on PR #11 are required. No production deploy or post-change browser acceptance has been performed.",
+    "loop_011": "Inner-page visual refinement committed on aeos/loop-011-inner-page-design. PR #12 build and static verification required before merge. Runtime visual review remains pending; no deployment has been initiated."
   }
 }
