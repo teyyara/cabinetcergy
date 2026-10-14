@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-022",
+  "run_id": "cabinetcergy-2026-10-14-loop-023",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-022-quiet-contact-links"
+    "current_working_branch": "aeos/loop-023-status-sync"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -218,6 +218,13 @@
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Remove accidental default underlines from standalone contact links in visitor-facing cards/strips and normalize waiting-list contact detail spacing without hiding interactive affordances or changing destinations.",
       "implementation": "Loop 022 adds a shared contact-link class to homepage phone/email links, pricing-callout telephone link and waiting-list help-card phone/email links. Links are quiet at rest and underline on hover/keyboard focus. Waiting-list contact details use a dedicated grid instead of a manual line break. The verifier checks styling and all three placements. Exact tel/mailto destinations and paragraph-level link styling remain preserved. PR #32 head eadd9a4a5d31c3f1a59029fc522e08e54ddf7c7c passed Actions run 38635199552; merge commit 713a50566575834363393c2f3fa35f034fb75d34 passed main run 38635353590. No deployment or browser visual QA initiated."
+    },
+    {
+      "id": "CR-021",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
+      "requirement": "Align homepage service-card action links consistently despite uneven copy lengths without changing public content or destinations.",
+      "implementation": "Loop 023 sets .cards-grid direct cards to vertical flex layout and their direct .text-link actions to margin-top:auto with responsive padding. Static verifier checks these rules. PR #34 final head e9ba5112be8d84b7aef3997404714e857f019ba7 passed run 38636516595; merged as a54eb81a28257bded1cc6c2be38e4d0a9abd5984; main run 38636673583 passed. No browser QA or Vercel deployment initiated."
     }
   ],
   "validation_evidence": {
@@ -248,6 +255,7 @@
     "loop_019": "PR #26 (https://github.com/teyyara/cabinetcergy/pull/26) final head a05184e53bf9491405555f86f3f4194f4e4b9947; Actions run 38629848669 PASS: dependency installation, Astro static build, route/integration verifier. Initial run 38629675502 exposed a duplicate const in scripts/verify-build.mjs and failed verifier; duplicate declaration removed before final run. Main merge commit 1a5f87ff84e2bb111aff771cf2d70916019a5112; main Actions run 38630043007 PASS. Homepage Services section current-state logic is implemented for desktop/mobile; no browser interaction QA or Vercel deployment initiated; owner-managed deployment and runtime acceptance remain pending.",
     "loop_020": "PR #28 https://github.com/teyyara/cabinetcergy/pull/28 final head 4fa621932a9a772efb124411fcfce228c069107c; Actions run 38631475971 PASS (dependency install, Astro static build, route/integration/accessibility verifier). Main merge commit 6c83b63f4a5b51589754376267e596da0b1f4852; post-merge Actions run 38631652346 PASS. Both homepage named generic containers now use role=group; regression guard checks labels against semantic roles. Visual and screen-reader QA not run; no Vercel deployment initiated.",
     "loop_021": "PR #30 https://github.com/teyyara/cabinetcergy/pull/30 final head 2fbfe587aa9b664329bc6d7b1e4ff5cd6d69ef53; Actions run 38633696207 PASS: dependency installation, Astro static build, and route/integration verifier. Main merge commit 38a42fd2caba162d3573624f451c62bf76110f95; post-merge main run 38633853515 PASS. Source-level checks confirm tighter responsive section spacing, footer links un-underlined at rest but underlined on hover/focus, consistent stacked footer links, and map/Street View captions without nested cards. Visual browser QA not run; no Vercel deployment initiated.",
-    "loop_022": "PR #32 https://github.com/teyyara/cabinetcergy/pull/32 final head eadd9a4a5d31c3f1a59029fc522e08e54ddf7c7c; Actions run 38635199552 PASS: dependency installation, Astro static build, route/integration verifier. Merged to main as 713a50566575834363393c2f3fa35f034fb75d34; post-merge main run 38635353590 PASS. Static source/output guards cover no-underline-at-rest, hover/focus underline, consistent waiting-list contact spacing, and homepage/pricing/waiting-list link use. No Vercel deployment or browser QA initiated."
+    "loop_022": "PR #32 https://github.com/teyyara/cabinetcergy/pull/32 final head eadd9a4a5d31c3f1a59029fc522e08e54ddf7c7c; Actions run 38635199552 PASS: dependency installation, Astro static build, route/integration verifier. Merged to main as 713a50566575834363393c2f3fa35f034fb75d34; post-merge main run 38635353590 PASS. Static source/output guards cover no-underline-at-rest, hover/focus underline, consistent waiting-list contact spacing, and homepage/pricing/waiting-list link use. No Vercel deployment or browser QA initiated.",
+    "loop_023": "PR #34 https://github.com/teyyara/cabinetcergy/pull/34 final head e9ba5112be8d84b7aef3997404714e857f019ba7; Actions run 38636516595 PASS. Merged to main as a54eb81a28257bded1cc6c2be38e4d0a9abd5984; post-merge main run 38636673583 PASS. Service-card action alignment has static regression guards. No deployment/browser QA initiated."
   }
 }
