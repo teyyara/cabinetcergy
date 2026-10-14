@@ -49,6 +49,10 @@ A successful build or deployment does **not** replace real-browser QA. The 2026-
 
 A copy review removed internal migration commentary such as “le site source indique” and technical explanations about replacing the original map image from visitor-facing sections. The information is now phrased for families while preserving the cabinet-attributed clinical guidance and operational details. Published fees, schedules, transit routes, contact links, the existing Google Form and third-party embed URLs remain unchanged. Caveats remain where reimbursement terms or transit timings have not been independently verified. The build verifier guards against those migration-only phrases returning to the generated pages.
 
+## Resource-page clarity and FAQ deduplication (Loop 018)
+
+The Resources page now prioritizes its two administrative documents and other useful links, replacing a repeated ten-question accordion with a compact callout to the dedicated Questions page. All ten questions remain available at `/ressources-utiles/questions/`. The Google Drive links, Tamis destination, contact destinations and form behavior remain unchanged. The public copy no longer describes the Drive links as a migration workaround or notes that PDFs were not inspected during an implementation step. Build verification guards the FAQ count, the link to the full FAQ and the removal of those internal audit notes.
+
 ## Non-negotiable constraints
 
 - Zero paid dependencies and no paid deployment features.
