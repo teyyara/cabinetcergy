@@ -159,7 +159,7 @@
     {
       "id": "CR-012",
       "date": "2026-10-14",
-      "state": "IMPLEMENTED_CI_PENDING",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Make practitioner pricing tables easier to navigate with keyboard and assistive technologies, especially when horizontal scrolling is needed on narrow screens, without changing published rates or clinic wording.",
       "implementation": "Loop 014 gives each practitioner's existing pricing-table scroll wrapper role=region, tabindex=0, and a descriptive accessible name; each table also has a visually-hidden caption. CSS adds a clearly visible keyboard-focus outline and compact scrollbar styling. The build verifier checks all three tables and their accessibility attributes."
     }
