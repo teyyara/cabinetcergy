@@ -13,6 +13,9 @@ const links = [
   { label: "Ressources", href: "/ressources-utiles/" },
 ];
 const logoUrl = "/images/cabinet-des-herons-logo.webp";
+const isCurrentPage = (href: string) => currentPath === href;
+const isCurrentSection = (href: string) =>
+  currentPath === "/prise-en-charge-de-groupe/" && href === "/prestations/";
 ---
 <header class="site-header">
   <div class="header-inner container">
@@ -36,8 +39,8 @@ const logoUrl = "/images/cabinet-des-herons-logo.webp";
       {links.map((link) => (
         <a
           href={link.href}
-          class:list={["nav-link", currentPath === link.href ? "is-active" : ""]}
-          aria-current={currentPath === link.href ? "page" : undefined}
+          class:list={["nav-link", isCurrentPage(link.href) || isCurrentSection(link.href) ? "is-active" : ""]}
+          aria-current={isCurrentPage(link.href) ? "page" : isCurrentSection(link.href) ? "location" : undefined}
         >{link.label}</a>
       ))}
     </nav>
@@ -52,7 +55,7 @@ const logoUrl = "/images/cabinet-des-herons-logo.webp";
       </summary>
       <nav aria-label="Navigation mobile">
         {links.map((link) => (
-          <a href={link.href}>{link.label}</a>
+          <a href={link.href} class:list={[isCurrentPage(link.href) || isCurrentSection(link.href) ? "is-active" : ""]} aria-current={isCurrentPage(link.href) ? "page" : isCurrentSection(link.href) ? "location" : undefined}>{link.label}</a>
         ))}
         <a class="mobile-menu-cta" href="/liste-attente/">Accéder à la liste d’attente ↗</a>
       </nav>

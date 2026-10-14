@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-007",
+  "run_id": "cabinetcergy-2026-10-14-loop-008",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "main"
+    "current_working_branch": "aeos/loop-008-a11y-content-verification"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -62,7 +62,7 @@
     "framework": "astro",
     "node_version": "24.x",
     "target": "production",
-    "latest_state": "PUBLIC_RUNTIME_VERIFIED_BEFORE_LOOP_007",
+    "latest_state": "PUBLIC_RUNTIME_VERIFIED_BEFORE_LOOP_008",
     "git_branch": "main",
     "git_sha": "7153f320dfd0533b2dfd04bc06d06319a94ca56b",
     "stable_domain": "cabinetcergy.vercel.app",
@@ -113,6 +113,13 @@
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Improve crawl discovery and prevent duplicate alias routes from competing in search engines.",
       "implementation": "Loop 007 adds a static sitemap.xml and robots.txt, canonical and Open Graph URL metadata, and noindex on duplicate aliases and the custom 404. Build checks validate the metadata and exact sitemap membership."
+    },
+    {
+      "id": "CR-006",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_CI_PENDING",
+      "requirement": "Strengthen accessibility regression tests and improve contrast/navigation semantics.",
+      "implementation": "Loop 008 darkens --teal-deep to #3c7173 and checks 4.5:1 text contrast against key light surfaces. Static build validation checks H1/main count, image alt attributes, iframe titles, anchor names, noopener for target=_blank, heading progression, and group-page parent-navigation semantics."
     }
   ],
   "validation_evidence": {
@@ -127,6 +134,8 @@
     "loop_007_pr": 8,
     "loop_007_ci_run_id": 38595897029,
     "loop_007_ci_conclusion": "success",
-    "accessibility_contrast": "Muted text token updated from #657b7e to #566b6f; static CI verifier now enforces >=4.5:1 against --paper and white backgrounds."
+    "accessibility_contrast": "Muted text token updated from #657b7e to #566b6f; static CI verifier now enforces >=4.5:1 against --paper and white backgrounds.",
+    "loop_008_pr": 9,
+    "accessibility": "PR #9: automated semantic/contrast checks and parent-section navigation fix; manual screen-reader and complete WCAG audit remain outstanding."
   }
 }
