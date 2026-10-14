@@ -21,6 +21,14 @@
 - **Validation gate:** the GitHub Actions workflow on the Loop 009 pull request must pass before merge. The PR's check results are the authoritative CI evidence.
 - **Production state:** no production browser check or deployment was initiated for this loop. The owner remains responsible for Vercel deployment.
 
+## Loop 009 — exact integration destination guards
+
+- Strengthened `scripts/verify-build.mjs` to compare actual generated HTML attribute values against exact approved destinations, normalizing only common HTML attribute entities before comparison.
+- Protects the existing Google Form responder and embed URLs on the homepage and waiting-list page; the exact CPAM and MDPH Drive viewer URLs; the original Google Maps iframe URL and user-supplied full Street View panorama URL; the Google Maps directions link; the Tamis directory link; and the public telephone/email links on key routes.
+- This is a regression guard only: it does not submit the Form, access responses, change supplied destinations, or assert that third-party documents contain the expected material.
+- **Validation gate:** the GitHub Actions workflow on the Loop 009 pull request must pass before merge. The PR's check results are the authoritative CI evidence.
+- **Production state:** no production browser check or deployment was initiated for this loop. The owner remains responsible for Vercel deployment.
+
 ## Loop 008 — changes in PR #9
 
 - Rechecked public source content for the fees, group schedule, FAQ, psychomotricity, psychoeducation, cabinet and access pages. The fee values and four group schedules currently represented match the content surfaced in the existing source audit. No prices or clinical claims were changed.
