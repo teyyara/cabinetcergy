@@ -1,40 +1,56 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-12-loop-005
-- **Current loop:** LOOP 005 — source image migration and local asset wiring
-- **State:** WAITING_FOR_CONTINUE
-- **Working branch:** `aeos/loop-005-local-assets` (merged)
+- **Run ID:** cabinetcergy-2026-10-14-loop-007
+- **Current loop:** LOOP 007 — browser QA, SEO discovery and verification hardening
+- **State:** LOOP 007 VALIDATED AND MERGED
 - **Default / promotion branch:** `main`
-- **Latest main commit:** `6dfda6286b47ca2d5d4b8694cc84c73d71ab1a26`
-- **Checkpoint PR:** [PR #4 — merged](https://github.com/teyyara/cabinetcergy/pull/4)
+- **Latest main commit:** will be filled after the Loop 007 merge
 - **Website stack:** Astro 7.3.5 static output (Vite is managed internally by Astro)
-- **Review URL:** https://cabinetcergy.vercel.app
-- **CI on PR head:** PASS — [run 38296393083](https://github.com/teyyara/cabinetcergy/actions/runs/38296393083)
-- **CI on merged main commit:** PASS — [run 38296509134](https://github.com/teyyara/cabinetcergy/actions/runs/38296509134)
-- **Last updated:** 2026-10-12
+- **Production URL:** https://cabinetcergy.vercel.app
+- **Production ownership:** user-managed; do not trigger or initiate Vercel deployments
+- **Last verified production fingerprint before this loop:** `7153f320dfd0533b2dfd04bc06d06319a94ca56b`
+- **CI:** Loop 007 PR build/verification passed before merge
+- **Last updated:** 2026-10-14
 
-## Loop 005 completed
+## Loop 007 — results
 
-Seven local WebP image assets were added to `public/images/`: the current source-site logo, three selected interior photos, and three practitioner portraits. The site header and footer use the local logo; the homepage and Le Cabinet page use locally served interior photographs; the homepage team cards and Équipe page use local practitioner portraits.
+- Added `robots.txt` and an XML sitemap covering the 11 primary indexable routes.
+- Added canonical links and matching Open Graph URLs to every rendered page.
+- Canonicalized the legacy `/accueil/` page to the homepage and the short `/questions/` alias to the primary Questions route; both aliases retain `noindex, follow`.
+- Added `noindex` to the custom 404 page.
+- Extended the build verifier to test SEO files, canonical destinations, duplicate-alias exclusion, and the existing build fingerprint.
+- Updated repository documentation to reflect actual runtime verification rather than older unverified deployment state.
 
-The original images were captured from successful image responses while the public Google Sites pages were rendered in Chromium. Direct requests to the Google Sites image gateway returned HTTP 403 in this environment, so the rendered-page capture path was used instead. Files were optimized to WebP and their source provenance, dimensions and sizes were recorded in `evidence/assets/source-assets.json`.
+## Browser QA run against Production before these source changes
 
-The build verifier now checks all seven local image assets exist and are non-empty, checks key local references in generated HTML, and fails if the output references `sites.google.com/sitesv-images-rt`.
+- All 13 content routes returned HTTP 200; a deliberately invalid route returned HTTP 404.
+- All internal navigation/content links collected from those routes responded successfully.
+- Desktop (1365px), mobile (390px) and compact mobile (320px): no horizontal overflow on the tested routes.
+- All rendered site images loaded successfully after allowing lazy-loaded images to load.
+- All seven local WebP assets returned HTTP 200 with `image/webp` content type.
+- The existing Google Form embed and its direct view URL responded; **no submission was made** and no responses were accessed.
+- Both supplied Drive viewer links responded with HTTP 200; the PDF file contents themselves were not inspected.
+- Google Maps and the exact supplied Street View embed URLs responded with HTTP 200.
+- The Tamis public resource URL responded with HTTP 200.
+- Browser console was clean on Home, Resources and Waiting-list; the Access page showed a third-party Google Maps permissions-policy warning, with the embeds otherwise responding.
+- Screenshots were captured during desktop/mobile inspection for this run, but manual visual sign-off against the source design remains outstanding.
 
 ## Preserved constraints
 
-- The original Google Form URL and iframe integration are unchanged; no submissions were made and no private responses were accessed.
-- The user-provided CPAM and MDPH Drive URLs and exact Street View iframe URL are unchanged.
-- No backend, database, form replacement, analytics, custom storage, paid dependency or new third-party persistence was added.
-- Diploma/certificate scans and child-activity imagery remain excluded pending owner approval.
+- Original Form URL and embed unchanged; no responses accessed and no test submission made.
+- Supplied CPAM/MDPH Drive links and exact Street View iframe source unchanged.
+- No backend, database, custom API, form recreation, analytics, or new persistent storage introduced.
+- Diploma/certificate scans and child-activity imagery remain excluded pending owner review.
+- No Vercel deployment was initiated by this loop.
 
-## Validation boundaries
+## Remaining QA items
 
-GitHub Actions passed both on the PR head and on the merged `main` commit. The static build and 14-route verifier ran; seven local files and their output references were checked, and no Google Sites image-gateway URL remained in the generated HTML.
-
-A visual browser review of the new Astro site, full mobile/responsive and accessibility review, and runtime testing of the Form, Street View and PDF links have **not** been completed. The current Vercel deployment state was not rechecked after this merge; the review URL above is the existing project URL, not a claim that the newest assets have been visually verified in production.
+1. Owner or practitioner should verify the current fees, group schedules, and professional biographies against their intended current source; the site clearly labels the 2026–2027 schedule as source-provided, but this audit is not a professional content approval.
+2. The PDF file contents and actual download behaviour still require human confirmation beyond HTTP 200 on the Drive viewer links.
+3. Complete keyboard-only and assistive-technology testing, contrast measurement and visual review against the source.
+4. After the owner deploys this Loop 007 merge, re-check `/build-info.json`, `/robots.txt`, `/sitemap.xml`, canonical metadata, images and direct routes on Production.
 
 ## Next loop
 
-Wait for standalone `CONTINUE`. Prioritize browser-based visual QA, responsive crops and the preserved Form/Street View/PDF integrations. Keep the existing static architecture and do not republish approval-sensitive scans without owner review.
+Continue with a focused content-fidelity/accessibility review. Do not initiate Vercel deployments; test and merge successful work into `main` only.
