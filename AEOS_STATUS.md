@@ -1,17 +1,25 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-014
-- **Current loop:** LOOP 014 — accessible pricing table navigation
-- **Working branch:** `aeos/loop-014-accessible-pricing-tables`
-- **Checkpoint PR:** [PR #15 — accessible pricing table navigation](https://github.com/teyyara/cabinetcergy/pull/15)
+- **Run ID:** cabinetcergy-2026-10-14-loop-015
+- **Current loop:** LOOP 015 — compact inner-page layouts
+- **Working branch:** `aeos/loop-015-narrow-screen-layouts`
+- **Checkpoint PR:** [PR #16 — compact inner-page layouts](https://github.com/teyyara/cabinetcergy/pull/15)
 - **Promotion branch:** `main`
-- **Main baseline:** `9ee3cb600f560e83551361c2138b6cbbc0cbc1be`
+- **Main baseline:** `84e71f24052c3968d7cffe40e554633c3d5cc20c`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
 - **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–014 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 015 — compact inner-page layouts
+
+- Tuned narrow-screen layouts for resource cards so the action link sits below the title and description rather than competing for the same horizontal space.
+- Allowed schedule heading/badge combinations to wrap cleanly, reduced embed-heading padding, stacked section-heading content, and guarded long contact/notice text against overflow at widths of 420px and below.
+- Added static regression assertions for the responsive rules. This is CSS-only; no wording, clinic details, prices, URLs, forms, dependencies, JavaScript or external services changed.
+- **Validation:** GitHub Actions build/static verification is the merge gate; browser visual acceptance remains unverified until the owner manually deploys.
+- **Production:** no Vercel deployment, retry or promotion was initiated.
 
 ## Loop 014 — accessible pricing table navigation
 
