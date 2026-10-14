@@ -414,5 +414,5 @@ console.log(`Build verification passed: ${routeFiles.length} static routes, ${lo
 
 // Loop 023 — service-card links align despite different paragraph lengths.
 const globalCss = cssSource;
-assert.match(globalCss, /\.cards-grid\s*>\s*\.card\s*\{[^}]*display:\s*flex;[^}]*flex-direction:\s*column;/s, "Service cards must use a vertical flex layout so actions can align consistently.");
-assert.match(globalCss, /\.cards-grid\s*>\s*\.card\s*>\s*\.text-link\s*\{[^}]*margin-top:\s*auto;/s, "Service-card action links must sit at the bottom of cards with different copy lengths.");
+assert.match(globalCss, /\.cards-grid\s*>\s*\.card\s*\{[^}]*display:\s*flex;[^}]*flex-direction:\s*column;[^}]*align-items:\s*stretch;/s, "Service cards must keep child copy stretched to the full available card width.");
+assert.match(globalCss, /\.cards-grid\s*>\s*\.card\s*>\s*\.text-link\s*\{[^}]*align-self:\s*flex-start;[^}]*margin-top:\s*auto;/s, "Service-card action links must sit at the bottom and remain left-aligned.");
