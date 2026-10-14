@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-012",
+  "run_id": "cabinetcergy-2026-10-14-loop-013",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-012-consistent-iconography"
+    "current_working_branch": "aeos/loop-013-mobile-interaction-polish"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -148,6 +148,13 @@
       "state": "IMPLEMENTED_BUILD_PENDING",
       "requirement": "Refine visual consistency and information scent by replacing mismatched Unicode glyphs with coherent decorative iconography, without adding remote dependencies or changing site content.",
       "implementation": "Loop 012 replaces homepage service/info card glyphs and contact-strip symbols plus Accès-page facility glyphs with purpose-drawn inline SVG line icons. CSS enforces shared stroke geometry and responsive sizing. The contact strip now uses a phone handset for the public phone link rather than a generic outbound arrow. Icons remain decorative under aria-hidden wrappers; words, URLs and business content remain unchanged."
+    },
+    {
+      "id": "CR-011",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_CI_PENDING",
+      "requirement": "Improve mobile navigation feedback and interaction-state clarity without changing page content, clinic information, or existing destinations.",
+      "implementation": "Loop 013 adds CSS-only open/closed feedback for the native mobile menu, a restrained menu-reveal and icon transition, pressed-state feedback for buttons, and reduced-motion handling. It corrects the mobile waiting-list CTA hover/focus treatment so white text remains on a dark teal surface instead of inheriting the generic pale-link hover background. Static verification guards these states; production visual acceptance remains gated by the owner's manual deployment."
     }
   ],
   "validation_evidence": {
@@ -168,6 +175,7 @@
     "loop_009": "Exact operational destination guards added to the static build verifier on aeos/loop-009-exact-integration-guards; see Loop 009 pull-request Actions for CI outcome. Production remains unverified until the owner deploys.",
     "loop_010": "Responsive CSS design refinement committed on aeos/loop-010-visual-design-polish. CI and static verifier on PR #11 are required. No production deploy or post-change browser acceptance has been performed.",
     "loop_011": "Inner-page visual refinement committed on aeos/loop-011-inner-page-design. PR #12 build and static verification required before merge. Runtime visual review remains pending; no deployment has been initiated.",
-    "loop_012": "Consistent inline SVG line-icon treatment committed on aeos/loop-012-consistent-iconography. PR #13 GitHub Actions build/static verification is the merge gate; post-deploy visual acceptance remains pending. No deployment initiated."
+    "loop_012": "Consistent inline SVG line-icon treatment committed on aeos/loop-012-consistent-iconography. PR #13 GitHub Actions build/static verification is the merge gate; post-deploy visual acceptance remains pending. No deployment initiated.",
+    "loop_013": "Responsive mobile navigation CSS and regression assertions are implemented on aeos/loop-013-mobile-interaction-polish. The pull-request GitHub Actions build/static verifier must pass before merge. No content or URLs changed, no dependency or JavaScript added, and no Vercel deployment initiated. Production visual acceptance remains pending."
   }
 }

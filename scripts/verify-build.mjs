@@ -34,6 +34,19 @@ assert.ok(contrastRatio(tealDeepColor, tealPaleColor) >= 4.5, "Teal text/link co
 assert.ok(contrastRatio(tealDeepColor, paperColor) >= 4.5, "Teal text/link colour must meet WCAG AA contrast on paper.");
 assert.ok(contrastRatio(tealDeepColor, "#ffffff") >= 4.5, "Teal text/link colour must meet WCAG AA contrast on white.");
 
+// Loop 013 — guard the mobile menu's visible state, reduced-motion behavior,
+// and high-contrast waiting-list CTA interaction states.
+const loop013Css = cssSource.split("/* Loop 013 — responsive navigation interaction polish */")[1] ?? "";
+assert.ok(loop013Css.length > 0, "Loop 013 mobile navigation styles must be present.");
+assert.match(loop013Css, /\.mobile-menu\[open\]\s*>\s*summary\s*\{/, "The mobile menu must visually distinguish its open state.");
+assert.match(loop013Css, /\.mobile-menu\[open\] \.menu-lines i:nth-child\(1\)/, "The menu icon must respond to the open state.");
+assert.match(loop013Css, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.mobile-menu nav\s*\{\s*animation:\s*none;/, "The mobile menu reveal must respect reduced-motion preferences.");
+const mobileMenuCtaStateRule = loop013Css.match(/\.mobile-menu nav \.mobile-menu-cta:hover,\s*\.mobile-menu nav \.mobile-menu-cta:focus-visible\s*\{([^}]*)\}/);
+assert.ok(mobileMenuCtaStateRule, "The waiting-list CTA must define explicit hover and keyboard-focus states.");
+assert.match(mobileMenuCtaStateRule[1], /color:\s*var\(--white\)/, "The waiting-list CTA must retain high-contrast white text while active.");
+assert.match(mobileMenuCtaStateRule[1], /background:\s*var\(--teal-deep\)/, "The waiting-list CTA must use deep teal instead of the generic pale hover surface.");
+
+
 
 const buildInfo = JSON.parse(await readFile(path.join(dist, "build-info.json"), "utf8"));
 assert.equal(buildInfo.application, "cabinet-des-herons", "Build fingerprint must identify this site.");
