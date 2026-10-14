@@ -1,17 +1,27 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-013
-- **Current loop:** LOOP 013 — responsive navigation interaction polish
-- **Working branch:** `aeos/loop-013-mobile-interaction-polish`
-- **Checkpoint PR:** [PR #14 — mobile navigation interaction polish](https://github.com/teyyara/cabinetcergy/pull/14)
+- **Run ID:** cabinetcergy-2026-10-14-loop-014
+- **Current loop:** LOOP 014 — accessible pricing table navigation
+- **Working branch:** `aeos/loop-014-accessible-pricing-tables`
+- **Checkpoint PR:** [PR #15 — accessible pricing table navigation](https://github.com/teyyara/cabinetcergy/pull/15)
 - **Promotion branch:** `main`
-- **Main baseline:** `0546b500bba17088fa0b2a88b862023bd369896a`
+- **Main baseline:** `9ee3cb600f560e83551361c2138b6cbbc0cbc1be`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–013 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–014 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 014 — accessible pricing table navigation
+
+- Made each of the three practitioner pricing-table wrappers keyboard-focusable and gave it a named `region` role so users navigating with a keyboard can reach the horizontal scroll container on narrow screens.
+- Added a visually-hidden caption inside each table that names its purpose and practitioner, without changing visible copy or any rates.
+- Added a visible keyboard-focus outline, scroll-margin, and compact scrollbar styling where browsers display scrollbars.
+- Extended `scripts/verify-build.mjs` to assert that all three pricing tables remain present and expose the expected region role, tab stop, accessible name, hidden caption, and focus treatment.
+- No fees, practitioner names, service labels, schedules, links, forms, external integrations, dependencies, or JavaScript changed.
+- **Validation:** PR GitHub Actions build/static verification is the merge gate; responsive keyboard/browser visual review remains unverified until the owner deploys and checks it.
+- **Production:** no Vercel deployment, retry or promotion was initiated.
 
 ## Loop 013 — responsive navigation interaction polish
 
