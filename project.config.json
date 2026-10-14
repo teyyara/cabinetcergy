@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-019",
+  "run_id": "cabinetcergy-2026-10-14-loop-020",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-019-services-nav-state"
+    "current_working_branch": "aeos/loop-020-labelled-groups"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -197,6 +197,13 @@
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Keep the homepage Services navigation item synchronized with the current visible section on desktop and mobile, including coherent visual and accessible current-location state.",
       "implementation": "Loop 019 adds an IntersectionObserver to the existing header, synchronizing both desktop and mobile “Les services” links with the visible #services section through is-active and aria-current=\"location\", and clearing the state when the section leaves the active region. It uses supported pixel/percentage rootMargin units. The static verifier checks the source behavior, units, and rendered link/target pair. First verifier run 38629675502 failed because headerSource was declared twice in the verifier; repaired on the same PR. Final PR #26 run 38629848669 passed build and route/integration verification on a05184e53bf9491405555f86f3f4194f4e4b9947. Main push run 38630043007 passed on 1a5f87ff84e2bb111aff771cf2d70916019a5112; PR #26 merged to main. No public content/integration destination changed and no Vercel deployment was initiated. Browser acceptance remains pending owner-managed deployment."
+    },
+    {
+      "id": "CR-018",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
+      "requirement": "Make homepage photo-gallery and practical contact-strip accessible labels meaningful to assistive technology by adding name-permitting grouping semantics and guarding the pattern in generated HTML.",
+      "implementation": "Loop 020 adds role=\"group\" to the homepage .hero-visual and .trust-strip containers while preserving their aria-labels and all visual presentation. The generated-HTML verifier explicitly checks both named groups and generally guards div/span aria-label usage against generic, none, and presentation roles. PR #28 final head 4fa621932a9a772efb124411fcfce228c069107c passed GitHub Actions run 38631475971; merged to main as 6c83b63f4a5b51589754376267e596da0b1f4852 and post-merge run 38631652346 passed. No public facts/links or external integration changed; no Vercel deployment initiated. Browser/screen-reader acceptance remains pending owner-managed deployment."
     }
   ],
   "validation_evidence": {
@@ -224,6 +231,7 @@
     "loop_016": "GitHub Actions run #58 (38623015583) completed successfully on PR #18's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #18 merged to main as 82afde0b4c2a718af39a8ba99fce3b58cbe69313. Live visual and keyboard acceptance remains pending manual deployment; no Vercel deployment initiated.",
     "loop_017": "GitHub Actions run 38624739343 (https://github.com/teyyara/cabinetcergy/actions/runs/38624739343) completed successfully on final PR #21 head a8038e69bc581cc2b3443eed84a4eccab6de139e: dependency installation, Astro static build, and route/integration regression verification all passed. PR #21 merged to main as bae8024e8308806991823fdb5059560a2bc49e75. Visitor-facing copy cleaned across 11 public content/component files, with a generated-HTML regression guard. Existing clinic facts, costs, schedules, maps/forms/contact and external links preserved. No Vercel deployment initiated; post-merge live visual acceptance awaits manual deployment.",
     "loop_018": "GitHub Actions run 38628378188 (https://github.com/teyyara/cabinetcergy/actions/runs/38628378188) completed successfully on final PR #24 head 71ee7ce409d9c294d157466acbaf696e265ae4be: dependency installation, Astro static build, and route/integration regression verification all passed. PR #24 merged to main as 69f1fc2cb5ea5820fdadcfa467e6f7d030143432. Resources page no longer duplicates the ten-item FAQ; FAQ destination and all ten answers remain; internal Google Drive migration/audit note removed; external operational destinations preserved. No Vercel deployment initiated; live acceptance awaits owner-managed deployment.",
-    "loop_019": "PR #26 (https://github.com/teyyara/cabinetcergy/pull/26) final head a05184e53bf9491405555f86f3f4194f4e4b9947; Actions run 38629848669 PASS: dependency installation, Astro static build, route/integration verifier. Initial run 38629675502 exposed a duplicate const in scripts/verify-build.mjs and failed verifier; duplicate declaration removed before final run. Main merge commit 1a5f87ff84e2bb111aff771cf2d70916019a5112; main Actions run 38630043007 PASS. Homepage Services section current-state logic is implemented for desktop/mobile; no browser interaction QA or Vercel deployment initiated; owner-managed deployment and runtime acceptance remain pending."
+    "loop_019": "PR #26 (https://github.com/teyyara/cabinetcergy/pull/26) final head a05184e53bf9491405555f86f3f4194f4e4b9947; Actions run 38629848669 PASS: dependency installation, Astro static build, route/integration verifier. Initial run 38629675502 exposed a duplicate const in scripts/verify-build.mjs and failed verifier; duplicate declaration removed before final run. Main merge commit 1a5f87ff84e2bb111aff771cf2d70916019a5112; main Actions run 38630043007 PASS. Homepage Services section current-state logic is implemented for desktop/mobile; no browser interaction QA or Vercel deployment initiated; owner-managed deployment and runtime acceptance remain pending.",
+    "loop_020": "PR #28 https://github.com/teyyara/cabinetcergy/pull/28 final head 4fa621932a9a772efb124411fcfce228c069107c; Actions run 38631475971 PASS (dependency install, Astro static build, route/integration/accessibility verifier). Main merge commit 6c83b63f4a5b51589754376267e596da0b1f4852; post-merge Actions run 38631652346 PASS. Both homepage named generic containers now use role=group; regression guard checks labels against semantic roles. Visual and screen-reader QA not run; no Vercel deployment initiated."
   }
 }
