@@ -160,3 +160,8 @@ Loop 015 improves inner-page composition at compact mobile widths: resource-card
 ## Mobile navigation keyboard behavior
 
 Loop 016 improves the existing native mobile navigation without replacing its semantic `details/summary` structure. The summary's accessible action name follows the menu's open/closed state; Escape closes the panel and returns focus to the trigger; choosing a navigation link closes the panel, including the homepage section anchor. Static build assertions guard these behaviors. The change uses a tiny local script with no dependency or remote call and preserves all navigation destinations. Verify it manually with keyboard and mobile browser input after the owner deploys the merged source.
+
+
+## Consistent service-card actions (Loop 023)
+
+Homepage service-card links now align at the bottom of each card, regardless of paragraph length, using a vertical flex layout and a responsive top gap. The static build verifier guards this behavior. Visitor copy and destinations are unchanged. PR #34 merged to `main` as a54eb81a28257bded1cc6c2be38e4d0a9abd5984; PR Actions run 38636516595 and post-merge main run 38636673583 passed. No Vercel deployment or browser visual QA was initiated.
