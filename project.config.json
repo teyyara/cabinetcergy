@@ -110,7 +110,7 @@
     {
       "id": "CR-005",
       "date": "2026-10-14",
-      "state": "IMPLEMENTED_CI_PENDING",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Improve crawl discovery and prevent duplicate alias routes from competing in search engines.",
       "implementation": "Loop 007 adds a static sitemap.xml and robots.txt, canonical and Open Graph URL metadata, and noindex on duplicate aliases and the custom 404. Build checks validate the metadata and exact sitemap membership."
     }
@@ -123,6 +123,10 @@
     "main_ci_conclusion": "success",
     "local_image_files": 7,
     "image_gateway_references_in_generated_html": 0,
-    "browser_runtime_qa": "PARTIAL_2026-10-14: all 13 routes HTTP 200, custom invalid route HTTP 404, internal links passed, no horizontal overflow at 1365/390/320px, all rendered images loaded, seven WebP asset paths 200, existing Google Form and viewer/map URLs 200; no form submitted. Full visual, assistive-tech and PDF-content QA remains open."
+    "browser_runtime_qa": "PARTIAL_2026-10-14: all 13 routes HTTP 200, custom invalid route HTTP 404, internal links passed, no horizontal overflow at 1365/390/320px, all rendered images loaded, seven WebP asset paths 200, existing Google Form and viewer/map URLs 200; no form submitted. Full visual, assistive-tech and PDF-content QA remains open.",
+    "loop_007_pr": 8,
+    "loop_007_ci_run_id": 38595897029,
+    "loop_007_ci_conclusion": "success",
+    "accessibility_contrast": "Muted text token updated from #657b7e to #566b6f; static CI verifier now enforces >=4.5:1 against --paper and white backgrounds."
   }
 }
