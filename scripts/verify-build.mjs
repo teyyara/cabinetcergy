@@ -4,6 +4,32 @@ import path from "node:path";
 
 const dist = path.resolve("dist");
 
+
+const cssSource = await readFile(path.resolve("src/styles/global.css"), "utf8");
+const getColorToken = (name) => {
+  const escaped = name.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\const dist = path.resolve("dist");
+");
+  const match = cssSource.match(new RegExp(`${escaped}:\\\\s*(#[0-9a-fA-F]{6})`));
+  assert.ok(match, `Missing CSS design token ${name}.`);
+  return match[1];
+};
+const relativeLuminance = (hex) => {
+  const channels = [1, 3, 5].map((index) => {
+    const value = Number.parseInt(hex.slice(index, index + 2), 16) / 255;
+    return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+};
+const contrastRatio = (first, second) => {
+  const [lighter, darker] = [relativeLuminance(first), relativeLuminance(second)].sort((a, b) => b - a);
+  return (lighter + 0.05) / (darker + 0.05);
+};
+const mutedColor = getColorToken("--muted");
+const paperColor = getColorToken("--paper");
+assert.ok(contrastRatio(mutedColor, paperColor) >= 4.5, `Muted text must meet WCAG AA contrast on paper (got ${contrastRatio(mutedColor, paperColor).toFixed(2)}:1).`);
+assert.ok(contrastRatio(mutedColor, "#ffffff") >= 4.5, `Muted text must meet WCAG AA contrast on white (got ${contrastRatio(mutedColor, "#ffffff").toFixed(2)}:1).`);
+
+
 const buildInfo = JSON.parse(await readFile(path.join(dist, "build-info.json"), "utf8"));
 assert.equal(buildInfo.application, "cabinet-des-herons", "Build fingerprint must identify this site.");
 assert.equal(buildInfo.formatVersion, 1, "Build fingerprint format must be supported.");
