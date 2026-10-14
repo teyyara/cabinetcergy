@@ -24,8 +24,15 @@ const contrastRatio = (first, second) => {
 };
 const mutedColor = getColorToken("--muted");
 const paperColor = getColorToken("--paper");
-assert.ok(contrastRatio(mutedColor, paperColor) >= 4.5, `Muted text must meet WCAG AA contrast on paper (got ${contrastRatio(mutedColor, paperColor).toFixed(2)}:1).`);
-assert.ok(contrastRatio(mutedColor, "#ffffff") >= 4.5, `Muted text must meet WCAG AA contrast on white (got ${contrastRatio(mutedColor, "#ffffff").toFixed(2)}:1).`);
+const warmPaperColor = getColorToken("--paper-warm");
+const tealDeepColor = getColorToken("--teal-deep");
+const tealPaleColor = getColorToken("--teal-pale");
+assert.ok(contrastRatio(mutedColor, paperColor) >= 4.5, "Muted text must meet WCAG AA contrast on paper.");
+assert.ok(contrastRatio(mutedColor, warmPaperColor) >= 4.5, "Muted text must meet WCAG AA contrast on warm paper.");
+assert.ok(contrastRatio(mutedColor, "#ffffff") >= 4.5, "Muted text must meet WCAG AA contrast on white.");
+assert.ok(contrastRatio(tealDeepColor, tealPaleColor) >= 4.5, "Teal text/link colour must meet WCAG AA contrast on pale teal.");
+assert.ok(contrastRatio(tealDeepColor, paperColor) >= 4.5, "Teal text/link colour must meet WCAG AA contrast on paper.");
+assert.ok(contrastRatio(tealDeepColor, "#ffffff") >= 4.5, "Teal text/link colour must meet WCAG AA contrast on white.");
 
 
 const buildInfo = JSON.parse(await readFile(path.join(dist, "build-info.json"), "utf8"));
@@ -139,11 +146,54 @@ assert.match(waiting, /Liste d.{0,2}attente/i, "Waiting-list page needs a meanin
 
 const allHtml = await Promise.all(routeFiles.map(html));
 for (const [index, page] of allHtml.entries()) {
-  assert.match(page, /<html[^>]+lang="fr"/i, `${routeFiles[index]} must declare French as its language.`);
-  assert.match(page, /<title>[^<]+<\/title>/i, `${routeFiles[index]} must have a non-empty title.`);
-  assert.match(page, /<h1[ >]/i, `${routeFiles[index]} must include a top-level heading.`);
-}
+  const file = routeFiles[index];
+  assert.match(page, /<html[^>]+lang="fr"/i, file + " must declare French as its language.");
+  assert.match(page, /<title>[^<]+<\/title>/i, file + " must have a non-empty title.");
+  assert.equal((page.match(/<h1\b/gi) || []).length, 1, file + " must include exactly one H1.");
+  assert.equal((page.match(/<main\b/gi) || []).length, 1, file + " must have exactly one main landmark.");
 
+  const images = [...page.matchAll(/<img\b([^>]*)>/gi)];
+  for (const match of images) {
+    assert.match(match[1], /\balt\s*=/i, file + " contains an image without an alt attribute.");
+  }
+
+  const iframes = [...page.matchAll(/<iframe\b([^>]*)>/gi)];
+  for (const match of iframes) {
+    assert.match(match[1], /\btitle\s*=\s*["'][^"']+["']/i, file + " contains an iframe without a descriptive title.");
+  }
+
+  const links = [...page.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/gi)];
+  for (const match of links) {
+    const attributes = match[1];
+    const markup = match[2];
+    const ariaLabel = attributes.match(/\baria-label\s*=\s*["']([^"']+)["']/i)?.[1]?.trim();
+    const title = attributes.match(/\btitle\s*=\s*["']([^"']+)["']/i)?.[1]?.trim();
+    const imageAlt = markup.match(/<img\b[^>]*\balt\s*=\s*["']([^"']*)["']/i)?.[1]?.trim();
+    const nestedLabel = markup.match(/\baria-label\s*=\s*["']([^"']+)["']/i)?.[1]?.trim();
+    const readableText = markup
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&(?:nbsp|#160);/gi, " ")
+      .replace(/&(?:amp|#38);/gi, "&")
+      .replace(/\s+/g, " ")
+      .trim();
+    assert.ok(
+      ariaLabel || title || nestedLabel || readableText || imageAlt,
+      file + " contains a link without a detectable accessible name.",
+    );
+    if (/\btarget\s*=\s*["']_blank["']/i.test(attributes)) {
+      const rel = attributes.match(/\brel\s*=\s*["']([^"']+)["']/i)?.[1] ?? "";
+      assert.match(rel, /\bnoopener\b/i, file + " has a new-tab link without rel=noopener.");
+    }
+  }
+
+  const headings = [...page.matchAll(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi)].map((match) => Number(match[1]));
+  for (let heading = 1; heading < headings.length; heading += 1) {
+    assert.ok(
+      headings[heading] <= headings[heading - 1] + 1,
+      file + " skips a heading level from H" + headings[heading - 1] + " to H" + headings[heading] + ".",
+    );
+  }
+}
 
 const localImages = [
   "images/cabinet-des-herons-logo.webp",
@@ -169,4 +219,4 @@ assert.ok(teamPage.includes('src="/images/jarod-florance.webp"'), "The team page
 assert.ok(teamPage.includes('src="/images/bouhar-obeidi.webp"'), "The team page must show Bouhar Oubeidi’s local portrait.");
 assert.ok(!allHtml.join("\n").includes("sites.google.com/sitesv-images-rt"), "Rendered pages must not depend on Google Sites’ image gateway.");
 
-console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, canonical/Open Graph metadata, robots.txt, sitemap.xml, Form, Street View, both PDF destinations and build fingerprint (${buildInfo.commitSha}) are present.`);
+console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, canonical/Open Graph metadata, sitemap/robots, accessibility semantics and contrast checks, Form, Street View, both PDF destinations and build fingerprint (${buildInfo.commitSha}) are present.`);
