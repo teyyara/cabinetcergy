@@ -217,18 +217,18 @@ for (const [pageName, page] of [["homepage", home], ["access", accessPage], ["re
 }
 // Loop 014 — pricing tables must expose named, keyboard-focusable scroll regions and accessible captions.
 const pricingPage = await html("prestations/index.html");
-const pricingRegions = [...pricingPage.matchAll(/<div\\b([^>]*class="table-wrap"[^>]*)>([\\s\\S]*?)<\\/div>/gi)];
+const pricingRegions = [...pricingPage.matchAll(/<div\b([^>]*class="table-wrap"[^>]*)>([\s\S]*?)<\/div>/gi)];
 assert.equal(pricingRegions.length, 3, "The three practitioner pricing tables must remain present.");
 for (const [index, region] of pricingRegions.entries()) {
-  assert.match(region[1], /\\brole="region"/i, "Pricing table " + (index + 1) + " must expose a named scroll region.");
-  assert.match(region[1], /\\btabindex="0"/i, "Pricing table " + (index + 1) + " must be keyboard-focusable for horizontal scrolling.");
-  assert.match(region[1], /\\baria-label="Tarifs : [^"]+"/i, "Pricing table " + (index + 1) + " must have a descriptive region name.");
-  assert.match(region[2], /<caption class="sr-only">Tarifs affichés pour les prestations de [^<]+<\\/caption>/i, "Pricing table " + (index + 1) + " must have an accessible caption.");
+  assert.match(region[1], /\brole="region"/i, "Pricing table " + (index + 1) + " must expose a named scroll region.");
+  assert.match(region[1], /\btabindex="0"/i, "Pricing table " + (index + 1) + " must be keyboard-focusable for horizontal scrolling.");
+  assert.match(region[1], /\baria-label="Tarifs : [^"]+"/i, "Pricing table " + (index + 1) + " must have a descriptive region name.");
+  assert.match(region[2], /<caption class="sr-only">Tarifs affichés pour les prestations de [^<]+<\/caption>/i, "Pricing table " + (index + 1) + " must have an accessible caption.");
 }
 const loop014Css = cssSource.split("/* Loop 014 — accessible pricing table overflow */")[1] ?? "";
 assert.ok(loop014Css.length > 0, "Loop 014 pricing table scrolling styles must be present.");
-assert.match(loop014Css, /\\.table-wrap\\[role="region"\\]:focus-visible\\s*\\{[^}]*outline:\\s*3px solid var\\(--blue\\)/, "Pricing table scroll regions must have a visible keyboard focus indicator.");
-assert.match(loop014Css, /scrollbar-width:\\s*thin/, "Pricing table scroll areas should have a compact, visible scrollbar where supported.");
+assert.match(loop014Css, /\.table-wrap\[role="region"\]:focus-visible\s*\{[^}]*outline:\s*3px solid var\(--blue\)/, "Pricing table scroll regions must have a visible keyboard focus indicator.");
+assert.match(loop014Css, /scrollbar-width:\s*thin/, "Pricing table scroll areas should have a compact, visible scrollbar where supported.");
 
 const groupPage = await html("prise-en-charge-de-groupe/index.html");
 assert.match(groupPage, /aria-current="location"/, "Group-support route must correctly mark its parent Tarifs & groupes navigation item as the current location.");
