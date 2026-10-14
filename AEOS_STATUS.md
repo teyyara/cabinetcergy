@@ -1,17 +1,27 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-023
-- **Current loop:** LOOP 023 — consistent service-card action alignment
-- **Working branch:** `aeos/loop-023-service-card-alignment`
-- **Checkpoint PR:** [PR #34 — align service-card actions across uneven copy lengths](https://github.com/teyyara/cabinetcergy/pull/34)
+- **Run ID:** cabinetcergy-2026-10-14-loop-024
+- **Current loop:** LOOP 024 — full-width service-card content and aligned actions
+- **Working branch:** `aeos/loop-024-card-content-stretch`
+- **Checkpoint PR:** [PR #36 — keep card copy full-width while aligning actions](https://github.com/teyyara/cabinetcergy/pull/36)
 - **Promotion branch:** `main`
-- **Main baseline:** `ee0ec38f8d8ed099dccc3be00783bfc809450c33`
+- **Main baseline:** `404295a4c14e30033fc27ef7576e60895de32307`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–023 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–024 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 024 — full-width service-card content and aligned actions
+
+- Corrected the Loop 023 card flex alignment: service cards now use `align-items: stretch` so headings and paragraphs keep the available width; only the action link uses `align-self: flex-start`.
+- Preserved the auto top margin on the link so actions remain aligned despite differing copy lengths, plus the responsive spacing added in Loop 023.
+- Strengthened `scripts/verify-build.mjs` to guard both full-width copy stretching and left-aligned card actions.
+- **Validation:** [GitHub Actions run 38638402109](https://github.com/teyyara/cabinetcergy/actions/runs/38638402109) passed on final PR #36 head 0f298b04fc16071c6fdd90641f2d85c8a7e03975.
+- **Main verification:** [GitHub Actions run 38638544902](https://github.com/teyyara/cabinetcergy/actions/runs/38638544902) passed on merge commit 93e98ff756b135ca39f9ebdd85aab6891a38bb25.
+- **Merge:** [PR #36](https://github.com/teyyara/cabinetcergy/pull/36) merged to `main` as [93e98ff756b135ca39f9ebdd85aab6891a38bb25](https://github.com/teyyara/cabinetcergy/commit/93e98ff756b135ca39f9ebdd85aab6891a38bb25).
+- **Production:** no Vercel deployment/retry/promotion initiated. Browser visual QA remains pending owner-managed deployment.
 
 ## Loop 023 — consistent service-card action alignment
 
