@@ -165,3 +165,8 @@ Loop 016 improves the existing native mobile navigation without replacing its se
 ## Consistent service-card actions (Loop 023)
 
 Homepage service-card links now align at the bottom of each card, regardless of paragraph length, using a vertical flex layout and a responsive top gap. The static build verifier guards this behavior. Visitor copy and destinations are unchanged. PR #34 merged to `main` as a54eb81a28257bded1cc6c2be38e4d0a9abd5984; PR Actions run 38636516595 and post-merge main run 38636673583 passed. No Vercel deployment or browser visual QA was initiated.
+
+
+## Service-card content width correction (Loop 024)
+
+A follow-up correction keeps service-card headings and paragraphs stretched to the full card width while using `align-self: flex-start` only on the action link. The action still uses `margin-top: auto` to align across cards with different copy lengths. The static verifier guards these rules. PR #36 passed Actions run 38638402109 and merged to `main` as 93e98ff756b135ca39f9ebdd85aab6891a38bb25; post-merge Actions run 38638544902 passed. No Vercel deployment or browser QA was initiated.
