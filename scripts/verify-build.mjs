@@ -288,6 +288,17 @@ assert.match(groupPage, /aria-current="location"/, "Group-support route must cor
 
 const allHtml = await Promise.all(routeFiles.map(html));
 
+
+const loop022Css = cssSource.split("/* Loop 022 — quieter standalone contact links outside prose */")[1] ?? "";
+assert.ok(loop022Css.length > 0, "Loop 022 standalone contact-link styling must be present.");
+assert.match(loop022Css, /\.contact-link\s*\{[^}]*text-decoration:\s*none;/, "Standalone contact links must not be underlined at rest.");
+assert.match(loop022Css, /\.contact-link:hover,\s*\.contact-link:focus-visible\s*\{[^}]*text-decoration:\s*underline;/, "Standalone contact links must show clear underline feedback on hover/focus.");
+assert.match(loop022Css, /\.notice-contact-links\s*\{[^}]*display:\s*grid;[^}]*gap:\s*0\.4rem;/, "Waiting-list contact details must use consistent vertical spacing.");
+assert.match(home, /<a class="contact-link" href="tel:\+33781243098">/, "Homepage phone link must use the quiet contact-link treatment.");
+assert.match(home, /<a class="contact-link" href="mailto:edith\.fautras@gmail\.com">/, "Homepage email link must use the quiet contact-link treatment.");
+assert.match(pricingPage, /<a class="contact-link" href="tel:\+33781243098">/, "Pricing-page direct phone link must use the quiet contact-link treatment.");
+assert.match(waiting, /<div class="notice-contact-links"><a class="contact-link" href="tel:\+33781243098">[\s\S]*?<a class="contact-link" href="mailto:edith\.fautras@gmail\.com">/, "Waiting-list phone/email links must be grouped with consistent spacing and quiet resting styles.");
+
 const loop021Css = cssSource.split("/* Loop 021 — visual polish: calmer spacing, clean footer links, consistent embed captions */")[1] ?? "";
 assert.ok(loop021Css.length > 0, "Loop 021 visual-polish rules must be present.");
 assert.match(loop021Css, /\.section\s*\{[^}]*padding-block:\s*clamp\(3\.8rem,\s*6vw,\s*6\.2rem\)/, "Desktop section spacing must use the calmer vertical rhythm.");
