@@ -133,3 +133,8 @@ Loop 014 makes each practitioner pricing-table scroll area keyboard-focusable an
 ## Compact narrow-screen layouts
 
 Loop 015 improves inner-page composition at compact mobile widths: resource-card actions wrap beneath their descriptions, schedule labels can wrap naturally, section headings stack, and embed/contact panels use tighter spacing and safer text wrapping. The responsive layer is CSS-only and preserves all clinic copy, rates, and external destinations. Static assertions guard the intended media-query rules; a real-browser visual check is still required after manual deployment.
+
+
+## Mobile navigation keyboard behavior
+
+Loop 016 improves the existing native mobile navigation without replacing its semantic `details/summary` structure. The summary's accessible action name follows the menu's open/closed state; Escape closes the panel and returns focus to the trigger; choosing a navigation link closes the panel, including the homepage section anchor. Static build assertions guard these behaviors. The change uses a tiny local script with no dependency or remote call and preserves all navigation destinations. Verify it manually with keyboard and mobile browser input after the owner deploys the merged source.
