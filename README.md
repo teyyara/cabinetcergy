@@ -104,3 +104,10 @@ The static build verifier compares the generated HTML's actual link and iframe d
 Loop 010 introduces a responsive editorial refinement using the existing local photography and existing palette. The update gives the homepage a more intentional hero and image collage, refines the header/nav and contact strip, and applies consistent surface, spacing, card, table, accordion, resource and footer treatments across the site. Motion is limited to subtle CSS transitions and a short hero entrance, with `prefers-reduced-motion` respected explicitly.
 
 No external font service, new image provider, JavaScript animation dependency, analytics, backend or persistent data store is added. Code-level checks validate the generated site; final visual acceptance still requires manual desktop/mobile review after the owner deploys the exact merged commit.
+
+
+## Inner-page visual refinement
+
+Loop 011 continues the editorial design system through the inner pages: service-domain cards, reading rhythm, practitioner biographies, fees and group schedules, resource cards, FAQs and access embeds. It uses CSS-only styling and the existing images/palette. Pricing values, biographies, health/service descriptions, public links and embed destinations are not changed by this visual pass.
+
+The CSS adds a compact responsive profile header on mobile, more differentiated pricing-table rows, quiet numbered markers for service domains, and more consistent card/panel framing. These improvements should be reviewed at desktop and narrow-mobile sizes after the owner deploys the merged commit; a successful build is not a substitute for visual acceptance.
