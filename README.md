@@ -97,3 +97,10 @@ For healthcare/business content, verify current fees, group schedules, practitio
 ## Exact integration regression guards
 
 The static build verifier compares the generated HTML's actual link and iframe destinations with the approved public URLs for the existing Google Form (both responder and embedded forms), CPAM and MDPH Drive viewers, the original Google Maps embed and full supplied Street View panorama, Maps directions, Tamis, telephone and email. These are source-level regression guards: they protect URL identity without submitting the form, accessing responses, or certifying third-party content or runtime availability.
+
+
+## Visual design direction
+
+Loop 010 introduces a responsive editorial refinement using the existing local photography and existing palette. The update gives the homepage a more intentional hero and image collage, refines the header/nav and contact strip, and applies consistent surface, spacing, card, table, accordion, resource and footer treatments across the site. Motion is limited to subtle CSS transitions and a short hero entrance, with `prefers-reduced-motion` respected explicitly.
+
+No external font service, new image provider, JavaScript animation dependency, analytics, backend or persistent data store is added. Code-level checks validate the generated site; final visual acceptance still requires manual desktop/mobile review after the owner deploys the exact merged commit.
