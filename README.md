@@ -111,3 +111,10 @@ No external font service, new image provider, JavaScript animation dependency, a
 Loop 011 continues the editorial design system through the inner pages: service-domain cards, reading rhythm, practitioner biographies, fees and group schedules, resource cards, FAQs and access embeds. It uses CSS-only styling and the existing images/palette. Pricing values, biographies, health/service descriptions, public links and embed destinations are not changed by this visual pass.
 
 The CSS adds a compact responsive profile header on mobile, more differentiated pricing-table rows, quiet numbered markers for service domains, and more consistent card/panel framing. These improvements should be reviewed at desktop and narrow-mobile sizes after the owner deploys the merged commit; a successful build is not a substitute for visual acceptance.
+
+
+## Iconography and contact cues
+
+Loop 012 replaces several mixed Unicode placeholders in the homepage and Accès cards with lightweight inline SVG line icons, including a proper handset beside the public phone link. Stroke weight, line caps and responsive sizing are set centrally in CSS. The SVGs are decorative and remain hidden from assistive technology where the visible text already identifies the content.
+
+The icons are stored directly in the Astro markup and require no remote requests, icon font, package or JavaScript. No business copy, fees, forms, or external destination URLs are changed. Visual acceptance should still be performed in desktop and narrow-mobile browsers after the owner deploys the merged commit.
