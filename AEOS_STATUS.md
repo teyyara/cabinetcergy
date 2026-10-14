@@ -1,18 +1,28 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-018
-- **Current loop:** LOOP 018 — Resources page clarity and FAQ deduplication
-- **Working branch:** `aeos/loop-018-resource-page-coherence`
-- **Checkpoint PR:** [PR #24 — streamline Resources page and remove repeated FAQ](https://github.com/teyyara/cabinetcergy/pull/24)
+- **Run ID:** cabinetcergy-2026-10-14-loop-019
+- **Current loop:** LOOP 019 — section-aware Services navigation
+- **Working branch:** `aeos/loop-019-services-nav-state`
+- **Checkpoint PR:** [PR #26 — keep Services navigation state in sync](https://github.com/teyyara/cabinetcergy/pull/26)
 - **Promotion branch:** `main`
-- **Main baseline:** `8856227c1409a83bec731d9e3cb9ebcf630e6e8b`
+- **Main baseline:** `7e7473657914bf93c259e1671322db84ece24f3b`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–018 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–019 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
 
+## Loop 019 — section-aware Services navigation
+
+- Fixed the homepage’s “Les services” navigation inconsistency: the link is an in-page destination, so exact whole-page URL matching alone never marked it current.
+- Added a small client-side IntersectionObserver that keeps both desktop and mobile links synchronized with the #services section. When the section is in the active reading region, the links receive is-active and aria-current="location"; the state is cleared when the section is no longer active.
+- Used valid pixel/percentage rootMargin values for the observer. Extended the static verifier to check both navigation destinations, the section target, class/ARIA state updates and supported margin units.
+- No clinic facts, prices, schedules, existing Google Form, phone/email, Drive, Maps, Street View or Tamis destinations were changed. No dependencies, backend, storage, analytics or new service were added.
+- **Validation:** [GitHub Actions run 38629848669](https://github.com/teyyara/cabinetcergy/actions/runs/38629848669) passed dependency installation, Astro static build and route/integration verification on final PR #26 head a05184e53bf9491405555f86f3f4194f4e4b9947. An initial verifier run failed due to a duplicated test-script declaration; this was corrected on the same PR before the successful final run.
+- **Main verification:** [GitHub Actions run 38630043007](https://github.com/teyyara/cabinetcergy/actions/runs/38630043007) passed on merge commit 1a5f87ff84e2bb111aff771cf2d70916019a5112.
+- **Merge:** [PR #26](https://github.com/teyyara/cabinetcergy/pull/26) merged to main as [1a5f87ff84e2bb111aff771cf2d70916019a5112](https://github.com/teyyara/cabinetcergy/commit/1a5f87ff84e2bb111aff771cf2d70916019a5112).
+- **Production:** no Vercel deployment/retry/promotion was initiated. The new scroll-state behavior has not had post-change browser QA; acceptance remains pending the owner’s manual deployment and browser review.
 ## Loop 018 — Resources page clarity and FAQ deduplication
 
 - Reorganized the Resources page so the CPAM and MDPH documents are the first primary resources, followed by Tamis/mutuelle information and a clear callout to the dedicated Questions page.
