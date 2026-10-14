@@ -255,7 +255,7 @@ const allHtml = await Promise.all(routeFiles.map(html));
 for (const [index, page] of allHtml.entries()) {
   assert.doesNotMatch(
     page,
-    /\b(?:the site source|the source site|source site|source page|content source|site source|page source)\b|replace the incorrectly placed static image/i,
+    /\b(?:le site source|la page source|du site source|de la page source|sur le site source|sur la page source|contenu source|site source|page source|source site|source page|content source)\b|remplacer l’image statique incorrectement placée/i,
     routeFiles[index] + " must not expose internal migration notes to visitors.",
   );
 }
