@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-12-loop-005",
+  "run_id": "cabinetcergy-2026-10-14-loop-007",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -62,14 +62,13 @@
     "framework": "astro",
     "node_version": "24.x",
     "target": "production",
-    "latest_state": "READY",
-    "deployment_id": "dpl_cnHgm4GgSADX38Gi3EUxraniBUjf",
+    "latest_state": "PUBLIC_RUNTIME_VERIFIED_BEFORE_LOOP_007",
     "git_branch": "main",
-    "git_sha": "a34acccef04c4b404b97366f3951059fe6c3fdf1",
+    "git_sha": "7153f320dfd0533b2dfd04bc06d06319a94ca56b",
     "stable_domain": "cabinetcergy.vercel.app",
     "domain_verified_by_vercel": true,
-    "anonymous_browser_access": "NOT_VERIFIED",
-    "browser_runtime_qa": "NOT_RUN"
+    "anonymous_browser_access": "VERIFIED_2026-10-14",
+    "browser_runtime_qa": "PARTIAL_2026-10-14"
   },
   "release_policy": {
     "no_final_public_launch_signoff_before_content_functional_and_technical_validation": true,
@@ -77,7 +76,7 @@
     "do_not_claim_unobserved_tests": true,
     "deploy_only_to_a_verified_zero_cost_tier_compatible_with_usage_terms": true
   },
-  "updated_at": "2026-10-12",
+  "updated_at": "2026-10-14",
   "contract_version": "1.2",
   "change_requests": [
     {
@@ -97,16 +96,23 @@
     {
       "id": "CR-003",
       "date": "2026-10-12",
-      "state": "DEPLOYMENT_READY_BROWSER_ACCESS_UNVERIFIED",
+      "state": "BROWSER_RUNTIME_PARTIALLY_VERIFIED",
       "requirement": "Make the main branch compatible with Vercel so the owner can inspect the site using a URL.",
-      "implementation": "Vercel already detects Astro and reports a READY production-target deployment for main. Stable project URL and settings are recorded; anonymous browser access and runtime QA remain unverified."
+      "implementation": "Production static build fingerprint matched commit 7153f320dfd0533b2dfd04bc06d06319a94ca56b on main. The public routes and local image URLs were independently exercised on desktop/mobile sizes; full accessibility and content approval remain open."
     },
     {
       "id": "CR-004",
       "date": "2026-10-12",
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Migrate essential images and branding from the source Google Sites website into local static assets to eliminate dependency on the fragile Google Sites image gateway.",
-      "implementation": "Loop 005 migrated the source-site logo, three selected interior photographs and three practitioner portraits into public/images/ as optimized WebP files. Header/footer, homepage, cabinet gallery and team page references are local. GitHub Actions runs 38296393083 (PR head) and 38296509134 (merged main commit) passed the static build and asset verifier. New-site visual browser QA remains open."
+      "implementation": "Loop 005 migrated the source-site logo, three selected interior photographs and three practitioner portraits into public/images/ as optimized WebP files. On 2026-10-14, all seven Production asset URLs returned HTTP 200 with image/webp and visual browser checks found no broken images at the tested desktop and mobile sizes."
+    },
+    {
+      "id": "CR-005",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_CI_PENDING",
+      "requirement": "Improve crawl discovery and prevent duplicate alias routes from competing in search engines.",
+      "implementation": "Loop 007 adds a static sitemap.xml and robots.txt, canonical and Open Graph URL metadata, and noindex on duplicate aliases and the custom 404. Build checks validate the metadata and exact sitemap membership."
     }
   ],
   "validation_evidence": {
@@ -117,6 +123,6 @@
     "main_ci_conclusion": "success",
     "local_image_files": 7,
     "image_gateway_references_in_generated_html": 0,
-    "browser_runtime_qa": "NOT_RUN"
+    "browser_runtime_qa": "PARTIAL_2026-10-14: all 13 routes HTTP 200, custom invalid route HTTP 404, internal links passed, no horizontal overflow at 1365/390/320px, all rendered images loaded, seven WebP asset paths 200, existing Google Form and viewer/map URLs 200; no form submitted. Full visual, assistive-tech and PDF-content QA remains open."
   }
 }
