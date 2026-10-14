@@ -1,18 +1,27 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-019
-- **Current loop:** LOOP 019 — section-aware Services navigation
-- **Working branch:** `aeos/loop-019-services-nav-state`
-- **Checkpoint PR:** [PR #26 — keep Services navigation state in sync](https://github.com/teyyara/cabinetcergy/pull/26)
+- **Run ID:** cabinetcergy-2026-10-14-loop-020
+- **Current loop:** LOOP 020 — semantic labels for homepage groups
+- **Working branch:** `aeos/loop-020-labelled-groups`
+- **Checkpoint PR:** [PR #28 — make labelled homepage groups accessible](https://github.com/teyyara/cabinetcergy/pull/28)
 - **Promotion branch:** `main`
-- **Main baseline:** `7e7473657914bf93c259e1671322db84ece24f3b`
+- **Main baseline:** `2ebefde11b9346e89270e0fab51198b253a29810`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–019 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–020 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
 
+## Loop 020 — semantic labels for homepage groups
+
+- Corrected two homepage containers that carried `aria-label` on a plain generic `div`: the room-photo gallery and practical contact strip now use `role="group"`, allowing their existing descriptive labels to be conveyed as accessible group names.
+- Added generated-HTML regression checks for both named groups, plus a general guard that rejects `aria-label` on generic `div`/`span` containers without an explicit name-permitting semantic role.
+- Visual presentation, all visible copy, images, clinic facts, fees, schedules, contact links, existing Google Form, Drive links, Maps, Street View and Tamis destinations remain unchanged. No dependencies, backend, storage or analytics were added.
+- **Validation:** [GitHub Actions run 38631475971](https://github.com/teyyara/cabinetcergy/actions/runs/38631475971) passed dependency installation, Astro static build and route/integration/accessibility regression verification on final PR #28 head 4fa621932a9a772efb124411fcfce228c069107c.
+- **Main verification:** [GitHub Actions run 38631652346](https://github.com/teyyara/cabinetcergy/actions/runs/38631652346) passed on merge commit 6c83b63f4a5b51589754376267e596da0b1f4852.
+- **Merge:** [PR #28](https://github.com/teyyara/cabinetcergy/pull/28) merged to `main` as [6c83b63f4a5b51589754376267e596da0b1f4852](https://github.com/teyyara/cabinetcergy/commit/6c83b63f4a5b51589754376267e596da0b1f4852).
+- **Production:** no Vercel deployment/retry/promotion was initiated. No browser or screen-reader test of the updated groups was run; post-deployment accessibility acceptance remains owner-managed.
 ## Loop 019 — section-aware Services navigation
 
 - Fixed the homepage’s “Les services” navigation inconsistency: the link is an in-page destination, so exact whole-page URL matching alone never marked it current.
