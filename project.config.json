@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-016",
+  "run_id": "cabinetcergy-2026-10-14-loop-017",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-016-mobile-menu-keyboard-behavior"
+    "current_working_branch": "aeos/loop-017-visitor-copy-polish"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -176,6 +176,13 @@
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Make the native mobile navigation clearer and easier to operate with keyboard interaction while preserving all navigation destinations.",
       "implementation": "Loop 016 adds a local script to synchronize the mobile menu summary's aria-label with its open/closed state, close on Escape while restoring focus to the trigger, and close after choosing a mobile nav link. Static verifier assertions guard each behavior. GitHub Actions run #58 (38623015583) passed dependency installation, Astro static build, and route/integration verification on the final PR head. PR #18 merged to main as 82afde0b4c2a718af39a8ba99fce3b58cbe69313. No dependencies, remote services, storage, clinic copy, prices, form behavior, or URLs changed. Manual browser review remains pending owner deployment."
+    },
+    {
+      "id": "CR-015",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
+      "requirement": "Improve consistency and professionalism of visitor-facing copy by removing internal migration commentary while preserving clinic facts and operational integrations.",
+      "implementation": "Loop 017 rewrites migration-oriented copy across the homepage, service pages, team, fees, group support, access, resources and FAQ; removes the technical migration note under Street View; and adds a generated-HTML regression guard. Prescription guidance, fees, schedules, transport information, contact details, the existing Google Form, resource links, Maps and Street View destinations remain unchanged. GitHub Actions run 38624739343 passed dependency installation, Astro static build and route/integration verification on the final PR #21 head. PR #21 merged to main as bae8024e8308806991823fdb5059560a2bc49e75. No Vercel deployment was initiated; live visual acceptance remains pending manual owner deployment."
     }
   ],
   "validation_evidence": {
@@ -200,6 +207,7 @@
     "loop_013": "Responsive mobile navigation CSS and regression assertions are implemented on aeos/loop-013-mobile-interaction-polish. The pull-request GitHub Actions build/static verifier must pass before merge. No content or URLs changed, no dependency or JavaScript added, and no Vercel deployment initiated. Production visual acceptance remains pending.",
     "loop_014": "Pricing table wrappers on the Prestations page now have named keyboard-focusable regions and hidden table captions, with responsive scrollbar/focus styling. Static build verifier now checks all three pricing tables. GitHub Actions on the loop PR remains the merge gate; no prices or service labels are changed, and no Vercel deployment initiated.",
     "loop_015": "GitHub Actions run #52 (38622265170) completed successfully on PR #16's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #16 merged to main as 54b142545f03ba507c0252d6fee4e47ad0bb2d06. Live visual acceptance remains pending manual deployment; no Vercel deployment initiated.",
-    "loop_016": "GitHub Actions run #58 (38623015583) completed successfully on PR #18's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #18 merged to main as 82afde0b4c2a718af39a8ba99fce3b58cbe69313. Live visual and keyboard acceptance remains pending manual deployment; no Vercel deployment initiated."
+    "loop_016": "GitHub Actions run #58 (38623015583) completed successfully on PR #18's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #18 merged to main as 82afde0b4c2a718af39a8ba99fce3b58cbe69313. Live visual and keyboard acceptance remains pending manual deployment; no Vercel deployment initiated.",
+    "loop_017": "GitHub Actions run 38624739343 (https://github.com/teyyara/cabinetcergy/actions/runs/38624739343) completed successfully on final PR #21 head a8038e69bc581cc2b3443eed84a4eccab6de139e: dependency installation, Astro static build, and route/integration regression verification all passed. PR #21 merged to main as bae8024e8308806991823fdb5059560a2bc49e75. Visitor-facing copy cleaned across 12 files, with a generated-HTML regression guard. Existing clinic facts, costs, schedules, maps/forms/contact and external links preserved. No Vercel deployment initiated; post-merge live visual acceptance awaits manual deployment."
   }
 }
