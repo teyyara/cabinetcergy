@@ -2084,11 +2084,12 @@ th {
 .cards-grid > .card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   min-width: 0;
 }
 
 .cards-grid > .card > .text-link {
+  align-self: flex-start;
   margin-top: auto;
   padding-top: 1rem;
 }
