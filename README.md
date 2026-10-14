@@ -45,6 +45,10 @@ The repository's `main` branch is the validated promotion branch. The Vercel pro
 
 A successful build or deployment does **not** replace real-browser QA. The 2026-10-14 browser audit exercised 13 content routes at desktop, 390px and 320px widths; checked rendered images and internal links; and confirmed that the existing Form, both Drive viewer links, Maps, Street View and Tamis responded. No form was submitted. Future deployments remain owner-managed.
 
+## Visitor-facing copy consistency (Loop 017)
+
+A copy review removed internal migration commentary such as “le site source indique” and technical explanations about replacing the original map image from visitor-facing sections. The information is now phrased for families while preserving the cabinet-attributed clinical guidance and operational details. Published fees, schedules, transit routes, contact links, the existing Google Form and third-party embed URLs remain unchanged. Caveats remain where reimbursement terms or transit timings have not been independently verified. The build verifier guards against those migration-only phrases returning to the generated pages.
+
 ## Non-negotiable constraints
 
 - Zero paid dependencies and no paid deployment features.
