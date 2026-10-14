@@ -6,7 +6,7 @@
 - **Working branch:** `aeos/loop-016-mobile-menu-keyboard-behavior`
 - **Checkpoint PR:** [PR #18 — mobile menu keyboard behavior](https://github.com/teyyara/cabinetcergy/pull/18)
 - **Promotion branch:** `main`
-- **Main baseline:** `77cf59c7a784f6a969a662de6f4a1913779490d4`
+- **Main baseline:** `82afde0b4c2a718af39a8ba99fce3b58cbe69313`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
@@ -19,8 +19,9 @@
 - Pressing Escape while the menu is open closes it and returns keyboard focus to the summary trigger. Activating any mobile navigation link also closes the panel, including the same-page homepage section anchor.
 - Extended the static build verifier to guard the label synchronization, Escape/focus handling, and link-close behavior in the source component.
 - This is a small self-hosted script with no package, network request, storage, analytics, backend, or third-party service. No visible clinic copy, prices, schedules, form workflow or external destination was changed.
-- **Validation:** GitHub Actions build and route/integration checks are the merge gate. Keyboard behavior has source assertions but still needs manual browser review after owner deployment.
-- **Production:** no Vercel deployment, retry or promotion was initiated.
+- **Validation:** [GitHub Actions run #58](https://github.com/teyyara/cabinetcergy/actions/runs/38623015583) passed dependency installation, Astro static build, and route/integration regression checks on the final PR head before merge.
+- **Merge:** PR [#18](https://github.com/teyyara/cabinetcergy/pull/18) merged to `main` as [`82afde0`](https://github.com/teyyara/cabinetcergy/commit/82afde0b4c2a718af39a8ba99fce3b58cbe69313).
+- **Production:** no Vercel deployment, retry or promotion was initiated; live visual and keyboard acceptance remains pending owner deployment.
 
 ## Loop 015 — compact inner-page layouts
 
