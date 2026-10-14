@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-011",
+  "run_id": "cabinetcergy-2026-10-14-loop-012",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-011-inner-page-design"
+    "current_working_branch": "aeos/loop-012-consistent-iconography"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -141,6 +141,13 @@
       "state": "IMPLEMENTED_BUILD_PENDING",
       "requirement": "Improve the visual quality and responsive presentation of inner informational pages without changing source-approved healthcare/business content or external integrations.",
       "implementation": "Loop 011 adds CSS-only refinement for PageIntro, editorial prose, pricing tables, group schedule cards, service-domain cards, practitioner-profile layouts, gallery panels, resource cards, FAQ details, map/embed headings and small-print rhythm. Practitioner profiles collapse into compact portrait/name headers on narrow mobile. Content values and external destinations unchanged; CI and later owner visual acceptance remain separate gates."
+    },
+    {
+      "id": "CR-010",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_BUILD_PENDING",
+      "requirement": "Refine visual consistency and information scent by replacing mismatched Unicode glyphs with coherent decorative iconography, without adding remote dependencies or changing site content.",
+      "implementation": "Loop 012 replaces homepage service/info card glyphs and contact-strip symbols plus Accès-page facility glyphs with purpose-drawn inline SVG line icons. CSS enforces shared stroke geometry and responsive sizing. The contact strip now uses a phone handset for the public phone link rather than a generic outbound arrow. Icons remain decorative under aria-hidden wrappers; words, URLs and business content remain unchanged."
     }
   ],
   "validation_evidence": {
@@ -160,6 +167,7 @@
     "accessibility": "PR #9: automated semantic/contrast checks and parent-section navigation fix; manual screen-reader and complete WCAG audit remain outstanding.",
     "loop_009": "Exact operational destination guards added to the static build verifier on aeos/loop-009-exact-integration-guards; see Loop 009 pull-request Actions for CI outcome. Production remains unverified until the owner deploys.",
     "loop_010": "Responsive CSS design refinement committed on aeos/loop-010-visual-design-polish. CI and static verifier on PR #11 are required. No production deploy or post-change browser acceptance has been performed.",
-    "loop_011": "Inner-page visual refinement committed on aeos/loop-011-inner-page-design. PR #12 build and static verification required before merge. Runtime visual review remains pending; no deployment has been initiated."
+    "loop_011": "Inner-page visual refinement committed on aeos/loop-011-inner-page-design. PR #12 build and static verification required before merge. Runtime visual review remains pending; no deployment has been initiated.",
+    "loop_012": "Consistent inline SVG line-icon treatment committed on aeos/loop-012-consistent-iconography. PR #13 GitHub Actions build/static verification is the merge gate; post-deploy visual acceptance remains pending. No deployment initiated."
   }
 }
