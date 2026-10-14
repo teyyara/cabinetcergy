@@ -163,6 +163,7 @@ assert.match(await html("404.html"), /name="robots" content="noindex, follow"/, 
 const home = await html("index.html");
 const accessPage = await html("acces/index.html");
 const resources = await html("ressources-utiles/index.html");
+const faqPage = await html("ressources-utiles/questions/index.html");
 const waiting = await html("liste-attente/index.html");
 
 // Protect the exact operational destinations from accidental URL drift.
@@ -191,6 +192,22 @@ const assertExactDestination = (values, expected, description) => {
 assert.match(home, /Cabinet des Hérons/i, "Homepage must include the practice name.");
 assert.match(home, /liste-attente/i, "Homepage must expose the waiting-list path.");
 assert.match(waiting, /Liste d.{0,2}attente/i, "Waiting-list page needs a meaningful title or heading.");
+assert.doesNotMatch(
+  resources,
+  /class="faq-item"/,
+  "The Resources overview must not repeat the full FAQ accordion list; use its dedicated FAQ page.",
+);
+assert.match(
+  resources,
+  /href="\\/ressources-utiles\\/questions\\/"/,
+  "The Resources overview must provide a clear link to the dedicated FAQ page.",
+);
+assert.equal(
+  (faqPage.match(/class="faq-item"/g) || []).length,
+  10,
+  "The dedicated FAQ page must retain all ten existing answers after removing the duplicate preview.",
+);
+
 
 const expectedIntegrationUrls = {
   form: "https://docs.google.com/forms/d/e/1FAIpQLScMR1FWyX53VLXnJb6GeowOZUiPI0yswKq45elzOnOCACz-pQ/viewform",
@@ -255,7 +272,7 @@ const allHtml = await Promise.all(routeFiles.map(html));
 for (const [index, page] of allHtml.entries()) {
   assert.doesNotMatch(
     page,
-    /\b(?:le site source|la page source|du site source|de la page source|sur le site source|sur la page source|contenu source|site source|page source|source site|source page|content source)\b|remplacer l’image statique incorrectement placée/i,
+    /\b(?:le site source|la page source|du site source|de la page source|sur le site source|sur la page source|contenu source|site source|page source|source site|source page|content source)\b|remplacer l’image statique incorrectement placée|liens de fichiers manquants|n['’]a pas été inspecté dans cette étape|dans cette étape/i,
     routeFiles[index] + " must not expose internal migration notes to visitors.",
   );
 }
