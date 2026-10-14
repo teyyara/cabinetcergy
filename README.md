@@ -2,18 +2,14 @@
 
 This repository contains the static Astro implementation of the Cabinet des Hérons public informational website, migrated from the existing Google Sites source.
 
-## Current review deployment
+## Production review
 
-- **Review URL:** https://cabinetcergy.vercel.app
-- **Vercel project:** `cabinetcergy`
-- **Framework preset:** Astro
-- **Current deployment:** Vercel reports `READY` on the `production` target
-- **Deployed Git reference:** `main`
-- **Deployed commit:** `a34acccef04c4b404b97366f3951059fe6c3fdf1`
-- **Deployment ID:** `dpl_cnHgm4GgSADX38Gi3EUxraniBUjf`
-- **Browser access:** Vercel's deployment API confirms the deployment and production alias; anonymous browser access and the embedded content have not yet been independently verified here.
+- **Public URL:** https://cabinetcergy.vercel.app
+- **Latest confirmed fingerprint at the start of Loop 007:** `7153f320dfd0533b2dfd04bc06d06319a94ca56b` on `main`.
+- **Browser verification on 2026-10-14:** the static fingerprint matched that commit; all seven local WebP asset URLs returned HTTP 200 with `image/webp` content type.
+- **Deployment ownership:** the site owner manages every Vercel deployment manually. This workflow does not create, promote or retry Vercel deployments.
 
-Use the stable project domain above for owner review rather than a one-off deployment URL. If that URL asks for Vercel authentication, review the project's Deployment Protection settings before sharing it with the owner; do not change account-wide security settings as a workaround.
+The recorded fingerprint is a dated verification point; it should be rechecked after later commits are deployed. A `READY` deployment by itself is not proof of visual or functional QA.
 
 ## Stack and Vercel settings
 
@@ -47,7 +43,7 @@ GitHub Actions workflow `.github/workflows/ci.yml` builds the static site and ch
 
 The repository's `main` branch is the validated promotion branch. The Vercel project is connected to this GitHub repository and has already produced a `READY` production-target deployment from `main`. For later loops, merge only validated checkpoints into `main`; the Git-connected Vercel project can then build the updated production branch automatically. If a merge does not trigger a build, inspect Vercel Project Settings → Git and ensure `main` is the Production Branch.
 
-A successful deploy proves that Vercel built and assigned a deployment. It does **not** replace real-browser QA for the public URL, responsive layouts, embedded Google Form, Street View, Drive PDFs, or external images.
+A successful build or deployment does **not** replace real-browser QA. The 2026-10-14 browser audit exercised 13 content routes at desktop, 390px and 320px widths; checked rendered images and internal links; and confirmed that the existing Form, both Drive viewer links, Maps, Street View and Tamis responded. No form was submitted. Future deployments remain owner-managed.
 
 ## Non-negotiable constraints
 
@@ -68,7 +64,7 @@ A successful deploy proves that Vercel built and assigned a deployment. It does 
 - Vercel evidence: `evidence/deployment/vercel-review-deployment-2026-10-12.md`
 - Current status: `AEOS_STATUS.md`
 
-The verifier checks 14 generated HTML files (13 content routes plus 404), French document language, page titles and H1 presence, plus the original waiting-list Form endpoint, the user-supplied CPAM/MDPH PDF URLs, and the exact supplied Street View URL. It does not test actual browser rendering or submit the form.
+The verifier checks 14 generated HTML files (13 content routes plus 404), French document language, titles and H1 presence, local image assets, the static build fingerprint, canonical/Open Graph URLs, the robots file, sitemap membership, and the preserved Form, CPAM/MDPH viewer links and Street View source. It never submits the Form.
 
 ## User-supplied sources integrated in Loop 003
 
@@ -84,3 +80,8 @@ PDF content/download behavior, real-browser Street View rendering, source image 
 Loop 005 adds the source practice logo, three selected interior photographs and three practitioner portraits under `public/images/`. Astro copies these static files to the build output, so the new pages do not need the Google Sites image gateway for their header, home/gallery photography or team portraits. `npm run verify:build` checks all seven local assets and rejects a generated page that still references the Google Sites image-gateway host.
 
 The migration deliberately excludes diploma/certificate scans and child-activity imagery pending owner review. The check verifies generated paths and file presence; it does not replace a visual browser review of responsive crops.
+
+
+## Search discovery and canonical URLs
+
+The build emits `/robots.txt` and `/sitemap.xml`. Canonical and Open Graph URL metadata point at the stable public hostname, and the legacy `/accueil/` and short `/questions/` aliases are marked `noindex` and canonicalized to their primary content routes. The custom 404 page is also marked `noindex`.
