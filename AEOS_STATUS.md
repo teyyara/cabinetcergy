@@ -1,17 +1,30 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-010
-- **Current loop:** LOOP 010 — editorial visual design polish
-- **Working branch:** `aeos/loop-010-visual-design-polish`
-- **Checkpoint PR:** [PR #11 — editorial visual design polish](https://github.com/teyyara/cabinetcergy/pull/11)
+- **Run ID:** cabinetcergy-2026-10-14-loop-011
+- **Current loop:** LOOP 011 — inner-page design refinement
+- **Working branch:** `aeos/loop-011-inner-page-design`
+- **Checkpoint PR:** [PR #12 — inner-page design refinement](https://github.com/teyyara/cabinetcergy/pull/12)
 - **Promotion branch:** `main`
-- **Main baseline:** `9cde7e483c7131c01eb38f8d4be3fd9148db307c`
+- **Main baseline:** `6db86b5d3e6f33a592220df22a89cc381b956705`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–010 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–011 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 011 — inner-page design refinement
+
+- Continued the visual design work across pages beyond the homepage using the existing global stylesheet and established palette.
+- Made page introductions more editorial, with clearer heading rhythm and more controlled content width; improved typography and reading rhythm for prose and lists.
+- Refined practitioner pricing blocks and tables with stronger section markers, clearer column headers, zebra rows and restrained price emphasis. Source price values are untouched.
+- Reworked the group schedule cards with a more intentional heading/badge hierarchy and quiet decorative geometry; labels and schedule text remain unchanged.
+- Added numbered visual markers to service-domain cards using CSS counters, strengthened their spacing and surfaces, and made hover behavior subtle.
+- Turned practitioner profiles into more cohesive panels with framed portrait areas; on mobile, portrait and identity align into a compact header while the biography remains readable below.
+- Refined resource cards, FAQ accordions, the cabinet gallery, map/embed headings and pill lists. Existing links, contact details, iframe sources and descriptions were not changed.
+- No external assets, fonts, scripts, libraries, backend, paid services or persistent storage were added.
+- **Validation:** PR #12 GitHub Actions build/static verifier is the merge gate. No browser visual certification is claimed; full visual review remains pending manual deployment by the owner.
+- **Production:** no Vercel deployment or retry initiated.
 
 ## Loop 010 — editorial visual design polish
 
