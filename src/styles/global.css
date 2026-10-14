@@ -1833,3 +1833,31 @@ th {
     transform: none;
   }
 }
+
+
+/* Loop 014 — accessible pricing table overflow */
+.table-wrap[role="region"] {
+  scroll-margin-block: 1rem;
+  scrollbar-color: #a8c9c1 #edf4f1;
+  scrollbar-width: thin;
+}
+
+.table-wrap[role="region"]::-webkit-scrollbar {
+  height: 0.65rem;
+}
+
+.table-wrap[role="region"]::-webkit-scrollbar-track {
+  border-radius: 999px;
+  background: #edf4f1;
+}
+
+.table-wrap[role="region"]::-webkit-scrollbar-thumb {
+  border: 2px solid #edf4f1;
+  border-radius: 999px;
+  background: #a8c9c1;
+}
+
+.table-wrap[role="region"]:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
