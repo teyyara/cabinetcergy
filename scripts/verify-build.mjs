@@ -18,7 +18,10 @@ if (expectedCommit) {
 
 const sitemap = await readFile(path.join(dist, "sitemap.xml"), "utf8");
 const robots = await readFile(path.join(dist, "robots.txt"), "utf8");
-const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\\/loc>/g)].map((match) => match[1]);
+const sitemapUrls = sitemap
+  .split("<loc>")
+  .slice(1)
+  .map((segment) => segment.split("</loc>")[0]);
 const expectedSitemapUrls = [
   "https://cabinetcergy.vercel.app/",
   "https://cabinetcergy.vercel.app/le-cabinet/",
@@ -37,9 +40,35 @@ assert.deepEqual(
   [...expectedSitemapUrls].sort(),
   "Sitemap must contain the intended indexable routes and no duplicate/alias URLs.",
 );
-assert.match(robots, /^User-agent: \\*\\s*$/m, "robots.txt must apply to all well-behaved crawlers.");
-assert.match(robots, /^Allow: \\/\\s*$/m, "robots.txt should allow public informational pages.");
-assert.match(robots, /^Sitemap: https:\\/\\/cabinetcergy\\.vercel\\.app\\/sitemap\\.xml\\s*$/m, "robots.txt must advertise the sitemap.");
+assert.ok(robots.includes("User-agent: *"), "robots.txt must apply to all well-behaved crawlers.");
+assert.ok(robots.includes("Allow: /"), "robots.txt should allow public informational pages.");
+assert.ok(
+  robots.includes("Sitemap: https://cabinetcergy.vercel.app/sitemap.xml"),
+  "robots.txt must advertise the sitemap.",
+);
+
+const routeFiles = [
+  "index.html",
+  "accueil/index.html",
+  "le-cabinet/index.html",
+  "equipe/index.html",
+  "psychomotricite/index.html",
+  "psycho-education/index.html",
+  "prestations/index.html",
+  "prise-en-charge-de-groupe/index.html",
+  "acces/index.html",
+  "ressources-utiles/index.html",
+  "ressources-utiles/questions/index.html",
+  "questions/index.html",
+  "liste-attente/index.html",
+  "404.html",
+];
+
+for (const file of routeFiles) {
+  await access(path.join(dist, file));
+}
+
+const html = async (file) => readFile(path.join(dist, file), "utf8");
 
 const canonicalPages = [
   ["index.html", "https://cabinetcergy.vercel.app/"],
@@ -69,30 +98,8 @@ for (const [file, canonical] of canonicalPages) {
 }
 assert.match(await html("accueil/index.html"), /name="robots" content="noindex, follow"/, "The duplicate Accueil route must remain excluded from indexing.");
 assert.match(await html("questions/index.html"), /name="robots" content="noindex, follow"/, "The short Questions alias must remain excluded from indexing.");
+assert.match(await html("404.html"), /name="robots" content="noindex, follow"/, "The custom 404 page must not be indexed.");
 
-
-const routeFiles = [
-  "index.html",
-  "accueil/index.html",
-  "le-cabinet/index.html",
-  "equipe/index.html",
-  "psychomotricite/index.html",
-  "psycho-education/index.html",
-  "prestations/index.html",
-  "prise-en-charge-de-groupe/index.html",
-  "acces/index.html",
-  "ressources-utiles/index.html",
-  "ressources-utiles/questions/index.html",
-  "questions/index.html",
-  "liste-attente/index.html",
-  "404.html",
-];
-
-for (const file of routeFiles) {
-  await access(path.join(dist, file));
-}
-
-const html = async (file) => readFile(path.join(dist, file), "utf8");
 const home = await html("index.html");
 const accessPage = await html("acces/index.html");
 const resources = await html("ressources-utiles/index.html");
