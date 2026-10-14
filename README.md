@@ -39,16 +39,21 @@ npm run preview
 
 GitHub Actions workflow `.github/workflows/ci.yml` builds the static site and checks generated routes plus the preserved external integrations on pull requests and pushes to `main`.
 
-## Main-branch deployment workflow
+## Main-branch promotion and owner-managed deployment
 
-The repository's `main` branch is the validated promotion branch. The Vercel project is connected to this GitHub repository and has already produced a `READY` production-target deployment from `main`. For later loops, merge only validated checkpoints into `main`; the Git-connected Vercel project can then build the updated production branch automatically. If a merge does not trigger a build, inspect Vercel Project Settings → Git and ensure `main` is the Production Branch.
+`main` is the validated source branch. Merging a pull request updates source code and runs the repository’s static GitHub Actions checks; it does not mean production has been released or verified.
 
-A successful build or deployment does **not** replace real-browser QA. The 2026-10-14 browser audit exercised 13 content routes at desktop, 390px and 320px widths; checked rendered images and internal links; and confirmed that the existing Form, both Drive viewer links, Maps, Street View and Tamis responded. No form was submitted. Future deployments remain owner-managed.
+**The site owner initiates all Vercel deployments manually.** This workflow must not trigger, create, retry, promote or otherwise initiate a Vercel deployment. Do not treat a GitHub merge, an Actions pass or a deployment build as production acceptance.
+
+After the owner deploys, verify the deployed build fingerprint, routes, responsive layouts, images, keyboard interactions and preserved external integrations in a browser. The recorded 2026-10-14 browser audit exercised 13 routes at desktop, 390px and 320px widths, and checked image/link behavior including Form, Drive, Maps, Street View and Tamis. That audit predates the later Loop 008–019 source changes; it is historical evidence, not acceptance of the current source. No form was submitted.
 
 ## Visitor-facing copy consistency (Loop 017)
 
 A copy review removed internal migration commentary such as “le site source indique” and technical explanations about replacing the original map image from visitor-facing sections. The information is now phrased for families while preserving the cabinet-attributed clinical guidance and operational details. Published fees, schedules, transit routes, contact links, the existing Google Form and third-party embed URLs remain unchanged. Caveats remain where reimbursement terms or transit timings have not been independently verified. The build verifier guards against those migration-only phrases returning to the generated pages.
 
+## Section-aware Services navigation (Loop 019)
+
+The homepage “Les services” item now follows the visible `#services` section in both desktop and mobile navigation. While the section is in the active reading region, the item receives active styling and `aria-current="location"`; the state clears once the section is no longer current. The build verifier guards the observer logic, valid margin units, destination and target. PR #26 merged to `main` as 1a5f87ff84e2bb111aff771cf2d70916019a5112; final PR Actions run 38629848669 and the post-merge main run 38630043007 both passed. No Vercel deployment or post-change browser QA was initiated; the site owner deploys manually and performs production acceptance.
 ## Resource-page clarity and FAQ deduplication (Loop 018)
 
 The Resources page now prioritizes its two administrative documents and other useful links, replacing a repeated ten-question accordion with a compact callout to the dedicated Questions page. All ten questions remain available at `/ressources-utiles/questions/`. The Google Drive links, Tamis destination, contact destinations and form behavior remain unchanged. The public copy no longer describes the Drive links as a migration workaround or notes that PDFs were not inspected during an implementation step. Build verification guards the FAQ count, the link to the full FAQ and the removal of those internal audit notes.
