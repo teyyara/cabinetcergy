@@ -1,18 +1,28 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-021
-- **Current loop:** LOOP 021 — visual rhythm, footer links and embed captions
-- **Working branch:** `aeos/loop-021-visual-rhythm-links`
-- **Checkpoint PR:** [PR #30 — polish spacing, footer links and access-page captions](https://github.com/teyyara/cabinetcergy/pull/30)
+- **Run ID:** cabinetcergy-2026-10-14-loop-022
+- **Current loop:** LOOP 022 — quieter contact links and cleaner waiting-list spacing
+- **Working branch:** `aeos/loop-022-quiet-contact-links`
+- **Checkpoint PR:** [PR #32 — polish standalone contact links and waiting-list spacing](https://github.com/teyyara/cabinetcergy/pull/32)
 - **Promotion branch:** `main`
-- **Main baseline:** `1d8d9c28c37b231ee688873f131efd194d9fc900`
+- **Main baseline:** `ee0ec38f8d8ed099dccc3be00783bfc809450c33`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–021 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–022 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
 
+## Loop 022 — quieter contact links and cleaner waiting-list spacing
+
+- Added a shared `contact-link` treatment to the homepage phone/email strip, the direct telephone link in the pricing callout and the waiting-list help card. These standalone contact links no longer have a default underline; they regain a clear underline on hover and keyboard focus.
+- Replaced the waiting-list help card's manual line break between phone and email with a dedicated grid wrapper and consistent gap, reducing uneven spacing and giving narrow layouts cleaner wrapping.
+- Kept contact link contrast suitable for the dark pricing callout. Informational links in paragraphs remain underlined through the existing global rule.
+- Preserved the exact `tel:+33781243098` and `mailto:edith.fautras@gmail.com` destinations, public clinic copy/facts, rates, schedules, form and all other external integrations. No new dependencies, backend, storage or analytics.
+- **Validation:** [GitHub Actions run 38635199552](https://github.com/teyyara/cabinetcergy/actions/runs/38635199552) passed dependency installation, Astro static build and route/integration verification on final PR #32 head eadd9a4a5d31c3f1a59029fc522e08e54ddf7c7c.
+- **Main verification:** [GitHub Actions run 38635353590](https://github.com/teyyara/cabinetcergy/actions/runs/38635353590) passed on merge commit 713a50566575834363393c2f3fa35f034fb75d34.
+- **Merge:** [PR #32](https://github.com/teyyara/cabinetcergy/pull/32) merged to `main` as [713a50566575834363393c2f3fa35f034fb75d34](https://github.com/teyyara/cabinetcergy/commit/713a50566575834363393c2f3fa35f034fb75d34).
+- **Production:** no Vercel deployment/retry/promotion was initiated. No browser visual QA was run; the changes await owner-managed deployment and visual review.
 ## Loop 021 — visual rhythm, footer links and access-page captions
 
 - Reduced the oversized vertical padding between content sections and adjusted the heading-to-copy gap. The tighter spacing scales separately for mobile and compact mobile layouts while retaining intentional whitespace.
