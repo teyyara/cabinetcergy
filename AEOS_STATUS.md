@@ -1,18 +1,28 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-020
-- **Current loop:** LOOP 020 — semantic labels for homepage groups
-- **Working branch:** `aeos/loop-020-labelled-groups`
-- **Checkpoint PR:** [PR #28 — make labelled homepage groups accessible](https://github.com/teyyara/cabinetcergy/pull/28)
+- **Run ID:** cabinetcergy-2026-10-14-loop-021
+- **Current loop:** LOOP 021 — visual rhythm, footer links and embed captions
+- **Working branch:** `aeos/loop-021-visual-rhythm-links`
+- **Checkpoint PR:** [PR #30 — polish spacing, footer links and access-page captions](https://github.com/teyyara/cabinetcergy/pull/30)
 - **Promotion branch:** `main`
-- **Main baseline:** `2ebefde11b9346e89270e0fab51198b253a29810`
+- **Main baseline:** `1d8d9c28c37b231ee688873f131efd194d9fc900`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–020 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–021 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
 
+## Loop 021 — visual rhythm, footer links and access-page captions
+
+- Reduced the oversized vertical padding between content sections and adjusted the heading-to-copy gap. The tighter spacing scales separately for mobile and compact mobile layouts while retaining intentional whitespace.
+- Removed default underlines from footer navigation/contact links, with underlines retained on hover and keyboard focus. Footer contact and exploration links now use consistent stacked spacing instead of relying on inline flow.
+- Replaced the nested-card treatment under the Maps and Street View embeds with a simple shared caption row. The Street View explanatory text no longer creates a bordered/shadowed card inside its parent embed card.
+- Preserved all public wording/facts, prices, schedules, images, the existing waiting-list Google Form, phone/email destinations, Drive links, Maps/Street View URLs and Tamis link. No dependencies, backend, storage or analytics added.
+- **Validation:** [GitHub Actions run 38633696207](https://github.com/teyyara/cabinetcergy/actions/runs/38633696207) passed dependency installation, Astro static build and route/integration verification on final PR #30 head 2fbfe587aa9b664329bc6d7b1e4ff5cd6d69ef53.
+- **Main verification:** [GitHub Actions run 38633853515](https://github.com/teyyara/cabinetcergy/actions/runs/38633853515) passed on merge commit 38a42fd2caba162d3573624f451c62bf76110f95.
+- **Merge:** [PR #30](https://github.com/teyyara/cabinetcergy/pull/30) merged to `main` as [38a42fd2caba162d3573624f451c62bf76110f95](https://github.com/teyyara/cabinetcergy/commit/38a42fd2caba162d3573624f451c62bf76110f95).
+- **Production:** no Vercel deployment/retry/promotion was initiated. No browser-based visual QA was run; the owner must deploy manually and review the rendered pages.
 ## Loop 020 — semantic labels for homepage groups
 
 - Corrected two homepage containers that carried `aria-label` on a plain generic `div`: the room-photo gallery and practical contact strip now use `role="group"`, allowing their existing descriptive labels to be conveyed as accessible group names.
