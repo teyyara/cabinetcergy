@@ -254,6 +254,11 @@ const waitingFormEmbeds = attributeValues(waiting, "iframe", "src").filter((valu
 assert.deepEqual(homeFormEmbeds, [expectedIntegrationUrls.formEmbed], "Homepage must preserve exactly one unchanged embedded Google Form destination.");
 assert.deepEqual(waitingFormEmbeds, [expectedIntegrationUrls.formEmbed], "Waiting-list page must preserve exactly one unchanged embedded Google Form destination.");
 
+
+assert.match(accessPage, /<p class="embed-caption map-link">[\\s\\S]*?<\\/p>/i, "The map destination must use a simple caption row, not a nested card.");
+assert.match(accessPage, /<p class="embed-caption small-print street-view-caption">[\\s\\S]*?<\\/p>/i, "The Street View explanation must use the same simple caption treatment.");
+assert.doesNotMatch(accessPage, /class="card (?:map-link|small-print)"/i, "Map and Street View captions must not create nested cards inside the embed cards.");
+
 const accessEmbedUrls = attributeValues(accessPage, "iframe", "src");
 assertExactDestination(accessEmbedUrls, expectedIntegrationUrls.mapEmbed, "Original Google Maps iframe");
 assertExactDestination(accessEmbedUrls, expectedIntegrationUrls.streetViewEmbed, "User-supplied Google Street View panorama iframe");
@@ -282,6 +287,16 @@ const groupPage = await html("prise-en-charge-de-groupe/index.html");
 assert.match(groupPage, /aria-current="location"/, "Group-support route must correctly mark its parent Tarifs & groupes navigation item as the current location.");
 
 const allHtml = await Promise.all(routeFiles.map(html));
+
+const loop021Css = cssSource.split("/* Loop 021 — visual polish: calmer spacing, clean footer links, consistent embed captions */")[1] ?? "";
+assert.ok(loop021Css.length > 0, "Loop 021 visual-polish rules must be present.");
+assert.match(loop021Css, /\.section\s*\{[^}]*padding-block:\s*clamp\(3\.8rem,\s*6vw,\s*6\.2rem\)/, "Desktop section spacing must use the calmer vertical rhythm.");
+assert.match(loop021Css, /@media\s*\(max-width:\s*700px\)[\s\S]*?\.section\s*\{\s*padding-block:\s*3\.1rem;/, "Mobile section spacing must be tightened as well.");
+assert.match(loop021Css, /\.site-footer a\s*\{[^}]*text-decoration:\s*none;/, "Footer links must not be underlined at rest.");
+assert.match(loop021Css, /\.site-footer a:hover,\s*\.site-footer a:focus-visible\s*\{[^}]*text-decoration:\s*underline;/, "Footer links must receive an underline on hover and keyboard focus.");
+assert.match(loop021Css, /\.footer-links a\s*\{[^}]*display:\s*block;/, "Footer navigation links must have a consistent vertical rhythm.");
+assert.match(loop021Css, /\.embed-caption\s*\{[^}]*box-shadow:\s*none;/, "Map and Street View captions must not appear as nested cards.");
+
 
 // ARIA labels on generic div/span containers are not exposed as accessible names.
 // Require a semantic, nameable role whenever these elements declare aria-label.
