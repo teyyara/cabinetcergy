@@ -1,17 +1,27 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-011
-- **Current loop:** LOOP 011 — inner-page design refinement
-- **Working branch:** `aeos/loop-011-inner-page-design`
-- **Checkpoint PR:** [PR #12 — inner-page design refinement](https://github.com/teyyara/cabinetcergy/pull/12)
+- **Run ID:** cabinetcergy-2026-10-14-loop-012
+- **Current loop:** LOOP 012 — consistent iconography and contact cues
+- **Working branch:** `aeos/loop-012-consistent-iconography`
+- **Checkpoint PR:** [PR #13 — consistent iconography and contact cues](https://github.com/teyyara/cabinetcergy/pull/13)
 - **Promotion branch:** `main`
-- **Main baseline:** `6db86b5d3e6f33a592220df22a89cc381b956705`
+- **Main baseline:** `10f124d2a9767e23826e23a120d5f1745ddc8f62`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–011 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–012 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 012 — consistent iconography and contact cues
+
+- Replaced the homepage's mixed Unicode symbols in the three primary service cards with restrained inline SVG line icons for movement/body coordination, learning, and group support.
+- Replaced the contact strip's generic symbols with explicit location-pin, telephone-handset and envelope icons; this also corrects the former outbound-arrow glyph next to the phone number.
+- Replaced the homepage's lower information-card glyphs with matching line icons for access, fees and documents; updated the Accès page's family-support cards with child, stroller and clock illustrations.
+- Added a small CSS icon layer so the icons use consistent current-color stroke, line caps and responsive dimensions. All illustrations are decorative (their parent elements are already marked `aria-hidden="true"`).
+- Icons are inline and local; no icon fonts, external SVG requests, icon package or new JavaScript was introduced. Labels, visible copy, prices, links and integration URLs remain unchanged.
+- **Validation:** PR #13 build/static verification must pass before merge. Runtime visual review remains pending a manual production deployment by the owner.
+- **Production:** no Vercel deployment, retry or promotion action was initiated.
 
 ## Loop 011 — inner-page design refinement
 
