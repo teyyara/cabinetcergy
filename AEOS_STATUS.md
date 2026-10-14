@@ -4,7 +4,7 @@
 - **Run ID:** cabinetcergy-2026-10-14-loop-013
 - **Current loop:** LOOP 013 — responsive navigation interaction polish
 - **Working branch:** `aeos/loop-013-mobile-interaction-polish`
-- **Checkpoint PR:** Pending creation after the loop checkpoint is committed
+- **Checkpoint PR:** [PR #14 — mobile navigation interaction polish](https://github.com/teyyara/cabinetcergy/pull/14)
 - **Promotion branch:** `main`
 - **Main baseline:** `0546b500bba17088fa0b2a88b862023bd369896a`
 - **Website stack:** Astro 7.3.5 static output
