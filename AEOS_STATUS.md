@@ -1,17 +1,27 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-017
-- **Current loop:** LOOP 017 — visitor-facing copy consistency
-- **Working branch:** `aeos/loop-017-visitor-copy-polish`
-- **Checkpoint PR:** [PR #21 — polish visitor-facing copy and remove migration notes](https://github.com/teyyara/cabinetcergy/pull/21)
+- **Run ID:** cabinetcergy-2026-10-14-loop-018
+- **Current loop:** LOOP 018 — Resources page clarity and FAQ deduplication
+- **Working branch:** `aeos/loop-018-resource-page-coherence`
+- **Checkpoint PR:** [PR #24 — streamline Resources page and remove repeated FAQ](https://github.com/teyyara/cabinetcergy/pull/24)
 - **Promotion branch:** `main`
-- **Main baseline:** `267585fffa744b540fb65b9a7c426e7ad2a684d4`
+- **Main baseline:** `8856227c1409a83bec731d9e3cb9ebcf630e6e8b`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–017 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–018 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 018 — Resources page clarity and FAQ deduplication
+
+- Reorganized the Resources page so the CPAM and MDPH documents are the first primary resources, followed by Tamis/mutuelle information and a clear callout to the dedicated Questions page.
+- Removed the repeated FAQ accordion from Resources. All ten FAQ answers remain on `/ressources-utiles/questions/`; the Resources page now links to that single authoritative FAQ route, reducing unnecessary page length and duplicated content.
+- Removed the internal implementation note about Google Drive links being a workaround for missing files and about PDF review occurring “in this step.” Visitor-facing copy describes the purpose of the links and advises families to confirm administrative conditions with the relevant organisations, without claiming independent review of the documents.
+- Extended the static verifier to assert the Resources page does not duplicate FAQ items, the dedicated FAQ page retains all ten existing answers, the FAQ link remains present, and migration/audit notes are not rendered to public pages.
+- **Validation:** [GitHub Actions run 38628378188](https://github.com/teyyara/cabinetcergy/actions/runs/38628378188) passed dependency installation, Astro static build, and route/integration regression checks on the final PR #24 head `71ee7ce409d9c294d157466acbaf696e265ae4be`.
+- **Merge:** [PR #24](https://github.com/teyyara/cabinetcergy/pull/24) merged to `main` as [`69f1fc2`](https://github.com/teyyara/cabinetcergy/commit/69f1fc2cb5ea5820fdadcfa467e6f7d030143432).
+- **Production:** no Vercel deployment/retry/promotion was initiated; post-merge runtime and visual acceptance remain pending owner-managed deployment.
 
 ## Loop 017 — visitor-facing copy consistency
 
