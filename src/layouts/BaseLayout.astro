@@ -16,6 +16,14 @@ const {
   currentPath = "/",
   noindex = false,
 } = Astro.props;
+
+const siteOrigin = "https://cabinetcergy.vercel.app";
+const canonicalAliases: Record<string, string> = {
+  "/accueil/": "/",
+  "/questions/": "/ressources-utiles/questions/",
+};
+const canonicalPath = canonicalAliases[Astro.url.pathname] ?? Astro.url.pathname;
+const canonicalUrl = new URL(canonicalPath, siteOrigin).href;
 ---
 <!doctype html>
 <html lang="fr">
@@ -30,6 +38,8 @@ const {
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>

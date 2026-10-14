@@ -4,6 +4,30 @@ import path from "node:path";
 
 const dist = path.resolve("dist");
 
+
+const cssSource = await readFile(path.resolve("src/styles/global.css"), "utf8");
+const getColorToken = (name) => {
+  const match = cssSource.match(new RegExp(name + ":\\s*(#[0-9a-fA-F]{6})"));
+  assert.ok(match, `Missing CSS design token ${name}.`);
+  return match[1];
+};
+const relativeLuminance = (hex) => {
+  const channels = [1, 3, 5].map((index) => {
+    const value = Number.parseInt(hex.slice(index, index + 2), 16) / 255;
+    return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * channels[0] + 0.7152 * channels[1] + 0.0722 * channels[2];
+};
+const contrastRatio = (first, second) => {
+  const [lighter, darker] = [relativeLuminance(first), relativeLuminance(second)].sort((a, b) => b - a);
+  return (lighter + 0.05) / (darker + 0.05);
+};
+const mutedColor = getColorToken("--muted");
+const paperColor = getColorToken("--paper");
+assert.ok(contrastRatio(mutedColor, paperColor) >= 4.5, `Muted text must meet WCAG AA contrast on paper (got ${contrastRatio(mutedColor, paperColor).toFixed(2)}:1).`);
+assert.ok(contrastRatio(mutedColor, "#ffffff") >= 4.5, `Muted text must meet WCAG AA contrast on white (got ${contrastRatio(mutedColor, "#ffffff").toFixed(2)}:1).`);
+
+
 const buildInfo = JSON.parse(await readFile(path.join(dist, "build-info.json"), "utf8"));
 assert.equal(buildInfo.application, "cabinet-des-herons", "Build fingerprint must identify this site.");
 assert.equal(buildInfo.formatVersion, 1, "Build fingerprint format must be supported.");
@@ -14,6 +38,38 @@ const expectedCommit = process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_S
 if (expectedCommit) {
   assert.equal(buildInfo.commitSha, expectedCommit, "Build fingerprint must match the commit supplied by the hosting/CI environment.");
 }
+
+
+const sitemap = await readFile(path.join(dist, "sitemap.xml"), "utf8");
+const robots = await readFile(path.join(dist, "robots.txt"), "utf8");
+const sitemapUrls = sitemap
+  .split("<loc>")
+  .slice(1)
+  .map((segment) => segment.split("</loc>")[0]);
+const expectedSitemapUrls = [
+  "https://cabinetcergy.vercel.app/",
+  "https://cabinetcergy.vercel.app/le-cabinet/",
+  "https://cabinetcergy.vercel.app/equipe/",
+  "https://cabinetcergy.vercel.app/psychomotricite/",
+  "https://cabinetcergy.vercel.app/psycho-education/",
+  "https://cabinetcergy.vercel.app/prestations/",
+  "https://cabinetcergy.vercel.app/prise-en-charge-de-groupe/",
+  "https://cabinetcergy.vercel.app/acces/",
+  "https://cabinetcergy.vercel.app/ressources-utiles/",
+  "https://cabinetcergy.vercel.app/ressources-utiles/questions/",
+  "https://cabinetcergy.vercel.app/liste-attente/",
+];
+assert.deepEqual(
+  [...sitemapUrls].sort(),
+  [...expectedSitemapUrls].sort(),
+  "Sitemap must contain the intended indexable routes and no duplicate/alias URLs.",
+);
+assert.ok(robots.includes("User-agent: *"), "robots.txt must apply to all well-behaved crawlers.");
+assert.ok(robots.includes("Allow: /"), "robots.txt should allow public informational pages.");
+assert.ok(
+  robots.includes("Sitemap: https://cabinetcergy.vercel.app/sitemap.xml"),
+  "robots.txt must advertise the sitemap.",
+);
 
 const routeFiles = [
   "index.html",
@@ -37,6 +93,37 @@ for (const file of routeFiles) {
 }
 
 const html = async (file) => readFile(path.join(dist, file), "utf8");
+
+const canonicalPages = [
+  ["index.html", "https://cabinetcergy.vercel.app/"],
+  ["accueil/index.html", "https://cabinetcergy.vercel.app/"],
+  ["le-cabinet/index.html", "https://cabinetcergy.vercel.app/le-cabinet/"],
+  ["equipe/index.html", "https://cabinetcergy.vercel.app/equipe/"],
+  ["psychomotricite/index.html", "https://cabinetcergy.vercel.app/psychomotricite/"],
+  ["psycho-education/index.html", "https://cabinetcergy.vercel.app/psycho-education/"],
+  ["prestations/index.html", "https://cabinetcergy.vercel.app/prestations/"],
+  ["prise-en-charge-de-groupe/index.html", "https://cabinetcergy.vercel.app/prise-en-charge-de-groupe/"],
+  ["acces/index.html", "https://cabinetcergy.vercel.app/acces/"],
+  ["ressources-utiles/index.html", "https://cabinetcergy.vercel.app/ressources-utiles/"],
+  ["ressources-utiles/questions/index.html", "https://cabinetcergy.vercel.app/ressources-utiles/questions/"],
+  ["questions/index.html", "https://cabinetcergy.vercel.app/ressources-utiles/questions/"],
+  ["liste-attente/index.html", "https://cabinetcergy.vercel.app/liste-attente/"],
+];
+for (const [file, canonical] of canonicalPages) {
+  const page = await html(file);
+  assert.ok(
+    page.includes(`<link rel="canonical" href="${canonical}"`),
+    `${file} must declare the correct canonical URL.`,
+  );
+  assert.ok(
+    page.includes(`<meta property="og:url" content="${canonical}"`),
+    `${file} must expose the same canonical URL in Open Graph metadata.`,
+  );
+}
+assert.match(await html("accueil/index.html"), /name="robots" content="noindex, follow"/, "The duplicate Accueil route must remain excluded from indexing.");
+assert.match(await html("questions/index.html"), /name="robots" content="noindex, follow"/, "The short Questions alias must remain excluded from indexing.");
+assert.match(await html("404.html"), /name="robots" content="noindex, follow"/, "The custom 404 page must not be indexed.");
+
 const home = await html("index.html");
 const accessPage = await html("acces/index.html");
 const resources = await html("ressources-utiles/index.html");
@@ -82,4 +169,4 @@ assert.ok(teamPage.includes('src="/images/jarod-florance.webp"'), "The team page
 assert.ok(teamPage.includes('src="/images/bouhar-obeidi.webp"'), "The team page must show Bouhar Oubeidi’s local portrait.");
 assert.ok(!allHtml.join("\n").includes("sites.google.com/sitesv-images-rt"), "Rendered pages must not depend on Google Sites’ image gateway.");
 
-console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, Form, Street View, both PDF destinations and build fingerprint (${buildInfo.commitSha}) are present.`);
+console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, canonical/Open Graph metadata, robots.txt, sitemap.xml, Form, Street View, both PDF destinations and build fingerprint (${buildInfo.commitSha}) are present.`);
