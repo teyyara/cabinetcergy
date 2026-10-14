@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cabinetcergy.vercel.app/sitemap.xml
