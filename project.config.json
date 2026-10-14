@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-017",
+  "run_id": "cabinetcergy-2026-10-14-loop-018",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-017-visitor-copy-polish"
+    "current_working_branch": "aeos/loop-018-resource-page-coherence"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -183,6 +183,13 @@
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Improve consistency and professionalism of visitor-facing copy by removing internal migration commentary while preserving clinic facts and operational integrations.",
       "implementation": "Loop 017 rewrites migration-oriented copy across the homepage, service pages, team, fees, group support, access, resources and FAQ; removes the technical migration note under Street View; and adds a generated-HTML regression guard. Prescription guidance, fees, schedules, transport information, contact details, the existing Google Form, resource links, Maps and Street View destinations remain unchanged. GitHub Actions run 38624739343 passed dependency installation, Astro static build and route/integration verification on the final PR #21 head. PR #21 merged to main as bae8024e8308806991823fdb5059560a2bc49e75. No Vercel deployment was initiated; live visual acceptance remains pending manual owner deployment."
+    },
+    {
+      "id": "CR-016",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
+      "requirement": "Improve the Resources page information hierarchy by avoiding repeated FAQ content and removing internal file-migration/audit commentary, while preserving all documents and destinations.",
+      "implementation": "Loop 018 prioritizes the existing CPAM/MDPH links and Tamis/mutuelle resources, replaces the duplicate ten-question FAQ accordion with a clear link to /ressources-utiles/questions/, and removes internal wording about links being a migration workaround and PDFs not inspected during a build step. The ten FAQ entries remain on the dedicated route. The verifier checks FAQ separation, count, route link and migration-note absence. GitHub Actions run 38628378188 passed dependency installation, Astro build and route/integration verification on final PR #24 head 71ee7ce409d9c294d157466acbaf696e265ae4be. PR #24 merged to main as 69f1fc2cb5ea5820fdadcfa467e6f7d030143432. No Vercel deployment initiated; live visual acceptance remains pending manual owner deployment."
     }
   ],
   "validation_evidence": {
@@ -208,6 +215,7 @@
     "loop_014": "Pricing table wrappers on the Prestations page now have named keyboard-focusable regions and hidden table captions, with responsive scrollbar/focus styling. Static build verifier now checks all three pricing tables. GitHub Actions on the loop PR remains the merge gate; no prices or service labels are changed, and no Vercel deployment initiated.",
     "loop_015": "GitHub Actions run #52 (38622265170) completed successfully on PR #16's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #16 merged to main as 54b142545f03ba507c0252d6fee4e47ad0bb2d06. Live visual acceptance remains pending manual deployment; no Vercel deployment initiated.",
     "loop_016": "GitHub Actions run #58 (38623015583) completed successfully on PR #18's final head: dependency installation, Astro static build, and the complete route/integration verifier passed. PR #18 merged to main as 82afde0b4c2a718af39a8ba99fce3b58cbe69313. Live visual and keyboard acceptance remains pending manual deployment; no Vercel deployment initiated.",
-    "loop_017": "GitHub Actions run 38624739343 (https://github.com/teyyara/cabinetcergy/actions/runs/38624739343) completed successfully on final PR #21 head a8038e69bc581cc2b3443eed84a4eccab6de139e: dependency installation, Astro static build, and route/integration regression verification all passed. PR #21 merged to main as bae8024e8308806991823fdb5059560a2bc49e75. Visitor-facing copy cleaned across 11 public content/component files, with a generated-HTML regression guard. Existing clinic facts, costs, schedules, maps/forms/contact and external links preserved. No Vercel deployment initiated; post-merge live visual acceptance awaits manual deployment."
+    "loop_017": "GitHub Actions run 38624739343 (https://github.com/teyyara/cabinetcergy/actions/runs/38624739343) completed successfully on final PR #21 head a8038e69bc581cc2b3443eed84a4eccab6de139e: dependency installation, Astro static build, and route/integration regression verification all passed. PR #21 merged to main as bae8024e8308806991823fdb5059560a2bc49e75. Visitor-facing copy cleaned across 11 public content/component files, with a generated-HTML regression guard. Existing clinic facts, costs, schedules, maps/forms/contact and external links preserved. No Vercel deployment initiated; post-merge live visual acceptance awaits manual deployment.",
+    "loop_018": "GitHub Actions run 38628378188 (https://github.com/teyyara/cabinetcergy/actions/runs/38628378188) completed successfully on final PR #24 head 71ee7ce409d9c294d157466acbaf696e265ae4be: dependency installation, Astro static build, and route/integration regression verification all passed. PR #24 merged to main as 69f1fc2cb5ea5820fdadcfa467e6f7d030143432. Resources page no longer duplicates the ten-item FAQ; FAQ destination and all ten answers remain; internal Google Drive migration/audit note removed; external operational destinations preserved. No Vercel deployment initiated; live acceptance awaits owner-managed deployment."
   }
 }
