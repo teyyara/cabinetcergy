@@ -3,6 +3,18 @@ import { access, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 
 const dist = path.resolve("dist");
+
+const buildInfo = JSON.parse(await readFile(path.join(dist, "build-info.json"), "utf8"));
+assert.equal(buildInfo.application, "cabinet-des-herons", "Build fingerprint must identify this site.");
+assert.equal(buildInfo.formatVersion, 1, "Build fingerprint format must be supported.");
+assert.ok(typeof buildInfo.buildProvider === "string" && buildInfo.buildProvider.length > 0, "Build provider must be recorded.");
+assert.ok(typeof buildInfo.commitSha === "string" && buildInfo.commitSha.length > 0, "Build commit must be recorded.");
+assert.ok(typeof buildInfo.branch === "string" && buildInfo.branch.length > 0, "Build branch must be recorded.");
+const expectedCommit = process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_SHA;
+if (expectedCommit) {
+  assert.equal(buildInfo.commitSha, expectedCommit, "Build fingerprint must match the commit supplied by the hosting/CI environment.");
+}
+
 const routeFiles = [
   "index.html",
   "accueil/index.html",
@@ -70,4 +82,4 @@ assert.ok(teamPage.includes('src="/images/jarod-florance.webp"'), "The team page
 assert.ok(teamPage.includes('src="/images/bouhar-obeidi.webp"'), "The team page must show Bouhar Oubeidi’s local portrait.");
 assert.ok(!allHtml.join("\n").includes("sites.google.com/sitesv-images-rt"), "Rendered pages must not depend on Google Sites’ image gateway.");
 
-console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, Form, Street View and both PDF destinations are present.`);
+console.log(`Build verification passed: ${routeFiles.length} static routes, ${localImages.length} local image assets, Form, Street View, both PDF destinations and build fingerprint (${buildInfo.commitSha}) are present.`);
