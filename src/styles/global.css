@@ -2030,3 +2030,51 @@ th {
     gap: 0.7rem;
   }
 }
+
+
+/* Loop 022 — quieter standalone contact links outside prose */
+.contact-link {
+  display: inline-flex;
+  align-items: baseline;
+  width: fit-content;
+  max-width: 100%;
+  color: var(--teal-deep);
+  font-weight: 680;
+  text-decoration: none;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  overflow-wrap: anywhere;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  color: var(--blue-deep);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+.trust-item .contact-link {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.notice-contact-links {
+  display: grid;
+  justify-items: start;
+  gap: 0.4rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.notice-contact-links .contact-link {
+  line-height: 1.5;
+}
+
+.feature-band-aside .contact-link {
+  color: #d2e1e0;
+}
+
+.feature-band-aside .contact-link:hover,
+.feature-band-aside .contact-link:focus-visible {
+  color: var(--white);
+}
