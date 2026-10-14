@@ -1,17 +1,27 @@
 # AEOS Status — Cabinet des Hérons
 
 - **Active keyphrase:** Read the master strategy
-- **Run ID:** cabinetcergy-2026-10-14-loop-016
-- **Current loop:** LOOP 016 — mobile menu keyboard behavior
-- **Working branch:** `aeos/loop-016-mobile-menu-keyboard-behavior`
-- **Checkpoint PR:** [PR #18 — mobile menu keyboard behavior](https://github.com/teyyara/cabinetcergy/pull/18)
+- **Run ID:** cabinetcergy-2026-10-14-loop-017
+- **Current loop:** LOOP 017 — visitor-facing copy consistency
+- **Working branch:** `aeos/loop-017-visitor-copy-polish`
+- **Checkpoint PR:** [PR #21 — polish visitor-facing copy and remove migration notes](https://github.com/teyyara/cabinetcergy/pull/21)
 - **Promotion branch:** `main`
-- **Main baseline:** `77cf59c7a784f6a969a662de6f4a1913779490d4`
+- **Main baseline:** `267585fffa744b540fb65b9a7c426e7ad2a684d4`
 - **Website stack:** Astro 7.3.5 static output
 - **Production URL:** https://cabinetcergy.vercel.app
 - **Deployment ownership:** The user manages Vercel deployments manually. This project loop must never trigger, create, retry or promote a Vercel deployment.
-- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–016 source changes remain unverified live until the user deploys them.
+- **Production baseline last checked before Loop 008:** fingerprint `7153f320dfd0533b2dfd04bc06d06319a94ca56b`; Loop 008–017 source changes remain unverified live until the user deploys them.
 - **Last updated:** 2026-10-14
+
+## Loop 017 — visitor-facing copy consistency
+
+- Removed internal migration commentary (for example, “le site source indique”) from the homepage, service pages, team, pricing, group support, access, resources and FAQ, so the live site's copy speaks directly to families rather than narrating the migration process.
+- Reworded the Street View caption that previously described a source-site image placement error. It now explains the visitor benefit of the map view.
+- Preserved the meaning of prescription guidance, published fees and group schedules, contact destinations, resource links, the existing Google Form and map/Street View embeds. Current-conditions caveats remain where reimbursement and transport details have not been independently verified.
+- Added a generated-HTML regression assertion to catch migration-only wording in public pages and documented the change in README.
+- **Validation:** [GitHub Actions run 38624739343](https://github.com/teyyara/cabinetcergy/actions/runs/38624739343) completed successfully: dependency installation, Astro static build, and route/integration regression verification all passed on final PR #21 head `a8038e69bc581cc2b3443eed84a4eccab6de139e`.
+- **Merge:** [PR #21](https://github.com/teyyara/cabinetcergy/pull/21) merged to `main` as [`bae8024`](https://github.com/teyyara/cabinetcergy/commit/bae8024e8308806991823fdb5059560a2bc49e75).
+- **Production:** no Vercel deployment/retry/promotion was initiated; post-merge live visual QA remains pending the owner's manual deployment.
 
 ## Loop 016 — mobile menu keyboard behavior
 
