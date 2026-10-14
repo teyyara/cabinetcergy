@@ -174,6 +174,12 @@ const resources = await html("ressources-utiles/index.html");
 const faqPage = await html("ressources-utiles/questions/index.html");
 const waiting = await html("liste-attente/index.html");
 
+const heroVisualTag = home.match(/<div\b[^>]*class="hero-visual"[^>]*>/i)?.[0] ?? "";
+assert.ok(heroVisualTag.includes('role="group"') && heroVisualTag.includes('aria-label="Aperçu des locaux du cabinet"'), "Homepage photo gallery must expose its accessible label on a semantic group.");
+const trustStripTag = home.match(/<div\b[^>]*class="trust-strip"[^>]*>/i)?.[0] ?? "";
+assert.ok(trustStripTag.includes('role="group"') && trustStripTag.includes('aria-label="Informations pratiques"'), "Homepage practical contact strip must expose its accessible label on a semantic group.");
+
+
 // Protect the exact operational destinations from accidental URL drift.
 // Astro HTML-escapes ampersands inside attributes; decode only the common
 // attribute entities before comparing URLs, without changing page output.
@@ -276,6 +282,24 @@ const groupPage = await html("prise-en-charge-de-groupe/index.html");
 assert.match(groupPage, /aria-current="location"/, "Group-support route must correctly mark its parent Tarifs & groupes navigation item as the current location.");
 
 const allHtml = await Promise.all(routeFiles.map(html));
+
+// ARIA labels on generic div/span containers are not exposed as accessible names.
+// Require a semantic, nameable role whenever these elements declare aria-label.
+for (const [index, page] of allHtml.entries()) {
+  const file = routeFiles[index];
+  const labelledGenericContainers = [
+    ...page.matchAll(/<(div|span)\b([^>]*)\baria-label\s*=\s*["'][^"']+["']([^>]*)>/gi),
+  ];
+  for (const match of labelledGenericContainers) {
+    const attributes = match[2] + " " + match[3];
+    const role = attributes.match(/\brole\s*=\s*["']([^"']+)["']/i)?.[1]?.toLowerCase();
+    assert.ok(
+      role && !["generic", "none", "presentation"].includes(role),
+      file + " puts aria-label on a generic div/span without a semantic role that permits naming.",
+    );
+  }
+}
+
 
 // Loop 017 — catch migration-only notes accidentally exposed in public copy.
 for (const [index, page] of allHtml.entries()) {
