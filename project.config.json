@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-023",
+  "run_id": "cabinetcergy-2026-10-14-loop-024",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-023-status-sync"
+    "current_working_branch": "aeos/loop-024-status-sync"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -225,6 +225,13 @@
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Align homepage service-card action links consistently despite uneven copy lengths without changing public content or destinations.",
       "implementation": "Loop 023 sets .cards-grid direct cards to vertical flex layout and their direct .text-link actions to margin-top:auto with responsive padding. Static verifier checks these rules. PR #34 final head e9ba5112be8d84b7aef3997404714e857f019ba7 passed run 38636516595; merged as a54eb81a28257bded1cc6c2be38e4d0a9abd5984; main run 38636673583 passed. No browser QA or Vercel deployment initiated."
+    },
+    {
+      "id": "CR-022",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_AND_CI_VERIFIED",
+      "requirement": "Keep service-card copy full-width while preserving bottom-aligned left-anchored action links.",
+      "implementation": "Loop 024 corrects the prior flex cross-axis alignment: .cards-grid > .card uses align-items:stretch, and only the direct .text-link uses align-self:flex-start while retaining margin-top:auto. Static verifier guards both. PR #36 head 0f298b04fc16071c6fdd90641f2d85c8a7e03975 passed Actions run 38638402109; merged as 93e98ff756b135ca39f9ebdd85aab6891a38bb25; post-merge main run 38638544902 passed. No browser QA or deployment initiated."
     }
   ],
   "validation_evidence": {
@@ -256,6 +263,7 @@
     "loop_020": "PR #28 https://github.com/teyyara/cabinetcergy/pull/28 final head 4fa621932a9a772efb124411fcfce228c069107c; Actions run 38631475971 PASS (dependency install, Astro static build, route/integration/accessibility verifier). Main merge commit 6c83b63f4a5b51589754376267e596da0b1f4852; post-merge Actions run 38631652346 PASS. Both homepage named generic containers now use role=group; regression guard checks labels against semantic roles. Visual and screen-reader QA not run; no Vercel deployment initiated.",
     "loop_021": "PR #30 https://github.com/teyyara/cabinetcergy/pull/30 final head 2fbfe587aa9b664329bc6d7b1e4ff5cd6d69ef53; Actions run 38633696207 PASS: dependency installation, Astro static build, and route/integration verifier. Main merge commit 38a42fd2caba162d3573624f451c62bf76110f95; post-merge main run 38633853515 PASS. Source-level checks confirm tighter responsive section spacing, footer links un-underlined at rest but underlined on hover/focus, consistent stacked footer links, and map/Street View captions without nested cards. Visual browser QA not run; no Vercel deployment initiated.",
     "loop_022": "PR #32 https://github.com/teyyara/cabinetcergy/pull/32 final head eadd9a4a5d31c3f1a59029fc522e08e54ddf7c7c; Actions run 38635199552 PASS: dependency installation, Astro static build, route/integration verifier. Merged to main as 713a50566575834363393c2f3fa35f034fb75d34; post-merge main run 38635353590 PASS. Static source/output guards cover no-underline-at-rest, hover/focus underline, consistent waiting-list contact spacing, and homepage/pricing/waiting-list link use. No Vercel deployment or browser QA initiated.",
-    "loop_023": "PR #34 https://github.com/teyyara/cabinetcergy/pull/34 final head e9ba5112be8d84b7aef3997404714e857f019ba7; Actions run 38636516595 PASS. Merged to main as a54eb81a28257bded1cc6c2be38e4d0a9abd5984; post-merge main run 38636673583 PASS. Service-card action alignment has static regression guards. No deployment/browser QA initiated."
+    "loop_023": "PR #34 https://github.com/teyyara/cabinetcergy/pull/34 final head e9ba5112be8d84b7aef3997404714e857f019ba7; Actions run 38636516595 PASS. Merged to main as a54eb81a28257bded1cc6c2be38e4d0a9abd5984; post-merge main run 38636673583 PASS. Service-card action alignment has static regression guards. No deployment/browser QA initiated.",
+    "loop_024": "PR #36 https://github.com/teyyara/cabinetcergy/pull/36 final head 0f298b04fc16071c6fdd90641f2d85c8a7e03975; Actions run 38638402109 PASS. Merged to main as 93e98ff756b135ca39f9ebdd85aab6891a38bb25; post-merge main run 38638544902 PASS. Build verifier checks full-width card content and left-aligned bottom actions. No deployment/browser QA initiated."
   }
 }
