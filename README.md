@@ -118,3 +118,8 @@ The CSS adds a compact responsive profile header on mobile, more differentiated 
 Loop 012 replaces several mixed Unicode placeholders in the homepage and Accès cards with lightweight inline SVG line icons, including a proper handset beside the public phone link. Stroke weight, line caps and responsive sizing are set centrally in CSS. The SVGs are decorative and remain hidden from assistive technology where the visible text already identifies the content.
 
 The icons are stored directly in the Astro markup and require no remote requests, icon font, package or JavaScript. No business copy, fees, forms, or external destination URLs are changed. Visual acceptance should still be performed in desktop and narrow-mobile browsers after the owner deploys the merged commit.
+
+
+## Mobile navigation and interaction states
+
+Loop 013 adds a more legible open state to the native mobile menu, a restrained close-icon/panel transition, and subtle button press feedback. The mobile waiting-list CTA keeps white text on a dark teal background in hover and keyboard-focus states rather than receiving the generic pale link-hover surface. Reduced-motion preferences disable the new movement. Regression assertions cover these source-level states; final browser acceptance remains pending the owner's manual deployment. No content, integrations, dependencies, or runtime JavaScript were added.
