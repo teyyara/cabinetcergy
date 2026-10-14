@@ -128,3 +128,8 @@ Loop 013 adds a more legible open state to the native mobile menu, a restrained 
 ## Accessible pricing-table navigation
 
 Loop 014 makes each practitioner pricing-table scroll area keyboard-focusable and exposes it as a named region. Each table includes a visually-hidden caption identifying the tariff table and practitioner. A visible focus ring, scroll positioning and slim scrollbar styling improve navigation on narrower screens when horizontal scrolling is required. Automated checks guard all three table regions and captions. No published prices or other clinic content were changed; live browser review remains pending the owner's manual deployment.
+
+
+## Compact narrow-screen layouts
+
+Loop 015 improves inner-page composition at compact mobile widths: resource-card actions wrap beneath their descriptions, schedule labels can wrap naturally, section headings stack, and embed/contact panels use tighter spacing and safer text wrapping. The responsive layer is CSS-only and preserves all clinic copy, rates, and external destinations. Static assertions guard the intended media-query rules; a real-browser visual check is still required after manual deployment.

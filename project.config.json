@@ -2,7 +2,7 @@
   "schema_version": 3,
   "project_id": "cabinet-des-herons-website",
   "active_keyphrase": "Read the master strategy",
-  "run_id": "cabinetcergy-2026-10-14-loop-014",
+  "run_id": "cabinetcergy-2026-10-14-loop-015",
   "repository": {
     "full_name": "teyyara/cabinetcergy",
     "visibility": "private",
@@ -18,7 +18,7 @@
       "main_merge_does_not_imply_production_release": true,
       "production_release_remains_separately_gated": true
     },
-    "current_working_branch": "aeos/loop-014-accessible-pricing-tables"
+    "current_working_branch": "aeos/loop-015-narrow-screen-layouts"
   },
   "source": {
     "website": "https://sites.google.com/view/cabinetdesheronscergy/",
@@ -162,6 +162,13 @@
       "state": "IMPLEMENTED_AND_CI_VERIFIED",
       "requirement": "Make practitioner pricing tables easier to navigate with keyboard and assistive technologies, especially when horizontal scrolling is needed on narrow screens, without changing published rates or clinic wording.",
       "implementation": "Loop 014 gives each practitioner's existing pricing-table scroll wrapper role=region, tabindex=0, and a descriptive accessible name; each table also has a visually-hidden caption. CSS adds a clearly visible keyboard-focus outline and compact scrollbar styling. The build verifier checks all three tables and their accessibility attributes."
+    },
+    {
+      "id": "CR-013",
+      "date": "2026-10-14",
+      "state": "IMPLEMENTED_CI_PENDING",
+      "requirement": "Improve inner-page card composition and prevent cramped wrapping at narrow mobile widths without changing clinic content or integrations.",
+      "implementation": "Loop 015 adds CSS-only compact responsive adjustments for resource cards, schedule headings/badges, section headings, embed headers, and long contact/notice text at <=420px. Static build assertions guard the responsive rules. No copy, prices, destinations, dependencies, JavaScript, or Vercel deployment changed."
     }
   ],
   "validation_evidence": {
@@ -184,6 +191,7 @@
     "loop_011": "Inner-page visual refinement committed on aeos/loop-011-inner-page-design. PR #12 build and static verification required before merge. Runtime visual review remains pending; no deployment has been initiated.",
     "loop_012": "Consistent inline SVG line-icon treatment committed on aeos/loop-012-consistent-iconography. PR #13 GitHub Actions build/static verification is the merge gate; post-deploy visual acceptance remains pending. No deployment initiated.",
     "loop_013": "Responsive mobile navigation CSS and regression assertions are implemented on aeos/loop-013-mobile-interaction-polish. The pull-request GitHub Actions build/static verifier must pass before merge. No content or URLs changed, no dependency or JavaScript added, and no Vercel deployment initiated. Production visual acceptance remains pending.",
-    "loop_014": "Pricing table wrappers on the Prestations page now have named keyboard-focusable regions and hidden table captions, with responsive scrollbar/focus styling. Static build verifier now checks all three pricing tables. GitHub Actions on the loop PR remains the merge gate; no prices or service labels are changed, and no Vercel deployment initiated."
+    "loop_014": "Pricing table wrappers on the Prestations page now have named keyboard-focusable regions and hidden table captions, with responsive scrollbar/focus styling. Static build verifier now checks all three pricing tables. GitHub Actions on the loop PR remains the merge gate; no prices or service labels are changed, and no Vercel deployment initiated.",
+    "loop_015": "Compact responsive inner-page CSS and static regression assertions are implemented on aeos/loop-015-narrow-screen-layouts. PR Actions must pass before merge; visual browser acceptance remains pending manual deployment. No Vercel deployment initiated."
   }
 }

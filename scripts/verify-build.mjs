@@ -48,6 +48,15 @@ assert.match(mobileMenuCtaStateRule[1], /background:\s*var\(--teal-deep\)/, "The
 
 
 
+// Loop 015 — protect compact layouts for resource, schedule, and embed cards.
+const loop015Css = cssSource.split("/* Loop 015 — compact inner-page layouts */")[1] ?? "";
+assert.ok(loop015Css.length > 0, "Loop 015 compact inner-page styles must be present.");
+assert.ok(loop015Css.includes("@media (max-width: 420px)"), "Compact inner-page adjustments must target narrow screens.");
+assert.ok(loop015Css.includes("grid-template-columns: 2.4rem minmax(0, 1fr)"), "Resource cards must preserve a compact icon/content layout on narrow screens.");
+assert.ok(loop015Css.includes("grid-column: 1 / -1"), "Resource actions must move below the content on narrow screens.");
+assert.ok(loop015Css.includes("flex-wrap: wrap"), "Schedule headings and badges must wrap instead of forcing overflow.");
+assert.ok(loop015Css.includes("padding: 1.05rem"), "Embed headings must use compact padding on narrow screens.");
+
 const buildInfo = JSON.parse(await readFile(path.join(dist, "build-info.json"), "utf8"));
 assert.equal(buildInfo.application, "cabinet-des-herons", "Build fingerprint must identify this site.");
 assert.equal(buildInfo.formatVersion, 1, "Build fingerprint format must be supported.");
