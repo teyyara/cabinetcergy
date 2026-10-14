@@ -197,9 +197,8 @@ assert.doesNotMatch(
   /class="faq-item"/,
   "The Resources overview must not repeat the full FAQ accordion list; use its dedicated FAQ page.",
 );
-assert.match(
-  resources,
-  /href="\\/ressources-utiles\\/questions\\/"/,
+assert.ok(
+  resources.includes('href="/ressources-utiles/questions/"'),
   "The Resources overview must provide a clear link to the dedicated FAQ page.",
 );
 assert.equal(
